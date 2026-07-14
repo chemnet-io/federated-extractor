@@ -1,11 +1,13 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException, Depends, Header
-from fastapi.responses import JSONResponse
+from pathlib import Path
 import shutil
 import os
 from shared.db import init_db, add_pdf, verify_token_hash
 from shared.crypto import hash_token
 
 app = FastAPI()
+REPO_ROOT = Path(__file__).resolve().parents[1]
+UPLOAD_DIR = Path(os.getenv("EXTRACTOR_UPLOAD_DIR", REPO_ROOT / "uploads"))
 
 # Initialize DB on startup
 @app.on_event("startup")
@@ -30,8 +32,8 @@ async def upload_pdf(
     if file.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="Only PDF files are allowed")
 
-    upload_dir = "/home/pcarmo/repositories/federated-extractor/uploads"
-    file_path = os.path.join(upload_dir, file.filename)
+    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    file_path = UPLOAD_DIR / file.filename
 
     try:
         with open(file_path, "wb") as buffer:
