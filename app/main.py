@@ -26,7 +26,7 @@ def verify_token(x_api_token: str = Header(...)):
 
 @app.post("/upload")
 async def upload_pdf(
-    file: UploadFile(File(...)), 
+    file: UploadFile = File(...),
     token: str = Depends(verify_token)
 ):
     if file.content_type != "application/pdf":
