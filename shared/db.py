@@ -1,8 +1,12 @@
+import os
+from pathlib import Path
 import sqlite3
 
-DB_PATH = "/home/pcarmo/repositories/federated-extractor/system.db"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+DB_PATH = Path(os.getenv("EXTRACTOR_DB_PATH", REPO_ROOT / "system.db"))
 
 def get_connection():
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     return sqlite3.connect(DB_PATH)
 
 def init_db():
