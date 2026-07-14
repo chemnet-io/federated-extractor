@@ -1,7 +1,9 @@
-import click
 import secrets
 import string
-from shared.db import save_token_hash, verify_token_hash, delete_token_by_hash, list_token_hashes
+
+import click
+
+from shared.db import init_db, save_token_hash, verify_token_hash, delete_token_by_hash, list_token_hashes
 from shared.crypto import hash_token
 
 def generate_random_token(length=32):
@@ -11,7 +13,7 @@ def generate_random_token(length=32):
 @click.group()
 def cli():
     """API Token Management CLI"""
-    pass
+    init_db()
 
 @cli.command()
 def create():
