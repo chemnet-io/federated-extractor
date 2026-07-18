@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Federated extractor local data
+system.db
+system.db-*
+uploads/*
+outputs/**
+!uploads/.gitkeep
+!outputs/
+!outputs/**/
+!outputs/**/.gitkeep
