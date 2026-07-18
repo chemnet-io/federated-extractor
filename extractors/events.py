@@ -11,6 +11,8 @@ from pathlib import Path
 import re
 from typing import Dict, List, Optional, Union
 
+from extractors.text_preprocessing import clean_entity, clean_value, split_sentences
+
 
 @dataclass(frozen=True)
 class Event:
@@ -75,7 +77,7 @@ EVENT_VERBS = {
 VERB_PATTERN = "|".join(sorted(EVENT_VERBS, key=len, reverse=True))
 
 ACTIVE_EVENT_PATTERN = re.compile(
-    r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]+?)\s+"
+    r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:may\s+|can\s+|also\s+|then\s+|effectively\s+)?"
     r"(?P<trigger>" + VERB_PATTERN + r")\s+"
     r"(?P<target>[^.!?]+)",
@@ -83,7 +85,7 @@ ACTIVE_EVENT_PATTERN = re.compile(
 )
 
 CONFIGURED_EVENT_PATTERN = re.compile(
-    r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]+?)\s+"
+    r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:is|are|may be|can be)\s+configured\s+to\s+"
     r"(?P<trigger>" + VERB_PATTERN + r")\s+"
     r"(?P<target>[^.!?]+)",
@@ -91,7 +93,7 @@ CONFIGURED_EVENT_PATTERN = re.compile(
 )
 
 USED_EVENT_PATTERN = re.compile(
-    r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]+?)\s+"
+    r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:is|are|may be|can be)\s+used\s+to\s+"
     r"(?P<trigger>" + VERB_PATTERN + r")\s+"
     r"(?P<target>[^.!?]+)",
@@ -99,7 +101,7 @@ USED_EVENT_PATTERN = re.compile(
 )
 
 PASSIVE_EVENT_PATTERN = re.compile(
-    r"\b(?P<target>[A-Za-z][A-Za-z0-9 ()/-]+?)\s+"
+    r"\b(?P<target>[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:may\s+|can\s+)?be\s+"
     r"(?P<trigger>" + VERB_PATTERN + r")\s+"
     r"(?:by\s+(?P<actor>[A-Za-z][A-Za-z0-9 ()/-]+))?",
@@ -112,7 +114,7 @@ def extract_events(text: str) -> List[Event]:
 
     events: List[Event] = []
 
-    for sentence in _split_sentences(text):
+    for sentence in split_sentences(text):
         events.extend(_extract_configured_events(sentence))
         events.extend(_extract_used_events(sentence))
         events.extend(_extract_active_events(sentence))
@@ -170,8 +172,8 @@ def _extract_action_pattern(
     events: List[Event] = []
     for match in pattern.finditer(sentence):
         trigger = match.group("trigger").lower()
-        actor = _clean_entity(match.group("actor"))
-        target = _clean_text(match.group("target"))
+        actor = clean_entity(match.group("actor"))
+        target = clean_value(match.group("target"))
         if _is_noisy(actor) or _is_noisy(target):
             continue
         events.append(
@@ -192,8 +194,8 @@ def _extract_active_events(sentence: str) -> List[Event]:
     events: List[Event] = []
     for match in ACTIVE_EVENT_PATTERN.finditer(sentence):
         trigger = match.group("trigger").lower()
-        actor = _clean_entity(match.group("actor"))
-        target = _clean_text(match.group("target"))
+        actor = clean_entity(match.group("actor"))
+        target = clean_value(match.group("target"))
         if _is_noisy(actor) or _is_noisy(target):
             continue
         events.append(
@@ -213,9 +215,9 @@ def _extract_passive_events(sentence: str) -> List[Event]:
     events: List[Event] = []
     for match in PASSIVE_EVENT_PATTERN.finditer(sentence):
         trigger = match.group("trigger").lower()
-        target = _clean_text(match.group("target"))
+        target = clean_value(match.group("target"))
         actor = match.group("actor")
-        clean_actor = _clean_entity(actor) if actor else None
+        clean_actor = clean_entity(actor) if actor else None
         if _is_noisy(target):
             continue
         events.append(
@@ -243,15 +245,6 @@ def _deduplicate_events(events: List[Event]) -> List[Event]:
     return deduplicated
 
 
-def _split_sentences(text: str) -> List[str]:
-    normalized = " ".join(text.split())
-    return [
-        sentence.strip()
-        for sentence in re.split(r"(?<=[.!?])\s+", normalized)
-        if sentence.strip()
-    ]
-
-
 def _clean_text(value: str) -> str:
     return value.strip(" .,:;")
 
@@ -275,6 +268,11 @@ def _is_noisy(value: Optional[str]) -> bool:
         "have to be",
         "has to be",
         "one or more",
+        "and/or",
+        "such as",
+        "e.g",
+        "wo 2023/",
+        "pct/",
         "and a",
     ]
     if any(fragment in lowered for fragment in noisy_fragments):

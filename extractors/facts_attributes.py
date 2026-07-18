@@ -11,6 +11,8 @@ from pathlib import Path
 import re
 from typing import Dict, List, Optional, Union
 
+from extractors.text_preprocessing import clean_entity, clean_value, split_list_items, split_sentences
+
 
 @dataclass(frozen=True)
 class FactAttribute:
@@ -52,19 +54,19 @@ METHOD_PATTERN = re.compile(
 )
 
 COMPRISES_PATTERN = re.compile(
-    r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]+?)\s+"
+    r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:may\s+)?comprises?\s+(?P<value>[^.!?]+)",
     re.IGNORECASE,
 )
 
 CONFIGURED_TO_PATTERN = re.compile(
-    r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]+?)\s+"
+    r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:is|are|may be)\s+configured\s+to\s+(?P<value>[^.!?]+)",
     re.IGNORECASE,
 )
 
 USED_TO_PATTERN = re.compile(
-    r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]+?)\s+"
+    r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:is|are|may be|can be)\s+used\s+to\s+(?P<value>[^.!?]+)",
     re.IGNORECASE,
 )
@@ -75,7 +77,7 @@ def extract_facts_and_attributes(text: str) -> List[FactAttribute]:
 
     facts: List[FactAttribute] = []
 
-    for sentence in _split_sentences(text):
+    for sentence in split_sentences(text):
         facts.extend(_extract_formula_facts(sentence))
         facts.extend(_extract_molar_mass_facts(sentence))
         facts.extend(_extract_measurement_facts(sentence))
@@ -184,25 +186,35 @@ def _extract_method_facts(sentence: str) -> List[FactAttribute]:
 def _extract_composition_facts(sentence: str) -> List[FactAttribute]:
     facts: List[FactAttribute] = []
     for match in COMPRISES_PATTERN.finditer(sentence):
-        facts.append(
-            FactAttribute(
-                entity=_clean_entity(match.group("entity")),
-                attribute="comprises",
-                value=_clean_text(match.group("value")),
-                evidence=sentence,
+        entity = clean_entity(match.group("entity"))
+        if _is_noisy_phrase(entity):
+            continue
+        for value in split_list_items(clean_value(match.group("value"))):
+            if _is_noisy_phrase(value):
+                continue
+            facts.append(
+                FactAttribute(
+                    entity=entity,
+                    attribute="comprises",
+                    value=value,
+                    evidence=sentence,
+                )
             )
-        )
     return facts
 
 
 def _extract_capability_facts(sentence: str) -> List[FactAttribute]:
     facts: List[FactAttribute] = []
     for match in CONFIGURED_TO_PATTERN.finditer(sentence):
+        entity = clean_entity(match.group("entity"))
+        value = clean_value(match.group("value"))
+        if _is_noisy_phrase(entity) or _is_noisy_phrase(value):
+            continue
         facts.append(
             FactAttribute(
-                entity=_clean_entity(match.group("entity")),
+                entity=entity,
                 attribute="configured to",
-                value=_clean_text(match.group("value")),
+                value=value,
                 evidence=sentence,
             )
         )
@@ -212,11 +224,15 @@ def _extract_capability_facts(sentence: str) -> List[FactAttribute]:
 def _extract_usage_facts(sentence: str) -> List[FactAttribute]:
     facts: List[FactAttribute] = []
     for match in USED_TO_PATTERN.finditer(sentence):
+        entity = clean_entity(match.group("entity"))
+        value = clean_value(match.group("value"))
+        if _is_noisy_phrase(entity) or _is_noisy_phrase(value):
+            continue
         facts.append(
             FactAttribute(
-                entity=_clean_entity(match.group("entity")),
+                entity=entity,
                 attribute="used to",
-                value=_clean_text(match.group("value")),
+                value=value,
                 evidence=sentence,
             )
         )
@@ -236,15 +252,6 @@ def _attribute_for_unit(unit: str) -> str:
     return "measurement"
 
 
-def _split_sentences(text: str) -> List[str]:
-    normalized = " ".join(text.split())
-    return [
-        sentence.strip()
-        for sentence in re.split(r"(?<=[.!?])\s+", normalized)
-        if sentence.strip()
-    ]
-
-
 def _clean_text(value: str) -> str:
     return value.strip(" .,:;")
 
@@ -252,6 +259,23 @@ def _clean_text(value: str) -> str:
 def _clean_entity(value: str) -> str:
     value = _clean_text(value)
     return re.sub(r"^(?:the|a|an)\s+", "", value, flags=re.IGNORECASE)
+
+
+def _is_noisy_phrase(value: str) -> bool:
+    normalized = " ".join(value.lower().split())
+    if len(normalized) < 3:
+        return True
+    if len(normalized.split()) > 18:
+        return True
+    noisy_fragments = [
+        "wo 2023/",
+        "pct/",
+        "one or more",
+        "and/or",
+        "such as",
+        "e.g",
+    ]
+    return any(fragment in normalized for fragment in noisy_fragments)
 
 
 if __name__ == "__main__":
