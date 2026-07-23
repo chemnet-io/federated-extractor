@@ -1,0 +1,811 @@
+@prefix amv: <https://w3id.org/amv#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dao: <https://w3id.org/daont#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix devopscore: <http://w3id.org/devops-infra/core#> .
+@prefix devopshw: <http://w3id.org/devops-infra/hardware#> .
+@prefix devopssw: <http://w3id.org/devops-infra/software#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix it6: <http://data.europa.eu/it6/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix mlso: <http://w3id.org/mlso/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+it6:classification a owl:ObjectProperty ;
+    rdfs:label "classification" ;
+    rdfs:domain it6:Modality ;
+    rdfs:range skos:Concept .
+
+it6:hasInputModality a owl:ObjectProperty ;
+    rdfs:label "has input modality" ;
+    rdfs:domain mls:Model ;
+    rdfs:range it6:Modality .
+
+it6:hasOutputModality a owl:ObjectProperty ;
+    rdfs:label "has output modality" ;
+    rdfs:domain mls:Model ;
+    rdfs:range it6:Modality .
+
+it6:size a owl:DatatypeProperty ;
+    rdfs:label "size" .
+
+dcterms:FileFormat a owl:Class ;
+    rdfs:label "File Format" .
+
+dcterms:Frequency a owl:Class ;
+    rdfs:label "Frequency" .
+
+dcterms:LicenseDocument a owl:Class ;
+    rdfs:label "License Document" .
+
+dcterms:LinguisticSystem a owl:Class ;
+    rdfs:label "Linguistic System" .
+
+dcterms:Location a owl:Class ;
+    rdfs:label "Location" .
+
+dcterms:MediaTypeOrExtent a owl:Class ;
+    rdfs:label "Media Type Or Extent" .
+
+dcterms:RightsStatement a owl:Class ;
+    rdfs:label "Rights Statement" .
+
+dcterms:Standard a owl:Class ;
+    rdfs:label "Standard" .
+
+dcterms:accessRights a owl:ObjectProperty ;
+    rdfs:label "access rights" .
+
+dcterms:accrualPeriodicity a owl:ObjectProperty ;
+    rdfs:label "accrual periodicity" .
+
+dcterms:conformsTo a owl:ObjectProperty ;
+    rdfs:label "conforms to" .
+
+dcterms:contributor a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:label "creator" .
+
+dcterms:description a owl:AnnotationProperty,
+        owl:DatatypeProperty ;
+    rdfs:label "description" .
+
+dcterms:format a owl:ObjectProperty ;
+    rdfs:label "format" .
+
+dcterms:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier" .
+
+dcterms:issued a owl:AnnotationProperty .
+
+dcterms:language a owl:ObjectProperty ;
+    rdfs:label "language" .
+
+dcterms:license a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:label "license" .
+
+dcterms:modified a owl:AnnotationProperty .
+
+dcterms:publisher a owl:AnnotationProperty,
+        owl:ObjectProperty ;
+    rdfs:label "publisher" .
+
+dcterms:requires a owl:ObjectProperty ;
+    rdfs:label "requires" .
+
+dcterms:title a owl:AnnotationProperty,
+        owl:DatatypeProperty ;
+    rdfs:label "title" .
+
+bibo:status a owl:AnnotationProperty .
+
+fabio:ApplicationProgrammingInterface a owl:Class ;
+    rdfs:label "Application Programming Interface" .
+
+fabio:OntologyDocument a owl:Class ;
+    rdfs:label "Ontology Document" .
+
+frbr:realization a owl:ObjectProperty ;
+    rdfs:label "realization" .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+mlso:trainedOn a owl:ObjectProperty ;
+    rdfs:label "trained on" .
+
+rdfs:label a owl:AnnotationProperty .
+
+owl:versionIRI a owl:AnnotationProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+dcat:Dataset a owl:Class ;
+    rdfs:label "Dataset" .
+
+dcat:accessURL a owl:DatatypeProperty ;
+    rdfs:label "access u r l" .
+
+dcat:distribution a owl:ObjectProperty ;
+    rdfs:label "distribution" .
+
+locn:Address a owl:Class ;
+    rdfs:label "Address" .
+
+locn:address a owl:ObjectProperty ;
+    rdfs:label "address" .
+
+locn:location a owl:ObjectProperty ;
+    rdfs:label "location" .
+
+mls:Data a owl:Class ;
+    rdfs:label "Data" .
+
+mls:EvaluationMeasure a owl:Class ;
+    rdfs:label "Evaluation Measure" .
+
+mls:ModelEvaluation a owl:Class ;
+    rdfs:label "Model Evaluation" .
+
+mls:Run a owl:Class ;
+    rdfs:label "Run" .
+
+mls:hasInput a owl:ObjectProperty ;
+    rdfs:label "has input" .
+
+mls:hasOutput a owl:ObjectProperty ;
+    rdfs:label "has output" .
+
+mls:hasValue a owl:DatatypeProperty ;
+    rdfs:label "has value" .
+
+mls:specifiedBy a owl:ObjectProperty ;
+    rdfs:label "specified by" .
+
+prov:Agent a owl:Class ;
+    rdfs:label "Agent" .
+
+prov:wasDerivedFrom a owl:ObjectProperty ;
+    rdfs:label "was derived from" .
+
+schema:citation a owl:AnnotationProperty .
+
+schema:funding a owl:AnnotationProperty .
+
+schema:url a owl:DatatypeProperty ;
+    rdfs:label "url" .
+
+<https://w3id.org/daont> a owl:Ontology ;
+    rdfs:label "Digital Assets Ontology (DAOnt)" ;
+    dcterms:contributor <https://orcid.org/0000-0003-1948-807X>,
+        <https://orcid.org/0000-0003-3139-3049> ;
+    dcterms:creator <https://orcid.org/0000-0003-1427-3723> ;
+    dcterms:description "The Digital Assets Ontology (DAOnt) addresses the digital assets domain, that is, any hardware, software, data, or service that exists in or interacts with a digital ecosystem and provides functional or informational value." ;
+    dcterms:issued "2025-10-27" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-03-27" ;
+    dcterms:publisher <https://ror.org/046bfkz44> ;
+    dcterms:title "Digital Assets Ontology (DAOnt)" ;
+    bibo:status "Draft Ontology"@en ;
+    vann:preferredNamespacePrefix "dao" ;
+    vann:preferredNamespaceUri "https://w3id.org/daont#" ;
+    owl:versionIRI <https://w3id.org/daont/0.0.1> ;
+    owl:versionInfo "0.0.1" ;
+    schema:citation "Carriero, V.A., Grassi, M., Carenini, A. (2026). Digital Assets Ontology (DAOnt)." ;
+    schema:funding <https://doi.org/10.3030/101140087> ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+dao:ClassicalAlgorithm a owl:Class ;
+    rdfs:label "Classical Algorithm" ;
+    rdfs:subClassOf fabio:Algorithm .
+
+dao:DPU a owl:Class ;
+    rdfs:label "D P U" ;
+    rdfs:subClassOf devopshw:HardwareItem .
+
+dao:DigitalAsset a owl:Class ;
+    rdfs:label "Digital Asset" .
+
+dao:EdgeNode a owl:Class ;
+    rdfs:label "Edge Node" ;
+    rdfs:subClassOf devopshw:HardwareItem .
+
+dao:Ethernet a owl:NamedIndividual,
+        dao:InterfaceTechnology .
+
+dao:HighRisk a owl:NamedIndividual,
+        dao:AIActRiskLevel .
+
+dao:LimitedRisk a owl:NamedIndividual,
+        dao:AIActRiskLevel .
+
+dao:MinimalRisk a owl:NamedIndividual,
+        dao:AIActRiskLevel .
+
+dao:ModelWeights a owl:Class ;
+    rdfs:label "Model Weights" .
+
+dao:OWL a owl:NamedIndividual,
+        dao:OntologyLanguage .
+
+dao:OperatingSystem a owl:Class ;
+    rdfs:label "Operating System" ;
+    rdfs:subClassOf devopssw:Software .
+
+dao:PCIexpress a owl:NamedIndividual,
+        dao:InterfaceTechnology .
+
+dao:PQCAccelerator a owl:Class ;
+    rdfs:label "P Q C Accelerator" ;
+    rdfs:subClassOf dao:CryptographicHardwareItem .
+
+dao:PostQuantumCryptographicAlgorithm a owl:Class ;
+    rdfs:label "Post Quantum Cryptographic Algorithm" ;
+    rdfs:subClassOf dao:CryptographicAlgorithm .
+
+dao:QuantumResistantSecureElement a owl:Class ;
+    rdfs:label "Quantum Resistant Secure Element" ;
+    rdfs:subClassOf dao:CryptographicHardwareItem .
+
+dao:RDF a owl:NamedIndividual,
+        dao:OntologyLanguage .
+
+dao:RDFS a owl:NamedIndividual,
+        dao:OntologyLanguage .
+
+dao:Recommended a owl:NamedIndividual,
+        dao:RequirementType .
+
+dao:Required a owl:NamedIndividual,
+        dao:RequirementType .
+
+dao:SPS a qudt:Unit,
+        owl:NamedIndividual .
+
+dao:SignatureAlgorithm a owl:Class ;
+    rdfs:label "Signature Algorithm" ;
+    rdfs:subClassOf dao:CryptographicAlgorithm .
+
+dao:UnacceptableRisk a owl:NamedIndividual,
+        dao:AIActRiskLevel .
+
+dao:VirtualInterface a owl:Class ;
+    rdfs:label "Virtual Interface" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( devopssw:Software dao:Interface ) ] .
+
+dao:appliesToHardwareType a owl:ObjectProperty ;
+    rdfs:label "applies to hardware type" ;
+    rdfs:domain dao:Requirement ;
+    rdfs:range dao:HardwareType .
+
+dao:appliesToProperty a owl:ObjectProperty ;
+    rdfs:label "applies to property" ;
+    rdfs:domain dao:Requirement ;
+    rdfs:range ssn:Property .
+
+dao:appliesToSoftwareType a owl:ObjectProperty ;
+    rdfs:label "applies to software type" ;
+    rdfs:domain dao:Requirement ;
+    rdfs:range dao:SoftwareType .
+
+dao:availableAtSPARQLEndpoint a owl:DatatypeProperty ;
+    rdfs:label "available at s p a r q l endpoint" ;
+    rdfs:domain fabio:Ontology ;
+    rdfs:range xsd:anyURI .
+
+dao:belongsToCPUFamily a owl:ObjectProperty ;
+    rdfs:label "belongs to c p u family" ;
+    rdfs:domain dao:CPU ;
+    rdfs:range dao:CPUFamily .
+
+dao:compliesWithAIAct a owl:DatatypeProperty ;
+    rdfs:label "complies with a i act" ;
+    rdfs:domain mls:Model ;
+    rdfs:range xsd:boolean .
+
+dao:compliesWithGDPR a owl:DatatypeProperty ;
+    rdfs:label "complies with g d p r" ;
+    rdfs:domain devopssw:Software ;
+    rdfs:range xsd:boolean .
+
+dao:exposesAPI a owl:ObjectProperty ;
+    rdfs:label "exposes a p i" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( devopssw:Software devopshw:HardwareItem ) ] .
+
+dao:hasBitrate a owl:ObjectProperty ;
+    rdfs:label "has bitrate" ;
+    rdfs:domain dao:Port ;
+    rdfs:range qudt:QuantityValue .
+
+dao:hasByteSize a owl:ObjectProperty ;
+    rdfs:label "has byte size" ;
+    rdfs:domain dcat:Distribution ;
+    rdfs:range qudt:QuantityValue .
+
+dao:hasCPU a owl:ObjectProperty ;
+    rdfs:label "has c p u" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:CPU .
+
+dao:hasCPUArchitecture a owl:ObjectProperty ;
+    rdfs:label "has c p u architecture" ;
+    rdfs:domain dao:CPU ;
+    rdfs:range dao:CPUArchitecture .
+
+dao:hasConnectorType a owl:ObjectProperty ;
+    rdfs:label "has connector type" ;
+    rdfs:domain dao:Connector ;
+    rdfs:range dao:ConnectorType .
+
+dao:hasDatasheet a owl:ObjectProperty ;
+    rdfs:label "has datasheet" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:Datasheet ;
+    rdfs:subPropertyOf dao:hasDocumentation .
+
+dao:hasDriver a owl:ObjectProperty ;
+    rdfs:label "has driver" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:Driver .
+
+dao:hasFirmware a owl:ObjectProperty ;
+    rdfs:label "has firmware" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:Firmware .
+
+dao:hasFirmwareVersion a owl:ObjectProperty ;
+    rdfs:label "has firmware version" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range sd:SoftwareVersion .
+
+dao:hasHardwareModel a owl:ObjectProperty ;
+    rdfs:label "has hardware model" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:HardwareModel .
+
+dao:hasInterface a owl:ObjectProperty ;
+    rdfs:label "has interface" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:Interface .
+
+dao:hasMaxClock a owl:ObjectProperty ;
+    rdfs:label "has max clock" ;
+    rdfs:domain dao:CPU ;
+    rdfs:range qudt:QuantityValue .
+
+dao:hasMaximumPowerConsumption a owl:ObjectProperty ;
+    rdfs:label "has maximum power consumption" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range qudt:QuantityValue .
+
+dao:hasModelCard a owl:ObjectProperty ;
+    rdfs:label "has model card" ;
+    rdfs:domain mls:Model ;
+    rdfs:range dao:ModelCard .
+
+dao:hasNetworkingConfiguration a owl:ObjectProperty ;
+    rdfs:label "has networking configuration" ;
+    rdfs:domain dao:NetworkingInterface ;
+    rdfs:range dao:NetworkingConfiguration .
+
+dao:hasOntologyLanguage a owl:ObjectProperty ;
+    rdfs:label "has ontology language" ;
+    rdfs:domain fabio:Ontology ;
+    rdfs:range dao:OntologyLanguage .
+
+dao:hasRAM a owl:ObjectProperty ;
+    rdfs:label "has r a m" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:RAM .
+
+dao:hasRAMSize a owl:ObjectProperty ;
+    rdfs:label "has r a m size" ;
+    rdfs:domain dao:RAM ;
+    rdfs:range qudt:QuantityValue .
+
+dao:hasRAMTechnology a owl:ObjectProperty ;
+    rdfs:label "has r a m technology" ;
+    rdfs:domain dao:RAM ;
+    rdfs:range dao:RAMTechnology .
+
+dao:hasRequirement a owl:ObjectProperty ;
+    rdfs:label "has requirement" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( devopssw:Software mls:Model ) ] .
+
+dao:hasRequirementType a owl:ObjectProperty ;
+    rdfs:label "has requirement type" ;
+    rdfs:domain dao:Requirement ;
+    rdfs:range dao:RequirementType .
+
+dao:hasSBOM a owl:ObjectProperty ;
+    rdfs:label "has s b o m" ;
+    rdfs:domain sd:SoftwareVersion ;
+    rdfs:range dao:SoftwareBillOfMaterials .
+
+dao:hasSignaturesPerSecond a owl:ObjectProperty ;
+    rdfs:label "has signatures per second" ;
+    rdfs:domain dao:CryptographicHardwareItem ;
+    rdfs:range qudt:QuantityValue .
+
+dao:hasSpeedUp a owl:ObjectProperty ;
+    rdfs:label "has speed up" ;
+    rdfs:domain dao:CryptographicHardwareItem ;
+    rdfs:range qudt:QuantityValue .
+
+dao:implementsProtocol a owl:ObjectProperty ;
+    rdfs:label "implements protocol" ;
+    rdfs:domain devopssw:Software ;
+    rdfs:range dao:Protocol .
+
+dao:involvesPersonalData a owl:DatatypeProperty ;
+    rdfs:label "involves personal data" ;
+    rdfs:range xsd:boolean .
+
+dao:isAssociatedWithAIActRiskLevel a owl:ObjectProperty ;
+    rdfs:label "is associated with a i act risk level" ;
+    rdfs:domain mls:Model ;
+    rdfs:range dao:AIActRiskLevel .
+
+dao:isAssociatedWithGDPRRiskLevel a owl:ObjectProperty ;
+    rdfs:label "is associated with g d p r risk level" ;
+    rdfs:domain devopssw:Software ;
+    rdfs:range dpv:RiskLevel .
+
+dao:isIntendedForEdgeExecution a owl:DatatypeProperty ;
+    rdfs:label "is intended for edge execution" ;
+    rdfs:domain mls:Model ;
+    rdfs:range xsd:boolean .
+
+dao:isMemberOfModelFamily a owl:ObjectProperty ;
+    rdfs:label "is member of model family" ;
+    rdfs:domain mls:Model ;
+    rdfs:range dao:ModelFamily .
+
+dao:isTechnologyVersionOf a owl:ObjectProperty ;
+    rdfs:label "is technology version of" ;
+    rdfs:domain dao:TechnologyVersion ;
+    rdfs:range dao:Technology .
+
+dao:isTransportable a owl:DatatypeProperty ;
+    rdfs:label "is transportable" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range xsd:boolean .
+
+dao:isTypicallyConfiguredWith a owl:ObjectProperty ;
+    rdfs:label "is typically configured with" ;
+    rdfs:domain mls:Model ;
+    rdfs:range mls:HyperParameter .
+
+dao:isWrittenInProgrammingLanguage a owl:ObjectProperty ;
+    rdfs:label "is written in programming language" ;
+    rdfs:domain devopssw:Software ;
+    rdfs:range amv:ProgrammingLanguage .
+
+dao:numberOfCores a owl:DatatypeProperty ;
+    rdfs:label "number of cores" ;
+    rdfs:domain dao:CPU ;
+    rdfs:range xsd:integer .
+
+dao:numberOfLanes a owl:DatatypeProperty ;
+    rdfs:label "number of lanes" ;
+    rdfs:domain dao:HostInterface ;
+    rdfs:range xsd:integer .
+
+dao:providesFeature a owl:ObjectProperty ;
+    rdfs:label "provides feature" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( devopssw:Software devopshw:HardwareItem ) ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( dao:SoftwareFeature dao:HardwareFeature ) ] .
+
+dao:referencesConnector a owl:ObjectProperty ;
+    rdfs:label "references connector" ;
+    rdfs:domain dao:NetworkingInterface ;
+    rdfs:range dao:Connector .
+
+dao:referencesPort a owl:ObjectProperty ;
+    rdfs:label "references port" ;
+    rdfs:domain dao:NetworkingInterface ;
+    rdfs:range dao:Port .
+
+dao:requiredHardware a owl:ObjectProperty ;
+    rdfs:label "required hardware" ;
+    rdfs:domain dao:HardwareRequirement ;
+    rdfs:range devopshw:HardwareItem .
+
+dao:requiredSoftware a owl:ObjectProperty ;
+    rdfs:label "required software" ;
+    rdfs:domain dao:SoftwareRequirement ;
+    rdfs:range devopssw:Software .
+
+dao:requiresMaximumValue a owl:ObjectProperty ;
+    rdfs:label "requires maximum value" ;
+    rdfs:domain dao:Requirement ;
+    rdfs:range qudt:QuantityValue .
+
+dao:requiresMinimumFirmwareVersion a owl:ObjectProperty ;
+    rdfs:label "requires minimum firmware version" ;
+    rdfs:domain dao:HardwareFeature ;
+    rdfs:range sd:SoftwareVersion .
+
+dao:requiresMinimumValue a owl:ObjectProperty ;
+    rdfs:label "requires minimum value" ;
+    rdfs:domain dao:Requirement ;
+    rdfs:range qudt:QuantityValue .
+
+dao:requiresValue a owl:ObjectProperty ;
+    rdfs:label "requires value" ;
+    rdfs:domain dao:Requirement ;
+    rdfs:range qudt:QuantityValue .
+
+dao:runsOnInterface a owl:ObjectProperty ;
+    rdfs:label "runs on interface" ;
+    rdfs:domain dao:Protocol ;
+    rdfs:range dao:Interface .
+
+dao:supportsAlgorithm a owl:ObjectProperty ;
+    rdfs:label "supports algorithm" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( devopssw:Software devopshw:HardwareItem ) ] .
+
+dao:supportsInterfaceTechnology a owl:ObjectProperty ;
+    rdfs:label "supports interface technology" ;
+    rdfs:domain devopshw:HardwareItem ;
+    rdfs:range dao:InterfaceTechnology .
+
+dao:usesDriver a owl:ObjectProperty ;
+    rdfs:label "uses driver" ;
+    rdfs:domain dao:NetworkingConfiguration ;
+    rdfs:range dao:Driver .
+
+dao:usesDriverVersion a owl:ObjectProperty ;
+    rdfs:label "uses driver version" ;
+    rdfs:domain dao:NetworkingConfiguration ;
+    rdfs:range sd:SoftwareVersion .
+
+dao:usesFirmware a owl:ObjectProperty ;
+    rdfs:label "uses firmware" ;
+    rdfs:domain dao:NetworkingConfiguration ;
+    rdfs:range dao:Firmware .
+
+dao:usesFirmwareVersion a owl:ObjectProperty ;
+    rdfs:label "uses firmware version" ;
+    rdfs:domain dao:NetworkingConfiguration ;
+    rdfs:range sd:SoftwareVersion .
+
+dao:usesInterfaceTechnology a owl:ObjectProperty ;
+    rdfs:label "uses interface technology" ;
+    rdfs:domain dao:Interface ;
+    rdfs:range dao:InterfaceTechnology .
+
+dao:usesInterfaceTechnologyVersion a owl:ObjectProperty ;
+    rdfs:label "uses interface technology version" ;
+    rdfs:domain dao:Interface ;
+    rdfs:range dao:InterfaceTechnologyVersion .
+
+sd:hasSoftwareVersion a owl:ObjectProperty ;
+    rdfs:label "has software version" .
+
+sd:hasVersionId a owl:DatatypeProperty ;
+    rdfs:label "has version id" .
+
+sd:softwareRequirements a owl:DatatypeProperty ;
+    rdfs:label "software requirements" .
+
+qudt:Unit a owl:Class ;
+    rdfs:label "Unit" .
+
+devopscore:Resource a owl:Class ;
+    rdfs:label "Resource" .
+
+devopssw:File a owl:Class ;
+    rdfs:label "File" .
+
+owl:Thing a owl:Class ;
+    rdfs:label "Thing" .
+
+skos:Concept a owl:Class ;
+    rdfs:label "Concept" .
+
+dcat:Distribution a owl:Class ;
+    rdfs:label "Distribution" .
+
+mls:HyperParameter a owl:Class ;
+    rdfs:label "Hyper Parameter" .
+
+ssn:Property a owl:Class ;
+    rdfs:label "Property" .
+
+amv:ProgrammingLanguage a owl:Class ;
+    rdfs:label "Programming Language" .
+
+dao:CPUArchitecture a owl:Class ;
+    rdfs:label "C P U Architecture" .
+
+dao:CPUFamily a owl:Class ;
+    rdfs:label "C P U Family" .
+
+dao:ConnectorType a owl:Class ;
+    rdfs:label "Connector Type" .
+
+dao:Datasheet a owl:Class ;
+    rdfs:label "Datasheet" ;
+    rdfs:subClassOf dao:Documentation .
+
+dao:HardwareModel a owl:Class ;
+    rdfs:label "Hardware Model" .
+
+dao:HardwareRequirement a owl:Class ;
+    rdfs:label "Hardware Requirement" ;
+    rdfs:subClassOf dao:Requirement .
+
+dao:HardwareType a owl:Class ;
+    rdfs:label "Hardware Type" .
+
+dao:HostInterface a owl:Class ;
+    rdfs:label "Host Interface" ;
+    rdfs:subClassOf dao:Interface .
+
+dao:InterfaceTechnologyVersion a owl:Class ;
+    rdfs:label "Interface Technology Version" ;
+    rdfs:subClassOf dao:TechnologyVersion .
+
+dao:ModelCard a owl:Class ;
+    rdfs:label "Model Card" ;
+    rdfs:subClassOf dao:Documentation .
+
+dao:ModelFamily a owl:Class ;
+    rdfs:label "Model Family" .
+
+dao:PhysicalInterface a owl:Class ;
+    rdfs:label "Physical Interface" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( devopshw:HardwareItem dao:Interface ) ] .
+
+dao:RAMTechnology a owl:Class ;
+    rdfs:label "R A M Technology" ;
+    rdfs:subClassOf dao:Technology .
+
+dao:SoftwareBillOfMaterials a owl:Class ;
+    rdfs:label "Software Bill Of Materials" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( dao:Documentation devopssw:File ) ] .
+
+dao:SoftwareFeature a owl:Class ;
+    rdfs:label "Software Feature" .
+
+dao:SoftwareRequirement a owl:Class ;
+    rdfs:label "Software Requirement" ;
+    rdfs:subClassOf dao:Requirement .
+
+dao:SoftwareType a owl:Class ;
+    rdfs:label "Software Type" .
+
+dao:hasDocumentation a owl:ObjectProperty ;
+    rdfs:label "has documentation" ;
+    rdfs:domain owl:Thing ;
+    rdfs:range dao:Documentation .
+
+dpv:RiskLevel a owl:Class ;
+    rdfs:label "Risk Level" .
+
+fabio:Algorithm a owl:Class ;
+    rdfs:label "Algorithm" .
+
+fabio:Ontology a owl:Class ;
+    rdfs:label "Ontology" .
+
+dao:Connector a owl:Class ;
+    rdfs:label "Connector" ;
+    rdfs:subClassOf devopshw:HardwareItem .
+
+dao:CryptographicAlgorithm a owl:Class ;
+    rdfs:label "Cryptographic Algorithm" ;
+    rdfs:subClassOf fabio:Algorithm .
+
+dao:Driver a owl:Class ;
+    rdfs:label "Driver" ;
+    rdfs:subClassOf devopssw:Software .
+
+dao:Firmware a owl:Class ;
+    rdfs:label "Firmware" ;
+    rdfs:subClassOf devopssw:Software .
+
+dao:HardwareFeature a owl:Class ;
+    rdfs:label "Hardware Feature" .
+
+dao:Port a owl:Class ;
+    rdfs:label "Port" ;
+    rdfs:subClassOf dao:PhysicalInterface .
+
+dao:Protocol a owl:Class ;
+    rdfs:label "Protocol" .
+
+dao:TechnologyVersion a owl:Class ;
+    rdfs:label "Technology Version" .
+
+it6:Modality a owl:Class ;
+    rdfs:label "Modality" .
+
+dao:NetworkingInterface a owl:Class ;
+    rdfs:label "Networking Interface" ;
+    rdfs:subClassOf dao:Interface .
+
+dao:RAM a owl:Class ;
+    rdfs:label "R A M" ;
+    rdfs:subClassOf devopshw:HardwareItem .
+
+dao:RequirementType a owl:Class ;
+    rdfs:label "Requirement Type" .
+
+dao:Technology a owl:Class ;
+    rdfs:label "Technology" .
+
+dao:CryptographicHardwareItem a owl:Class ;
+    rdfs:label "Cryptographic Hardware Item" ;
+    rdfs:subClassOf devopshw:HardwareItem .
+
+dao:Documentation a owl:Class ;
+    rdfs:label "Documentation" ;
+    rdfs:subClassOf devopscore:Resource .
+
+dao:InterfaceTechnology a owl:Class ;
+    rdfs:label "Interface Technology" ;
+    rdfs:subClassOf dao:Technology .
+
+dao:OntologyLanguage a owl:Class ;
+    rdfs:label "Ontology Language" .
+
+dao:AIActRiskLevel a owl:Class ;
+    rdfs:label "A I Act Risk Level" .
+
+dao:CPU a owl:Class ;
+    rdfs:label "C P U" ;
+    rdfs:subClassOf devopshw:HardwareItem .
+
+dao:NetworkingConfiguration a owl:Class ;
+    rdfs:label "Networking Configuration" .
+
+sd:SoftwareVersion a owl:Class ;
+    rdfs:label "Software Version" .
+
+dao:Interface a owl:Class ;
+    rdfs:label "Interface" .
+
+mls:Model a owl:Class ;
+    rdfs:label "Model" .
+
+dao:Requirement a owl:Class ;
+    rdfs:label "Requirement" .
+
+qudt:QuantityValue a owl:Class ;
+    rdfs:label "Quantity Value" .
+
+devopssw:Software a owl:Class ;
+    rdfs:label "Software" .
+
+devopshw:HardwareItem a owl:Class ;
+    rdfs:label "Hardware Item" .
+
