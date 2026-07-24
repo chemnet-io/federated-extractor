@@ -45,15 +45,46 @@ def clean_extracted_text(text: str) -> str:
 
 
 def split_sentences(text: str) -> List[str]:
-    """Split cleaned text into rough sentences for rule-based extractors."""
+    """Split cleaned text while protecting common abbreviations."""
 
     normalized = " ".join(clean_extracted_text(text).split())
+
+    # Correct a common OCR form of i.e.
+    normalized = re.sub(
+        r"\b1\.e\.",
+        "i.e.",
+        normalized,
+        flags=re.IGNORECASE,
+    )
+
+    abbreviations = (
+        "e.g.",
+        "i.e.",
+        "Fig.",
+        "Figs.",
+        "No.",
+        "etc.",
+    )
+
+    for abbreviation in abbreviations:
+        protected = abbreviation.replace(".", "<prd>")
+        normalized = re.sub(
+            re.escape(abbreviation),
+            protected,
+            normalized,
+            flags=re.IGNORECASE,
+        )
+
+    sentences = re.split(
+        r"(?<=[.!?])\s+",
+        normalized,
+    )
+
     return [
-        sentence.strip()
-        for sentence in re.split(r"(?<=[.!?])\s+", normalized)
+        sentence.replace("<prd>", ".").strip()
+        for sentence in sentences
         if sentence.strip()
     ]
-
 
 def split_list_items(value: str) -> List[str]:
     """Split semicolon/comma/and-separated object lists into smaller phrases."""

@@ -55,19 +55,19 @@ METHOD_PATTERN = re.compile(
 
 COMPRISES_PATTERN = re.compile(
     r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
-    r"(?:may\s+)?comprises?\s+(?P<value>[^.!?]+)",
+    r"(?:may\s+)?comprises?\s+(?P<value>.+)$",
     re.IGNORECASE,
 )
 
 CONFIGURED_TO_PATTERN = re.compile(
     r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
-    r"(?:is|are|may be)\s+configured\s+to\s+(?P<value>[^.!?]+)",
+    r"(?:is|are|may be)\s+configured\s+to\s+(?P<value>.+)$",
     re.IGNORECASE,
 )
 
 USED_TO_PATTERN = re.compile(
     r"\b(?P<entity>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
-    r"(?:is|are|may be|can be)\s+used\s+to\s+(?P<value>[^.!?]+)",
+    r"(?:is|are|may be|can be)\s+used\s+to\s+(?P<value>.+)$",
     re.IGNORECASE,
 )
 

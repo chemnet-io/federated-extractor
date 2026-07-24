@@ -80,7 +80,7 @@ ACTIVE_EVENT_PATTERN = re.compile(
     r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:may\s+|can\s+|also\s+|then\s+|effectively\s+)?"
     r"(?P<trigger>" + VERB_PATTERN + r")\s+"
-    r"(?P<target>[^.!?]+)",
+    r"(?P<target>.+)$",
     re.IGNORECASE,
 )
 
@@ -88,7 +88,7 @@ CONFIGURED_EVENT_PATTERN = re.compile(
     r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:is|are|may be|can be)\s+configured\s+to\s+"
     r"(?P<trigger>" + VERB_PATTERN + r")\s+"
-    r"(?P<target>[^.!?]+)",
+    r"(?P<target>.+)$",
     re.IGNORECASE,
 )
 
@@ -96,7 +96,7 @@ USED_EVENT_PATTERN = re.compile(
     r"\b(?P<actor>(?:[Tt]he|[Aa]n?)?\s*[A-Za-z][A-Za-z0-9 ()/-]{0,90}?)\s+"
     r"(?:is|are|may be|can be)\s+used\s+to\s+"
     r"(?P<trigger>" + VERB_PATTERN + r")\s+"
-    r"(?P<target>[^.!?]+)",
+    r"(?P<target>.+)$",
     re.IGNORECASE,
 )
 
