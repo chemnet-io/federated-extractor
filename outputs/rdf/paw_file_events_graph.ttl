@@ -1,0 +1,1028 @@
+@prefix event: <https://example.org/federated-extractor/event/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res: <https://example.org/federated-extractor/resource/> .
+
+event:Actor a rdfs:Class .
+
+event:Computation a rdfs:Class ;
+    rdfs:label "Computation" ;
+    rdfs:subClassOf event:Event .
+
+event:Control a rdfs:Class ;
+    rdfs:label "Control" ;
+    rdfs:subClassOf event:Event .
+
+event:DataTransfer a rdfs:Class ;
+    rdfs:label "DataTransfer" ;
+    rdfs:subClassOf event:Event .
+
+event:Encryption a rdfs:Class ;
+    rdfs:label "Encryption" ;
+    rdfs:subClassOf event:Event .
+
+event:Event a rdfs:Class .
+
+event:Execution a rdfs:Class ;
+    rdfs:label "Execution" ;
+    rdfs:subClassOf event:Event .
+
+event:Generation a rdfs:Class ;
+    rdfs:label "Generation" ;
+    rdfs:subClassOf event:Event .
+
+event:Masking a rdfs:Class ;
+    rdfs:label "Masking" ;
+    rdfs:subClassOf event:Event .
+
+event:Operation a rdfs:Class ;
+    rdfs:label "Operation" ;
+    rdfs:subClassOf event:Event .
+
+event:Processing a rdfs:Class ;
+    rdfs:label "Processing" ;
+    rdfs:subClassOf event:Event .
+
+event:Storage a rdfs:Class ;
+    rdfs:label "Storage" ;
+    rdfs:subClassOf event:Event .
+
+event:Target a rdfs:Class .
+
+res:event_02b532ac167941fa a event:Event,
+        event:Masking ;
+    rdfs:label "one in generating the — masks — for the masking and one in performing a masked permutation" ;
+    event:action "masks" ;
+    event:evidence "In one case, an XOF operation may itself be masked, resulting in two “layers” of use for the permutation unit 140 — one in generating the masks for the masking and one in performing a masked permutation." ;
+    event:hasActor res:actor_1809e413bee154e5 ;
+    event:hasTarget res:target_7104280b599ade11 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masks" .
+
+res:event_0a9fd5313cf516fd a event:DataTransfer,
+        event:Event ;
+    rdfs:label "hash generator 430 — receives — message signature Y 414" ;
+    event:action "receives" ;
+    event:evidence "The hash generator 430 also receives a message signature Y 414." ;
+    event:hasActor res:actor_1c9ef691ed9c8d4d ;
+    event:hasTarget res:target_ce40966fb6d876f0 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "receives" .
+
+res:event_132909eaaabd0f5c a event:Event,
+        event:Execution ;
+    rdfs:label "cryptographic system 110 may be configured as a set of condition-free instructions to be — executed — by the processor 152" ;
+    event:action "executed" ;
+    event:evidence "[0091] To prevent secret data passing through the processor 152, post-quantum cryptographic algorithms to be implemented using the cryptographic system 110 may be configured as a set of condition-free instructions to be executed by the processor 152." ;
+    event:hasActor res:actor_28eb820c18b84c05 ;
+    event:hasTarget res:target_753f56195ae57881 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "executed" .
+
+res:event_1534985bf95fcc32 a event:Event,
+        event:Operation ;
+    rdfs:label "XOR summing the individual data shares — performed — recomposition" ;
+    event:action "performed" ;
+    event:evidence "In the example of Figure 3, the recomposition may be performed by XOR summing the individual data shares, i.e. Z=Z) ® Z2 ® Z;3." ;
+    event:hasActor res:actor_d65e64809bac1000 ;
+    event:hasTarget res:target_9427736c60561f9d ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performed" .
+
+res:event_1bc3cfe66e4a6b09 a event:Event,
+        event:Storage ;
+    rdfs:label "additional functionality may be provided via a firmware update of an image — stored — in the ROM 156 following manufacture)" ;
+    event:action "stored" ;
+    event:evidence "[0093] The cryptographic system described herein may be easily programmed to support various use cases and constraints (e.g., additional functionality may be provided via a firmware update of an image stored in the ROM 156 following manufacture)." ;
+    event:hasActor res:actor_0a26d0a1a586b53c ;
+    event:hasTarget res:target_e483fea94fb47c0b ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "stored" .
+
+res:event_24e2fe1210695c2d a event:Event,
+        event:Operation ;
+    rdfs:label "wherein the permutation unit — performs — ASCON permutation" ;
+    event:action "performs" ;
+    event:evidence "The cryptographic system of any one of claims 1 to 3, wherein the permutation unit performs an ASCON permutation." ;
+    event:hasActor res:actor_0faacad1be7896c2 ;
+    event:hasTarget res:target_5e822e31675d5f49 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performs" .
+
+res:event_26966bae35836427 a event:Event,
+        event:Storage ;
+    rdfs:label "matrix memory 132 — store — multi-dimensional array of data, i.e. data arranged as a multi-dimensional array" ;
+    event:action "store" ;
+    event:context "configured to" ;
+    event:evidence "The matrix memory 132 is configured to store a multi-dimensional array of data, i.e. data arranged as a multi-dimensional array." ;
+    event:hasActor res:actor_af6420f32d92d4dc ;
+    event:hasTarget res:target_caa45401468f698e ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "store" .
+
+res:event_27af3a6eae98988d a event:Control,
+        event:Event ;
+    rdfs:label "Certain examples described herein have a control unit — controls — cryptographic operations without handling sensitive data (so-called “no-touch” operation)" ;
+    event:action "controls" ;
+    event:evidence "Certain examples described herein have a control unit that controls cryptographic operations without handling sensitive data (so-called “no-touch” operation)." ;
+    event:hasActor res:actor_ea7e60fd00c50513 ;
+    event:hasTarget res:target_9eaa5f7842ce052c ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "controls" .
+
+res:event_295e28d91ff7d6b5 a event:Event,
+        event:Masking ;
+    rdfs:label "This means that lattice-based post-quantum cryptography is particularly suited to a — masked — mode of operation" ;
+    event:action "masked" ;
+    event:evidence "This means that lattice-based post-quantum cryptography is particularly suited to a masked mode of operation." ;
+    event:hasActor res:actor_de7b2af3e86c03ac ;
+    event:hasTarget res:target_f4203fc6e8f85e85 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masked" .
+
+res:event_326b9aab89098c4f a event:Event,
+        event:Masking ;
+    rdfs:label "n-bit cryptographic state that is separated into a plurality of data shares for — masked — arithmetic computations" ;
+    event:action "masked" ;
+    event:evidence "The cryptographic system of claim 6 or claim 7, wherein the XOF unit comprises a n-bit cryptographic state that is separated into a plurality of data shares for masked arithmetic computations." ;
+    event:hasActor res:actor_35b9a3f9262183a4 ;
+    event:hasTarget res:target_5d0042f6d4999fe6 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masked" .
+
+res:event_3776f4e32bfe676b a event:DataTransfer,
+        event:Event ;
+    rdfs:label "this function — return — random word every step or iteration to be used for masking operations" ;
+    event:action "return" ;
+    event:evidence "In certain cases, the cryptographic system 110 may have a “mask random” function that may or may not use the permutation unit 140 and may output a random bit sequence according to a nondeterministic function, e.g. this function may return a random word every step or iteration to be used for masking operations." ;
+    event:hasActor res:actor_b923fda02ff5480e ;
+    event:hasTarget res:target_6a47d2f0e8685bc3 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "return" .
+
+res:event_3a4b24583eedad6f a event:Event,
+        event:Operation ;
+    rdfs:label "cryptographic math unit 130 — perform — arithmetic operations with complex addressing efficiently" ;
+    event:action "perform" ;
+    event:context "configured to" ;
+    event:evidence "Examples ofPipelined Operations [0047] The cryptographic math unit 130 is configured to perform arithmetic operations with complex addressing efficiently." ;
+    event:hasActor res:actor_806949c75d86be6f ;
+    event:hasTarget res:target_2152b1b170f9a5b8 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_3c7462dcc6305e31 a event:Event,
+        event:Operation ;
+    rdfs:label "address generation — performed — by address generator 134 also allows for a flexible ordering of operations" ;
+    event:action "performed" ;
+    event:evidence "The address generation performed by address generator 134 also allows for a flexible ordering of operations." ;
+    event:hasActor res:actor_7a83e8bf91937b59 ;
+    event:hasTarget res:target_ea247eeb15586846 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performed" .
+
+res:event_40a8a230b18f11c2 a event:Event,
+        event:Storage ;
+    rdfs:label "via computer program code — stored — in memory)" ;
+    event:action "stored" ;
+    event:evidence "The operations may be selected from a set of available operations, where the set of available operations may be pre-configured (e.g., pre-programmed into, or configured within, an ASIC or FPGA, and/or in certain cases extendible or modifiable, e.g. via computer program code stored in memory)." ;
+    event:hasActor res:actor_a4d33662abb856c6 ;
+    event:hasTarget res:target_083fe91b81abab11 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "stored" .
+
+res:event_465385a2ab5013a0 a event:Event,
+        event:Operation ;
+    rdfs:label "communicatively-coupled computing system — perform — cryptographic operation" ;
+    event:action "perform" ;
+    event:evidence "Detailed Description Introduction [0021] Certain examples described herein relate to a cryptographic system that allows a communicatively-coupled computing system to efficiently perform a cryptographic operation." ;
+    event:hasActor res:actor_d9995dca25975719 ;
+    event:hasTarget res:target_9ec74136aabeae0a ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_492e27049fe7d60e a event:Event,
+        event:Masking ;
+    rdfs:label "output of the — mask — random function may not be addressable" ;
+    event:action "mask" ;
+    event:evidence "While the permutation unit 140 may be addressable, an output of the mask random function may not be addressable." ;
+    event:hasActor res:actor_7bb97651bc9636c0 ;
+    event:hasTarget res:target_d03c301dbf4c4931 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "mask" .
+
+res:event_4dd5715014ee2076 a event:Event,
+        event:Storage ;
+    rdfs:label "matrix memory 132 — store — both secret keys and public keys as well as working variables" ;
+    event:action "store" ;
+    event:context "used to" ;
+    event:evidence "[0036] In use, the matrix memory 132 may be used to store both secret keys and public keys as well as working variables." ;
+    event:hasActor res:actor_af6420f32d92d4dc ;
+    event:hasTarget res:target_d4d0e31a84d36565 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "store" .
+
+res:event_525ed1017674d9f6 a event:Control,
+        event:Event ;
+    rdfs:label "generator 134 is able to index individual data words relating to the permutation state — controlled — by the permutation unit 140" ;
+    event:action "controlled" ;
+    event:evidence "[0046] In certain examples, the address generator 134 may be additionally wired to one or more state registers of the permutation unit 140, such that the address generator 134 is able to index individual data words relating to the permutation state controlled by the permutation unit 140." ;
+    event:hasActor res:actor_d76be531944f99d8 ;
+    event:hasTarget res:target_8ac36b7b5cde674e ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "controlled" .
+
+res:event_5dc29fd9c5335f50 a event:Computation,
+        event:Event ;
+    rdfs:label "host 410 from a public key pk and a message M — computed — initial hash Q 412" ;
+    event:action "computed" ;
+    event:evidence "The initial hash Q 412 may be computed by the host 410 from a public key pk and a message M, e.g. via H( f(pk) | M ) where H(...) is a hash function, f(...) isa public key function." ;
+    event:hasActor res:actor_078729d277f26724 ;
+    event:hasTarget res:target_61f20bbca2a29353 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "computed" .
+
+res:event_5e0dbd7555aef165 a event:Event,
+        event:Operation ;
+    rdfs:label "arithmetic unit 136 — performs — pipelined operation 210 to implement an SIMD-like functionality where multiple pipelines function in parallel" ;
+    event:action "performs" ;
+    event:evidence "As such, the arithmetic unit 136 performs the pipelined operation 210 to implement an SIMD-like functionality where multiple pipelines function in parallel." ;
+    event:hasActor res:actor_178ddae54187c165 ;
+    event:hasTarget res:target_21310b08e98c9135 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performs" .
+
+res:event_6261c34bbdcbab42 a event:DataTransfer,
+        event:Event ;
+    rdfs:label "set of cryptographic registers 122 — transfer — sensitive security parameters (SSPs) to and from the cryptographic system 110" ;
+    event:action "transfer" ;
+    event:evidence "The set of cryptographic registers 122 are configured for the transfer of sensitive security parameters (SSPs) to and from the cryptographic system 110." ;
+    event:hasActor res:actor_43f79f3fc6856b8a ;
+    event:hasTarget res:target_cc3fc666ba07cfce ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "transfer" .
+
+res:event_63d230077cd0de60 a event:Computation,
+        event:Event ;
+    rdfs:label "there is a second arithmetic step which reads R from memory and — computes — second remasked data share as X2' = X2 + R" ;
+    event:action "computes" ;
+    event:evidence "Then, for the remasking, there is a second arithmetic step which reads R from memory and computes the second remasked data share as X2' = X2 + R." ;
+    event:hasActor res:actor_0719904d3c5f506a ;
+    event:hasTarget res:target_c286150dbf7b7281 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "computes" .
+
+res:event_6cbb947a7913cc2c a event:Event,
+        event:Processing ;
+    rdfs:label "key generation — process — may involve generating a public-private key pair" ;
+    event:action "process" ;
+    event:evidence "[0103] Asan example, a key generation process may involve generating a public-private key pair." ;
+    event:hasActor res:actor_05f5cf50f75fcf63 ;
+    event:hasTarget res:target_b457fae4b358e3f4 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "process" .
+
+res:event_6d1467d0c068f3d3 a event:Event,
+        event:Masking ;
+    rdfs:label "arithmetic unit 136 may be accomplished with the help of conversion functions within a — masked — mode of operation (or the conversion functions may be implemented with the direct operations)" ;
+    event:action "masked" ;
+    event:evidence "[0069] Certain arithmetic primitives that are applied as operations by the arithmetic unit 136 may be accomplished with the help of conversion functions within a masked mode of operation (or the conversion functions may be implemented with the direct operations)." ;
+    event:hasActor res:actor_ab78e0f72b98cd57 ;
+    event:hasTarget res:target_b08c95f2b59511d0 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masked" .
+
+res:event_7341b9c3c5fa0b16 a event:Event,
+        event:Storage ;
+    rdfs:label "where each letter represents a word — stored — in memory" ;
+    event:action "stored" ;
+    event:evidence "[0035] As an example, consider the sequence “ABCDEFGHIJKLMNOP”, where each letter represents a word stored in memory." ;
+    event:hasActor res:actor_27616157297a49a8 ;
+    event:hasTarget res:target_d9b8483601b879a7 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "stored" .
+
+res:event_739b607e371f18d0 a event:Computation,
+        event:Event ;
+    rdfs:label "cryptographic system 110 where permutations implemented by the permutation unit 140 — compute — SHA3 hash function" ;
+    event:action "compute" ;
+    event:context "used to" ;
+    event:evidence "In this case, the hash may be computed using the cryptographic system 110 where permutations implemented by the permutation unit 140 are used to compute the SHA3 hash function." ;
+    event:hasActor res:actor_af7b0abf94799a12 ;
+    event:hasTarget res:target_f6efb3ad89bbfe9f ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "compute" .
+
+res:event_7593e62644e49b98 a event:Event,
+        event:Execution ;
+    rdfs:label "either the cryptographic system 110 or the computing system — execute — individual steps in a single cycle or more cycles" ;
+    event:action "execute" ;
+    event:evidence "In these cases, either the cryptographic system 110 or the computing system may execute individual steps in a single cycle or more cycles." ;
+    event:hasActor res:actor_6106b87891351cc2 ;
+    event:hasTarget res:target_b3aec7f1860210d0 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "execute" .
+
+res:event_77d90820d6a33451 a event:Event,
+        event:Operation ;
+    rdfs:label "arithmetic unit — perform — discrete binary arithmetic using bit sequences loaded from a memory" ;
+    event:action "perform" ;
+    event:context "configured to" ;
+    event:evidence "The co-processor has an arithmetic unit that is configured to perform discrete binary arithmetic using bit sequences loaded from a memory." ;
+    event:hasActor res:actor_c75c787f11b061e4 ;
+    event:hasTarget res:target_5923f763a3f74032 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_7b1a7b992bf71ba1 a event:Event,
+        event:Processing ;
+    rdfs:label "for classical cryptographic algorithms may be chosen using flow-chart characterisations — processes — enabled by the cryptographic system" ;
+    event:action "processes" ;
+    event:evidence "Security parameters for classical cryptographic algorithms may be chosen using flow-chart characterisations processes enabled by the cryptographic system." ;
+    event:hasActor res:actor_9114e50675883fb5 ;
+    event:hasTarget res:target_638773ec7e852cf7 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "processes" .
+
+res:event_7d3eed04dfa047cd a event:DataTransfer,
+        event:Event ;
+    rdfs:label "cryptographic system 420 acts as a hash generator 430 — receives — inputs from the host 410 and provides a cryptographic output" ;
+    event:action "receives" ;
+    event:evidence "In the present fast iterated hash mode, the cryptographic system 420 acts as a hash generator 430 that receives inputs from the host 410 and provides a cryptographic output." ;
+    event:hasActor res:actor_2adeb3b96c73ae6e ;
+    event:hasTarget res:target_8b794fd01d5a73ba ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "receives" .
+
+res:event_7eb1f987f3781af2 a event:Encryption,
+        event:Event ;
+    rdfs:label "C can then be exported safely in an — encrypted — form that reveals no information about P" ;
+    event:action "encrypted" ;
+    event:evidence "C can then be exported safely in an encrypted form that reveals no information about P." ;
+    event:hasActor res:actor_f8e2e0b1f8ffcb9b ;
+    event:hasTarget res:target_4326bb6226993c20 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "encrypted" .
+
+res:event_8aa10f5315f5a5ca a event:Event,
+        event:Generation ;
+    rdfs:label "arithmetic masking in the form of additive masking — generate — data shares" ;
+    event:action "generate" ;
+    event:context "used to" ;
+    event:evidence "In one case, arithmetic masking in the form of additive masking may be used to generate the data shares." ;
+    event:hasActor res:actor_9ec71f058e3369da ;
+    event:hasTarget res:target_e90dbe20cd77d88a ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "generate" .
+
+res:event_8eee084a01320d9f a event:Computation,
+        event:Event ;
+    rdfs:label "cryptographic operation 510 is implemented as a pipelined arithmetic combiner — computes — two parallel modulus 2\" multiply-add operations" ;
+    event:action "computes" ;
+    event:evidence "In this case, the cryptographic operation 510 is implemented as a pipelined arithmetic combiner that computes two parallel modulus 2\" multiply-add operations." ;
+    event:hasActor res:actor_93c2e5e6d82100a6 ;
+    event:hasTarget res:target_3e7aedcf15255062 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "computes" .
+
+res:event_92f4cb17c07696df a event:Control,
+        event:Event ;
+    rdfs:label "processor 152 of the control unit — controlled — execution of post-quantum cryptography via operations of the cryptographic math unit 130" ;
+    event:action "controlled" ;
+    event:evidence "For example, information flow and execution of post-quantum cryptography via operations of the cryptographic math unit 130 may be controlled by the processor 152 of the control unit." ;
+    event:hasActor res:actor_7f2781f619a8b982 ;
+    event:hasTarget res:target_b9e1e0933ba7ae4f ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "controlled" .
+
+res:event_962aa57bcdabd6fb a event:Event,
+        event:Execution ;
+    rdfs:label "processor 152 — executed — cryptographic system 110 may be configured as a set of condition-free instructions to" ;
+    event:action "executed" ;
+    event:evidence "[0091] To prevent secret data passing through the processor 152, post-quantum cryptographic algorithms to be implemented using the cryptographic system 110 may be configured as a set of condition-free instructions to be executed by the processor 152." ;
+    event:hasActor res:actor_e9ef7f893a98df27 ;
+    event:hasTarget res:target_d73c21025a334cb9 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "executed" .
+
+res:event_96371467318c6c38 a event:DataTransfer,
+        event:Event ;
+    rdfs:label "bit block — transfer — - microcode instruction of the Xerox Alto computer)" ;
+    event:action "transfer" ;
+    event:evidence "These bit-sequences may be blocks of bits and so the cryptographic math unit may implement “blitter” functionality, i.e. a hardware-assisted system for movement and manipulation of blocks of bits in memory (where the term “blitter” comes from the “BitBLT” - bit block transfer - microcode instruction of the Xerox Alto computer)." ;
+    event:hasActor res:actor_1cd758bc3677e408 ;
+    event:hasTarget res:target_9f03f516df747d52 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "transfer" .
+
+res:event_a3fa583f958b17ad a event:DataTransfer,
+        event:Event ;
+    rdfs:label "where the verification function — returns — True or False (i.e., verified or not verified)" ;
+    event:action "returns" ;
+    event:evidence "A further HAL group (e.g., sig ver) may then provide for detached signature verification functions, e.g. {T, F}= verify(sig, hm, pk) where sig is an obtained digital signature, hm is a hashed message, and pk is a public key, where the verification function returns True or False (i.e., verified or not verified)." ;
+    event:hasActor res:actor_b11ad3dcd03b4823 ;
+    event:hasTarget res:target_55194164b0d5ff02 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "returns" .
+
+res:event_a463e20b122b681d a event:Event,
+        event:Operation ;
+    rdfs:label "combining the initial input variable (e — performed — Boolean masking decomposition" ;
+    event:action "performed" ;
+    event:evidence "For example, a Boolean masking decomposition may be performed by combining the initial input variable (e.g., 310 or 320) with a random mask generated by the permutation unit 140." ;
+    event:hasActor res:actor_20fdb100c2056610 ;
+    event:hasTarget res:target_efb375fe3d52541d ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performed" .
+
+res:event_a96a1f0df5f4b373 a event:Event,
+        event:Masking ;
+    rdfs:label "and the permutation unit 140 are adapted to support both — masked — and nonmasked computation" ;
+    event:action "masked" ;
+    event:evidence "In the present examples, one or more of the control unit 150, the cryptographic math unit 130 (including the arithmetic unit 136), and the permutation unit 140 are adapted to support both masked and nonmasked computation." ;
+    event:hasActor res:actor_93f0fcbc915c0b71 ;
+    event:hasTarget res:target_eab18843e38e3032 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masked" .
+
+res:event_ae555edf4820b097 a event:Event,
+        event:Operation ;
+    rdfs:label "analysing equivalence or ordered (e — performed — Comparisons" ;
+    event:action "performed" ;
+    event:evidence "Comparisons may be performed by analysing equivalence or ordered (e.g., using less-than or greater-than) of masked variables." ;
+    event:hasActor res:actor_2a4f648782b2a7ca ;
+    event:hasTarget res:target_36d78c756a3bec3c ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performed" .
+
+res:event_af85f73c6ff3591a a event:Event,
+        event:Operation ;
+    rdfs:label "permutation unit 140 — perform — one of a number of defined permutation operations" ;
+    event:action "perform" ;
+    event:context "used to" ;
+    event:evidence "[0044] The permutation unit 140 may be used to perform one of a number of defined permutation operations." ;
+    event:hasActor res:actor_e31438ec2068c5db ;
+    event:hasTarget res:target_0cec255c68ad3b93 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_b237c99e74654e5d a event:Control,
+        event:Event ;
+    rdfs:label "control unit 150 — controls — operation of the cryptographic math unit 130 via a third internal bus 166" ;
+    event:action "controls" ;
+    event:evidence "The control unit 150 then controls operation of the cryptographic math unit 130 via a third internal bus 166." ;
+    event:hasActor res:actor_97ce4b93f2455336 ;
+    event:hasTarget res:target_797bf46e5b721a11 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "controls" .
+
+res:event_b6caf6f7f42fefd7 a event:Encryption,
+        event:Event ;
+    rdfs:label "cryptographic system only accesses — encrypted — data via the cryptographic registers 122" ;
+    event:action "encrypted" ;
+    event:evidence "These functions may be implemented without passing plaintext data to the cryptographic system, i.e. the cryptographic system only accesses encrypted data via the cryptographic registers 122." ;
+    event:hasActor res:actor_3377f333ab329974 ;
+    event:hasTarget res:target_314c46d8d11d0fc4 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "encrypted" .
+
+res:event_b9af6add514889c5 a event:Event,
+        event:Masking ;
+    rdfs:label "These variables may be represented as — masked — shares as described in more detail below" ;
+    event:action "masked" ;
+    event:evidence "These variables may be represented as masked shares as described in more detail below." ;
+    event:hasActor res:actor_4a0c06885023ba0c ;
+    event:hasTarget res:target_de2b20544ac99335 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masked" .
+
+res:event_bd54ffed8bb828db a event:DataTransfer,
+        event:Event ;
+    rdfs:label "post-quantum key establishment functions — receive — or access additional flag variables to determinea set of side-channel countermeasures to be implemented" ;
+    event:action "receive" ;
+    event:evidence "In certain cases, post-quantum key establishment functions may receive or access additional flag variables to determinea set of side-channel countermeasures to be implemented." ;
+    event:hasActor res:actor_c8dc2255f86c53be ;
+    event:hasTarget res:target_cb8746db801146da ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "receive" .
+
+res:event_c20032bd73aa39a8 a event:Event,
+        event:Operation ;
+    rdfs:label "processing unit — perform — cryptographic operation" ;
+    event:action "perform" ;
+    event:evidence "[0005] A1, which is incorporated herein by reference, describes a co-processor that allows a processing unit to efficiently perform a cryptographic operation." ;
+    event:hasActor res:actor_a2b06c0a1fe46bc7 ;
+    event:hasTarget res:target_9ec74136aabeae0a ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_c71b1747dc764af6 a event:Event,
+        event:Operation ;
+    rdfs:label "they — perform — operation 350" ;
+    event:action "perform" ;
+    event:context "used to" ;
+    event:evidence "[0063] Returning to Figure 3, once the data shares are generated, they are used to perform an operation 350." ;
+    event:hasActor res:actor_151e58a831306903 ;
+    event:hasTarget res:target_d8d6d4c2c0064a6c ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_c91d55f879f98322 a event:Event,
+        event:Processing ;
+    rdfs:label "as accessible to an operating system or other — processes — via the aforementioned driver component" ;
+    event:action "processes" ;
+    event:evidence "Parameters for the operations may be configured and/or selected using suitable hardware abstraction layer (HAL) functions, e.g. as accessible to an operating system or other processes via the aforementioned driver component." ;
+    event:hasActor res:actor_bab7bd6c4902c40d ;
+    event:hasTarget res:target_7f439d99080a0eea ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "processes" .
+
+res:event_cbebd48c7044cf4f a event:Event,
+        event:Generation ;
+    rdfs:label "creating d-1 random bit sequences — generated — d-1 data shares" ;
+    event:action "generated" ;
+    event:evidence "In this case, d-1 data shares may be generated by creating d-1 random bit sequences, combining these with the original secret (e.g., 310 or 320), and then generating a ath share as a combination of the previous combinations." ;
+    event:hasActor res:actor_6f85bf6904810b9d ;
+    event:hasTarget res:target_e4a29c5d94438b36 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "generated" .
+
+res:event_cd921865e8293a91 a event:Event,
+        event:Masking ;
+    rdfs:label "comparison includes — masked — comparisons using masking as discussed below" ;
+    event:action "masked" ;
+    event:evidence "The comparison includes masked comparisons using masking as discussed below." ;
+    event:hasActor res:actor_ab39439c460e5238 ;
+    event:hasTarget res:target_e475c08fb46a2fc6 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masked" .
+
+res:event_d09d0aaadb7ad216 a event:Event,
+        event:Operation ;
+    rdfs:label "arithmetic unit — perform — discrete binary arithmetic using bit sequences loaded from the matrix memory" ;
+    event:action "perform" ;
+    event:context "configured to" ;
+    event:evidence "The arithmetic unit may be configured to perform discrete binary arithmetic using bit sequences loaded from the matrix memory." ;
+    event:hasActor res:actor_c75c787f11b061e4 ;
+    event:hasTarget res:target_75789bb1c860ea4f ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_d20663a0aad649d8 a event:Event,
+        event:Operation ;
+    rdfs:label "operations may be post-quantum cryptographic operations and the cryptographic system — perform — said operations for a communicatively-coupled computing system" ;
+    event:action "perform" ;
+    event:evidence "The cryptographic operations may be post-quantum cryptographic operations and the cryptographic system may perform said operations for a communicatively-coupled computing system." ;
+    event:hasActor res:actor_d763748b0787b73f ;
+    event:hasTarget res:target_6cef0a30455f9890 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_d32f6a393ea1396b a event:Event,
+        event:Operation ;
+    rdfs:label "cryptographic system 110 — perform — these functions autonomously" ;
+    event:action "perform" ;
+    event:context "configured to" ;
+    event:evidence "The cryptographic system 110 may be configured to perform these functions autonomously." ;
+    event:hasActor res:actor_ad0642736b84688d ;
+    event:hasTarget res:target_0cac21ab95775d70 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "perform" .
+
+res:event_d3a01dde6383602d a event:Event,
+        event:Operation ;
+    rdfs:label "features described with respect to the system components may also be adapted to be — performed — as part of the described methods" ;
+    event:action "performed" ;
+    event:evidence "For example, features described with respect to the system components may also be adapted to be performed as part of the described methods." ;
+    event:hasActor res:actor_78eae0d7487a27d0 ;
+    event:hasTarget res:target_760b6f970b793243 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performed" .
+
+res:event_d3ada463984071d9 a event:DataTransfer,
+        event:Event ;
+    rdfs:label "z processing unit — receives — input of data in units of planes and outputs data in units of sheets" ;
+    event:action "receives" ;
+    event:evidence "The z processing unit receives input of data in units of planes and outputs data in units of sheets." ;
+    event:hasActor res:actor_3e3837d6947a6b4d ;
+    event:hasTarget res:target_c5e5ec87d34bd137 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "receives" .
+
+res:event_d81345ade36f02a7 a event:Event,
+        event:Masking ;
+    rdfs:label "it is now possible to collapse the — masks — without giving away secret information, i.e. C = C; XOR C2 XOR C3" ;
+    event:action "masks" ;
+    event:evidence "Following encryption, it is now possible to collapse the masks without giving away secret information, i.e. C = C; XOR C2 XOR C3." ;
+    event:hasActor res:actor_fc8e8814ccb289fd ;
+    event:hasTarget res:target_5ed169f534cbf9cc ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masks" .
+
+res:event_e44c5fd73596d7b4 a event:Computation,
+        event:Event ;
+    rdfs:label "wherein the cryptographic system — compute — hash-based signatures by iteratively hashing data stored in the matrix memory" ;
+    event:action "compute" ;
+    event:context "configured to" ;
+    event:evidence "The cryptographic system of any one of claims 1 to 8, wherein the cryptographic system is configured to compute hash-based signatures by iteratively hashing data stored in the matrix memory." ;
+    event:hasActor res:actor_771e1389eecf53ef ;
+    event:hasTarget res:target_744b993d2bb88349 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "compute" .
+
+res:event_e9aceb08bc87be5e a event:Event,
+        event:Execution ;
+    rdfs:label "cryptographic math unit 130 (e — executed — as controlled via the OPER control signals) to" ;
+    event:action "executed" ;
+    event:evidence "Instead, the control unit 150 arranges for a series of one or more defined operations (e.g., as controlled via the OPER control signals) to be executed by the cryptographic math unit 130 (e.g., as shown schematically in at least Figures 2, 4 and 5)." ;
+    event:hasActor res:actor_5437aaea9d49d9ba ;
+    event:hasTarget res:target_3754c2b312340cfe ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "executed" .
+
+res:event_f21eb96a1a95adfb a event:Event,
+        event:Masking ;
+    rdfs:label "security of the cryptographic system 110 may be increased using — masked — computation" ;
+    event:action "masked" ;
+    event:evidence "Examples ofMasked Computation [0057] In certain examples described herein, the security of the cryptographic system 110 may be increased using masked computation." ;
+    event:hasActor res:actor_6b3026d783176f85 ;
+    event:hasTarget res:target_fb209e75cfb94344 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "masked" .
+
+res:event_fcd00ae31c10e198 a event:Event,
+        event:Operation ;
+    rdfs:label "cryptographic math unit 130 are described in Al — performed — Further details of operations that" ;
+    event:action "performed" ;
+    event:evidence "Further details of operations that may be performed by the cryptographic math unit 130 are described in Al." ;
+    event:hasActor res:actor_b6c187d682053f27 ;
+    event:hasTarget res:target_fecfa2cccefb3361 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "performed" .
+
+res:event_fdead4c1f257b6dd a event:DataTransfer,
+        event:Event ;
+    rdfs:label "data — received — by each stage may be of a different size to the input variables" ;
+    event:action "received" ;
+    event:evidence "For certain cryptographic algorithms, the data received by each stage may be of a different size to the input variables." ;
+    event:hasActor res:actor_3a6eb0790f39ac87 ;
+    event:hasTarget res:target_3da078d6f03ba595 ;
+    event:sourceExtractor "events.py" ;
+    event:trigger "received" .
+
+res:actor_05f5cf50f75fcf63 a event:Actor ;
+    rdfs:label "key generation" .
+
+res:actor_0719904d3c5f506a a event:Actor ;
+    rdfs:label "there is a second arithmetic step which reads R from memory and" .
+
+res:actor_078729d277f26724 a event:Actor ;
+    rdfs:label "host 410 from a public key pk and a message M" .
+
+res:actor_0a26d0a1a586b53c a event:Actor ;
+    rdfs:label "additional functionality may be provided via a firmware update of an image" .
+
+res:actor_0faacad1be7896c2 a event:Actor ;
+    rdfs:label "wherein the permutation unit" .
+
+res:actor_151e58a831306903 a event:Actor ;
+    rdfs:label "they" .
+
+res:actor_178ddae54187c165 a event:Actor ;
+    rdfs:label "arithmetic unit 136" .
+
+res:actor_1809e413bee154e5 a event:Actor ;
+    rdfs:label "one in generating the" .
+
+res:actor_1c9ef691ed9c8d4d a event:Actor ;
+    rdfs:label "hash generator 430" .
+
+res:actor_1cd758bc3677e408 a event:Actor ;
+    rdfs:label "bit block" .
+
+res:actor_20fdb100c2056610 a event:Actor ;
+    rdfs:label "combining the initial input variable (e" .
+
+res:actor_27616157297a49a8 a event:Actor ;
+    rdfs:label "where each letter represents a word" .
+
+res:actor_28eb820c18b84c05 a event:Actor ;
+    rdfs:label "cryptographic system 110 may be configured as a set of condition-free instructions to be" .
+
+res:actor_2a4f648782b2a7ca a event:Actor ;
+    rdfs:label "analysing equivalence or ordered (e" .
+
+res:actor_2adeb3b96c73ae6e a event:Actor ;
+    rdfs:label "cryptographic system 420 acts as a hash generator 430" .
+
+res:actor_3377f333ab329974 a event:Actor ;
+    rdfs:label "cryptographic system only accesses" .
+
+res:actor_35b9a3f9262183a4 a event:Actor ;
+    rdfs:label "n-bit cryptographic state that is separated into a plurality of data shares for" .
+
+res:actor_3a6eb0790f39ac87 a event:Actor ;
+    rdfs:label "data" .
+
+res:actor_3e3837d6947a6b4d a event:Actor ;
+    rdfs:label "z processing unit" .
+
+res:actor_43f79f3fc6856b8a a event:Actor ;
+    rdfs:label "set of cryptographic registers 122" .
+
+res:actor_4a0c06885023ba0c a event:Actor ;
+    rdfs:label "These variables may be represented as" .
+
+res:actor_5437aaea9d49d9ba a event:Actor ;
+    rdfs:label "cryptographic math unit 130 (e" .
+
+res:actor_6106b87891351cc2 a event:Actor ;
+    rdfs:label "either the cryptographic system 110 or the computing system" .
+
+res:actor_6b3026d783176f85 a event:Actor ;
+    rdfs:label "security of the cryptographic system 110 may be increased using" .
+
+res:actor_6f85bf6904810b9d a event:Actor ;
+    rdfs:label "creating d-1 random bit sequences" .
+
+res:actor_771e1389eecf53ef a event:Actor ;
+    rdfs:label "wherein the cryptographic system" .
+
+res:actor_78eae0d7487a27d0 a event:Actor ;
+    rdfs:label "features described with respect to the system components may also be adapted to be" .
+
+res:actor_7a83e8bf91937b59 a event:Actor ;
+    rdfs:label "address generation" .
+
+res:actor_7bb97651bc9636c0 a event:Actor ;
+    rdfs:label "output of the" .
+
+res:actor_7f2781f619a8b982 a event:Actor ;
+    rdfs:label "processor 152 of the control unit" .
+
+res:actor_806949c75d86be6f a event:Actor ;
+    rdfs:label "cryptographic math unit 130" .
+
+res:actor_9114e50675883fb5 a event:Actor ;
+    rdfs:label "for classical cryptographic algorithms may be chosen using flow-chart characterisations" .
+
+res:actor_93c2e5e6d82100a6 a event:Actor ;
+    rdfs:label "cryptographic operation 510 is implemented as a pipelined arithmetic combiner" .
+
+res:actor_93f0fcbc915c0b71 a event:Actor ;
+    rdfs:label "and the permutation unit 140 are adapted to support both" .
+
+res:actor_97ce4b93f2455336 a event:Actor ;
+    rdfs:label "control unit 150" .
+
+res:actor_9ec71f058e3369da a event:Actor ;
+    rdfs:label "arithmetic masking in the form of additive masking" .
+
+res:actor_a2b06c0a1fe46bc7 a event:Actor ;
+    rdfs:label "processing unit" .
+
+res:actor_a4d33662abb856c6 a event:Actor ;
+    rdfs:label "via computer program code" .
+
+res:actor_ab39439c460e5238 a event:Actor ;
+    rdfs:label "comparison includes" .
+
+res:actor_ab78e0f72b98cd57 a event:Actor ;
+    rdfs:label "arithmetic unit 136 may be accomplished with the help of conversion functions within a" .
+
+res:actor_ad0642736b84688d a event:Actor ;
+    rdfs:label "cryptographic system 110" .
+
+res:actor_af7b0abf94799a12 a event:Actor ;
+    rdfs:label "cryptographic system 110 where permutations implemented by the permutation unit 140" .
+
+res:actor_b11ad3dcd03b4823 a event:Actor ;
+    rdfs:label "where the verification function" .
+
+res:actor_b6c187d682053f27 a event:Actor ;
+    rdfs:label "cryptographic math unit 130 are described in Al" .
+
+res:actor_b923fda02ff5480e a event:Actor ;
+    rdfs:label "this function" .
+
+res:actor_bab7bd6c4902c40d a event:Actor ;
+    rdfs:label "as accessible to an operating system or other" .
+
+res:actor_c8dc2255f86c53be a event:Actor ;
+    rdfs:label "post-quantum key establishment functions" .
+
+res:actor_d65e64809bac1000 a event:Actor ;
+    rdfs:label "XOR summing the individual data shares" .
+
+res:actor_d763748b0787b73f a event:Actor ;
+    rdfs:label "operations may be post-quantum cryptographic operations and the cryptographic system" .
+
+res:actor_d76be531944f99d8 a event:Actor ;
+    rdfs:label "generator 134 is able to index individual data words relating to the permutation state" .
+
+res:actor_d9995dca25975719 a event:Actor ;
+    rdfs:label "communicatively-coupled computing system" .
+
+res:actor_de7b2af3e86c03ac a event:Actor ;
+    rdfs:label "This means that lattice-based post-quantum cryptography is particularly suited to a" .
+
+res:actor_e31438ec2068c5db a event:Actor ;
+    rdfs:label "permutation unit 140" .
+
+res:actor_e9ef7f893a98df27 a event:Actor ;
+    rdfs:label "processor 152" .
+
+res:actor_ea7e60fd00c50513 a event:Actor ;
+    rdfs:label "Certain examples described herein have a control unit" .
+
+res:actor_f8e2e0b1f8ffcb9b a event:Actor ;
+    rdfs:label "C can then be exported safely in an" .
+
+res:actor_fc8e8814ccb289fd a event:Actor ;
+    rdfs:label "it is now possible to collapse the" .
+
+res:target_083fe91b81abab11 a event:Target ;
+    rdfs:label "in memory)" .
+
+res:target_0cac21ab95775d70 a event:Target ;
+    rdfs:label "these functions autonomously" .
+
+res:target_0cec255c68ad3b93 a event:Target ;
+    rdfs:label "one of a number of defined permutation operations" .
+
+res:target_21310b08e98c9135 a event:Target ;
+    rdfs:label "pipelined operation 210 to implement an SIMD-like functionality where multiple pipelines function in parallel" .
+
+res:target_2152b1b170f9a5b8 a event:Target ;
+    rdfs:label "arithmetic operations with complex addressing efficiently" .
+
+res:target_314c46d8d11d0fc4 a event:Target ;
+    rdfs:label "data via the cryptographic registers 122" .
+
+res:target_36d78c756a3bec3c a event:Target ;
+    rdfs:label "Comparisons" .
+
+res:target_3754c2b312340cfe a event:Target ;
+    rdfs:label "as controlled via the OPER control signals) to" .
+
+res:target_3da078d6f03ba595 a event:Target ;
+    rdfs:label "by each stage may be of a different size to the input variables" .
+
+res:target_3e7aedcf15255062 a event:Target ;
+    rdfs:label "two parallel modulus 2\" multiply-add operations" .
+
+res:target_4326bb6226993c20 a event:Target ;
+    rdfs:label "form that reveals no information about P" .
+
+res:target_55194164b0d5ff02 a event:Target ;
+    rdfs:label "True or False (i.e., verified or not verified)" .
+
+res:target_5923f763a3f74032 a event:Target ;
+    rdfs:label "discrete binary arithmetic using bit sequences loaded from a memory" .
+
+res:target_5d0042f6d4999fe6 a event:Target ;
+    rdfs:label "arithmetic computations" .
+
+res:target_5e822e31675d5f49 a event:Target ;
+    rdfs:label "ASCON permutation" .
+
+res:target_5ed169f534cbf9cc a event:Target ;
+    rdfs:label "without giving away secret information, i.e. C = C; XOR C2 XOR C3" .
+
+res:target_61f20bbca2a29353 a event:Target ;
+    rdfs:label "initial hash Q 412" .
+
+res:target_638773ec7e852cf7 a event:Target ;
+    rdfs:label "enabled by the cryptographic system" .
+
+res:target_6a47d2f0e8685bc3 a event:Target ;
+    rdfs:label "random word every step or iteration to be used for masking operations" .
+
+res:target_6cef0a30455f9890 a event:Target ;
+    rdfs:label "said operations for a communicatively-coupled computing system" .
+
+res:target_7104280b599ade11 a event:Target ;
+    rdfs:label "for the masking and one in performing a masked permutation" .
+
+res:target_744b993d2bb88349 a event:Target ;
+    rdfs:label "hash-based signatures by iteratively hashing data stored in the matrix memory" .
+
+res:target_753f56195ae57881 a event:Target ;
+    rdfs:label "by the processor 152" .
+
+res:target_75789bb1c860ea4f a event:Target ;
+    rdfs:label "discrete binary arithmetic using bit sequences loaded from the matrix memory" .
+
+res:target_760b6f970b793243 a event:Target ;
+    rdfs:label "as part of the described methods" .
+
+res:target_797bf46e5b721a11 a event:Target ;
+    rdfs:label "operation of the cryptographic math unit 130 via a third internal bus 166" .
+
+res:target_7f439d99080a0eea a event:Target ;
+    rdfs:label "via the aforementioned driver component" .
+
+res:target_8ac36b7b5cde674e a event:Target ;
+    rdfs:label "by the permutation unit 140" .
+
+res:target_8b794fd01d5a73ba a event:Target ;
+    rdfs:label "inputs from the host 410 and provides a cryptographic output" .
+
+res:target_9427736c60561f9d a event:Target ;
+    rdfs:label "recomposition" .
+
+res:target_9eaa5f7842ce052c a event:Target ;
+    rdfs:label "cryptographic operations without handling sensitive data (so-called “no-touch” operation)" .
+
+res:target_9f03f516df747d52 a event:Target ;
+    rdfs:label "- microcode instruction of the Xerox Alto computer)" .
+
+res:target_b08c95f2b59511d0 a event:Target ;
+    rdfs:label "mode of operation (or the conversion functions may be implemented with the direct operations)" .
+
+res:target_b3aec7f1860210d0 a event:Target ;
+    rdfs:label "individual steps in a single cycle or more cycles" .
+
+res:target_b457fae4b358e3f4 a event:Target ;
+    rdfs:label "may involve generating a public-private key pair" .
+
+res:target_b9e1e0933ba7ae4f a event:Target ;
+    rdfs:label "execution of post-quantum cryptography via operations of the cryptographic math unit 130" .
+
+res:target_c286150dbf7b7281 a event:Target ;
+    rdfs:label "second remasked data share as X2' = X2 + R" .
+
+res:target_c5e5ec87d34bd137 a event:Target ;
+    rdfs:label "input of data in units of planes and outputs data in units of sheets" .
+
+res:target_caa45401468f698e a event:Target ;
+    rdfs:label "multi-dimensional array of data, i.e. data arranged as a multi-dimensional array" .
+
+res:target_cb8746db801146da a event:Target ;
+    rdfs:label "or access additional flag variables to determinea set of side-channel countermeasures to be implemented" .
+
+res:target_cc3fc666ba07cfce a event:Target ;
+    rdfs:label "sensitive security parameters (SSPs) to and from the cryptographic system 110" .
+
+res:target_ce40966fb6d876f0 a event:Target ;
+    rdfs:label "message signature Y 414" .
+
+res:target_d03c301dbf4c4931 a event:Target ;
+    rdfs:label "random function may not be addressable" .
+
+res:target_d4d0e31a84d36565 a event:Target ;
+    rdfs:label "both secret keys and public keys as well as working variables" .
+
+res:target_d73c21025a334cb9 a event:Target ;
+    rdfs:label "cryptographic system 110 may be configured as a set of condition-free instructions to" .
+
+res:target_d8d6d4c2c0064a6c a event:Target ;
+    rdfs:label "operation 350" .
+
+res:target_d9b8483601b879a7 a event:Target ;
+    rdfs:label "in memory" .
+
+res:target_de2b20544ac99335 a event:Target ;
+    rdfs:label "shares as described in more detail below" .
+
+res:target_e475c08fb46a2fc6 a event:Target ;
+    rdfs:label "comparisons using masking as discussed below" .
+
+res:target_e483fea94fb47c0b a event:Target ;
+    rdfs:label "in the ROM 156 following manufacture)" .
+
+res:target_e4a29c5d94438b36 a event:Target ;
+    rdfs:label "d-1 data shares" .
+
+res:target_e90dbe20cd77d88a a event:Target ;
+    rdfs:label "data shares" .
+
+res:target_ea247eeb15586846 a event:Target ;
+    rdfs:label "by address generator 134 also allows for a flexible ordering of operations" .
+
+res:target_eab18843e38e3032 a event:Target ;
+    rdfs:label "and nonmasked computation" .
+
+res:target_efb375fe3d52541d a event:Target ;
+    rdfs:label "Boolean masking decomposition" .
+
+res:target_f4203fc6e8f85e85 a event:Target ;
+    rdfs:label "mode of operation" .
+
+res:target_f6efb3ad89bbfe9f a event:Target ;
+    rdfs:label "SHA3 hash function" .
+
+res:target_fb209e75cfb94344 a event:Target ;
+    rdfs:label "computation" .
+
+res:target_fecfa2cccefb3361 a event:Target ;
+    rdfs:label "Further details of operations that" .
+
+res:actor_af6420f32d92d4dc a event:Actor ;
+    rdfs:label "matrix memory 132" .
+
+res:actor_c75c787f11b061e4 a event:Actor ;
+    rdfs:label "arithmetic unit" .
+
+res:target_9ec74136aabeae0a a event:Target ;
+    rdfs:label "cryptographic operation" .
+

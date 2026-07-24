@@ -1,0 +1,892 @@
+@prefix fact: <https://example.org/federated-extractor/fact/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res: <https://example.org/federated-extractor/resource/> .
+
+fact:Entity a rdfs:Class .
+
+fact:Fact a rdfs:Class .
+
+fact:Value a rdfs:Class .
+
+fact:attribute a rdf:Property ;
+    rdfs:label "attribute" .
+
+fact:evidence a rdf:Property ;
+    rdfs:label "evidence" .
+
+fact:hasEntity a rdf:Property ;
+    rdfs:label "has entity" .
+
+fact:hasValue a rdf:Property ;
+    rdfs:label "has value" .
+
+fact:sourceExtractor a rdf:Property ;
+    rdfs:label "source extractor" .
+
+fact:unit a rdf:Property ;
+    rdfs:label "unit" .
+
+res:fact_001e57e7525dd507 a fact:Fact ;
+    rdfs:label "input to each of the first stages in Figure 2 — comprises — data shares of the three inputs A, B and C)" ;
+    fact:attribute "comprises" ;
+    fact:evidence "While Figure 3 shows one set of operations on the data shares for ease of example, it should be noted that the operations may be applied as computation streams as shown in Figure 2 (e.g., the input to each of the first stages in Figure 2 may comprise data shares of the three inputs A, B and C)." ;
+    fact:hasEntity res:entity_ce8c186d2822b58f ;
+    fact:hasValue res:value_42e6bbc9cdbe20f4 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_0126e47d17cd0b54 a fact:Fact ;
+    rdfs:label "This — comprises — copying data from specific addresses in matrix memory 132 into input registers of the arithmetic unit 136" ;
+    fact:attribute "comprises" ;
+    fact:evidence "This may comprise copying data from specific addresses in matrix memory 132 into input registers of the arithmetic unit 136." ;
+    fact:hasEntity res:entity_1eb79602411ef02c ;
+    fact:hasValue res:value_b592e9accd724efa ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_0362a72707fb52d1 a fact:Fact ;
+    rdfs:label "permutation unit 140 — configured to — implement a (cryptographic) permutation computation" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The permutation unit 140 is configured to implement a (cryptographic) permutation computation." ;
+    fact:hasEntity res:entity_e31438ec2068c5db ;
+    fact:hasValue res:value_2170255e13cdbaf0 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_03b60d5f33ca7489 a fact:Fact ;
+    rdfs:label "cryptographic system 110 — configured to — perform these functions autonomously" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The cryptographic system 110 may be configured to perform these functions autonomously." ;
+    fact:hasEntity res:entity_ad0642736b84688d ;
+    fact:hasValue res:value_d15b8183b10fe880 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_15dd7cdbaad25cfe a fact:Fact ;
+    rdfs:label "instruction 220 of Figure 2) — comprises — specific mathematical operations and representations to support post-quantum cryptographic algorithms or other targets for accelerated computation" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0053] The cryptographic operations performable by the arithmetic unit 136 (e.g., as instructed by the OPER control signal in Figure 1 or the “oper” instruction 220 of Figure 2) may comprise specific mathematical operations and representations to support post-quantum cryptographic algorithms or other targets for accelerated computation." ;
+    fact:hasEntity res:entity_079dc937ce65f32d ;
+    fact:hasValue res:value_6cc62db38f55db2a ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_19d9135387c2e251 a fact:Fact ;
+    rdfs:label "cryptographic math unit 130 — comprises — matrix memory 132, an address generator 134" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0032] In the example 100 of Figure 1, the cryptographic math unit 130 comprises a matrix memory 132, an address generator 134, and an arithmetic unit 136." ;
+    fact:hasEntity res:entity_806949c75d86be6f ;
+    fact:hasValue res:value_108f50fdb8bed2e5 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_1e52b04a0fe79cd1 a fact:Fact ;
+    rdfs:label "each round of a cryptographic permutation — comprises — composition of five individual (permutation) steps: theta: 6(A), rho: p(A), pi: 2(A), chi: y(A)" ;
+    fact:attribute "comprises" ;
+    fact:evidence "As described in Section 3 of the FIPS 202 standard, each round of a cryptographic permutation may comprise a composition of five individual (permutation) steps: theta: 6(A), rho: p(A), pi: 2(A), chi: y(A), and iota (A, ir)." ;
+    fact:hasEntity res:entity_896f381fe21d8547 ;
+    fact:hasValue res:value_dbe7a30ed9f9d5cc ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_23f9c7320e99b5fb a fact:Fact ;
+    rdfs:label "low-power computation of certain functions — comprises — low-level building blocks for the cryptographic operation" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The co-processor may be configured for fast, low-power computation of certain functions that comprise low-level building blocks for the cryptographic operation." ;
+    fact:hasEntity res:entity_ebf60c92b3320c49 ;
+    fact:hasValue res:value_752c08985c4766fc ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_31d4f34de1e9cae1 a fact:Fact ;
+    rdfs:label "wherein the XOF unit — comprises — n-bit cryptographic state that is separated into a plurality of data shares for masked arithmetic computations" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The cryptographic system of claim 6 or claim 7, wherein the XOF unit comprises a n-bit cryptographic state that is separated into a plurality of data shares for masked arithmetic computations." ;
+    fact:hasEntity res:entity_1b40342bb346ecc5 ;
+    fact:hasValue res:value_f3996600a91799ca ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_39a242bfdf9d0a93 a fact:Fact ;
+    rdfs:label "of Figure 4 shows one way in which the cryptographic system of the described examples — used to — support signature algorithms for post-quantum cryptography" ;
+    fact:attribute "used to" ;
+    fact:evidence "[0076] The example of Figure 4 shows one way in which the cryptographic system of the described examples may be used to support signature algorithms for post-quantum cryptography." ;
+    fact:hasEntity res:entity_eaa7e42237469ef2 ;
+    fact:hasValue res:value_a027e3a70750ab63 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_3bbd5099d9a7296a a fact:Fact ;
+    rdfs:label "cryptographic system — comprises — cryptographic math unit" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0022] In certain described examples, the cryptographic system comprises a set of bus interfaces for communicatively coupling the cryptographic system to one or more system buses of the computing system; a cryptographic math unit; and a control unit comprising at least one processor and memory to control the cryptographic system." ;
+    fact:hasEntity res:entity_9626f1988746ba27 ;
+    fact:hasValue res:value_e5e13878a12e9e76 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_3d5211cc97e23500 a fact:Fact ;
+    rdfs:label "Supported cryptographic algorithms — comprises — XMSS™" ;
+    fact:attribute "comprises" ;
+    fact:evidence "Supported cryptographic algorithms may comprise but are not limited to: NIST structured lattice algorithms including DILITHIUM, KYBER, SABER and NTRU; the German Bundesamt fiir Sicherheit in der Informationstechnik (BSI) developed algorithms including FrodoKEM and Classic McEliece; and NIST SP 800-208 Hash-Based Signature Algorithms such as LMS, HSS, XMSS, and XMSS™." ;
+    fact:hasEntity res:entity_d34409e599bbaf77 ;
+    fact:hasValue res:value_0b8a81fb194710bb ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_3d81cfcadd1ee30e a fact:Fact ;
+    rdfs:label "cryptographic system — comprises — control unit" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0022] In certain described examples, the cryptographic system comprises a set of bus interfaces for communicatively coupling the cryptographic system to one or more system buses of the computing system; a cryptographic math unit; and a control unit comprising at least one processor and memory to control the cryptographic system." ;
+    fact:hasEntity res:entity_9626f1988746ba27 ;
+    fact:hasValue res:value_25a3ed3d07606c76 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_4034d27145646fb2 a fact:Fact ;
+    rdfs:label "These Boolean add and Boolean substitution operations in turn — comprises — relatively complex sequences of bit manipulations involving a “mask random” input" ;
+    fact:attribute "comprises" ;
+    fact:evidence "These Boolean add and Boolean substitution operations in turn comprise relatively complex sequences of bit manipulations involving a “mask random” input." ;
+    fact:hasEntity res:entity_db7e71593af508f8 ;
+    fact:hasValue res:value_f7a0e7ed01e8351f ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_423faf596eaeed43 a fact:Fact ;
+    rdfs:label "These — comprises — cryptographic random masking operation" ;
+    fact:attribute "comprises" ;
+    fact:evidence "These may comprise one or more of: a cryptographic absorb operation, a cryptographic squeeze operation, a cryptographic sampling operation, and a cryptographic random masking operation." ;
+    fact:hasEntity res:entity_b808e156d18d1cec ;
+    fact:hasValue res:value_7bf341499747fa61 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_45a9c7a214735922 a fact:Fact ;
+    rdfs:label "control unit 150 — comprises — processor 152, randomaccess memory (RAM) 154 and read-alone memory (ROM) 156" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0030] In the example 100 of Figure 1, the control unit 150 comprises a processor 152, randomaccess memory (RAM) 154 and read-alone memory (ROM) 156." ;
+    fact:hasEntity res:entity_97ce4b93f2455336 ;
+    fact:hasValue res:value_9ff7274613586b63 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_4c7231316f523edb a fact:Fact ;
+    rdfs:label "cryptographic math unit — comprises — address generator" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The cryptographic math unit may comprise a matrix memory to store data configured as a multi-dimensional array; an address generator configured to receive control signals from the control unit and to control access to data within the matrix memory; and an arithmetic unit to perform a set of defined arithmetic operations upon data within the matrix memory as accessed using the address generator." ;
+    fact:hasEntity res:entity_25c46260e9cefba9 ;
+    fact:hasValue res:value_89a3193fa9c44aee ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_524cb9d7ca9a56a6 a fact:Fact ;
+    rdfs:label "Supported cryptographic algorithms — comprises — but are not limited to: NIST structured lattice algorithms including DILITHIUM, KYBER, SABER and NTRU" ;
+    fact:attribute "comprises" ;
+    fact:evidence "Supported cryptographic algorithms may comprise but are not limited to: NIST structured lattice algorithms including DILITHIUM, KYBER, SABER and NTRU; the German Bundesamt fiir Sicherheit in der Informationstechnik (BSI) developed algorithms including FrodoKEM and Classic McEliece; and NIST SP 800-208 Hash-Based Signature Algorithms such as LMS, HSS, XMSS, and XMSS™." ;
+    fact:hasEntity res:entity_d34409e599bbaf77 ;
+    fact:hasValue res:value_f20955b5064d7df6 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_57c50ed5b294627a a fact:Fact ;
+    rdfs:label "cryptographic system 110 — comprises — set of bus interfaces 120, a cryptographic math unit 130 and a control unit 150" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The cryptographic system 110 comprises a set of bus interfaces 120, a cryptographic math unit 130 and a control unit 150." ;
+    fact:hasEntity res:entity_ad0642736b84688d ;
+    fact:hasValue res:value_e271e97c0fabe1cf ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_5826bdc28e5e52f8 a fact:Fact ;
+    rdfs:label "present cryptographic operation 510 is a multiply-add operation — used to — implement SABER and NTRU cryptographic algorithms" ;
+    fact:attribute "used to" ;
+    fact:evidence "The present cryptographic operation 510 is a multiply-add operation that may be used to implement SABER and NTRU cryptographic algorithms." ;
+    fact:hasEntity res:entity_463fd1b940421c7a ;
+    fact:hasValue res:value_341db9794155dfb4 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_5aee15d12c45adee a fact:Fact ;
+    rdfs:label "number of components — configured to — implement particular cryptographic operations" ;
+    fact:attribute "configured to" ;
+    fact:evidence "Example Cryptographic Operations [0080] The cryptographic system described herein has a number of components that may be configured to implement particular cryptographic operations." ;
+    fact:hasEntity res:entity_82d5d635e7bc03ee ;
+    fact:hasValue res:value_779353e3f97fe397 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_5fbaf66770bef225 a fact:Fact ;
+    rdfs:label "cryptographic system 110 — configured to — implement at least post-quantum cryptographic operations" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The cryptographic system 110 is configured to implement at least post-quantum cryptographic operations." ;
+    fact:hasEntity res:entity_ad0642736b84688d ;
+    fact:hasValue res:value_3624e5f26d838047 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_66419af78dd6a2e0 a fact:Fact ;
+    rdfs:label "wherein the plurality of stages — comprises — plurality of parallel processing streams, the plurality of parallel processing streams receiving data accessed from the matrix memory" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The cryptographic system of claim 13, wherein the plurality of stages comprise a plurality of parallel processing streams, the plurality of parallel processing streams receiving data accessed from the matrix memory." ;
+    fact:hasEntity res:entity_fb7a5f298b754fc1 ;
+    fact:hasValue res:value_e085025afe6f48a5 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_67cf21ecac0105e3 a fact:Fact ;
+    rdfs:label "operations — comprises — set of available functions that are" ;
+    fact:attribute "comprises" ;
+    fact:evidence "In general, operations may comprise a set of available functions that are configured to manipulate one or more bit sequences read from one or more data sources (also referred to herein as “sources”, such as A, B, C) and to store a result of the manipulation as destination data (also referred to herein as “destinations”, such as C and D)." ;
+    fact:hasEntity res:entity_74de07c4e919534b ;
+    fact:hasValue res:value_62a75440f3d0af54 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_69be7fc04fc7664b a fact:Fact ;
+    rdfs:label "control unit 150 — comprises — at least one processor and memory to control the cryptographic system" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The control unit 150 comprises at least one processor and memory to control the cryptographic system." ;
+    fact:hasEntity res:entity_97ce4b93f2455336 ;
+    fact:hasValue res:value_fbfd1179ba0ffaf4 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_6a2e13c347afec60 a fact:Fact ;
+    rdfs:label "This — comprises — re-combining the individual results from each computation stream 212" ;
+    fact:attribute "comprises" ;
+    fact:evidence "This may comprise re-combining the individual results from each computation stream 212." ;
+    fact:hasEntity res:entity_1eb79602411ef02c ;
+    fact:hasValue res:value_c1a60c0d1c308880 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_6bba43b4f2660dee a fact:Fact ;
+    rdfs:label "arithmetic unit — configured to — perform discrete binary arithmetic using bit sequences loaded from a memory" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The co-processor has an arithmetic unit that is configured to perform discrete binary arithmetic using bit sequences loaded from a memory." ;
+    fact:hasEntity res:entity_c75c787f11b061e4 ;
+    fact:hasValue res:value_686b1ddc34d7f238 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_71655369b404e143 a fact:Fact ;
+    rdfs:label "in terms of hardware it may be implemented using Random Access Memory (RAM) — configured to — be accessed via address generator 134 in a manner that allows for the storage of multi-dimensional arrays" ;
+    fact:attribute "configured to" ;
+    fact:evidence "Although the memory 132 is referred to as a “matrix memory” in terms of hardware it may be implemented using Random Access Memory (RAM) that is configured to be accessed via address generator 134 in a manner that allows for the storage of multi-dimensional arrays." ;
+    fact:hasEntity res:entity_d217d7f31fddafd9 ;
+    fact:hasValue res:value_1c04a7cc711c299d ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_718f928adcd6c830 a fact:Fact ;
+    rdfs:label "matrix memory 132 — used to — store both secret keys and public keys as well as working variables" ;
+    fact:attribute "used to" ;
+    fact:evidence "[0036] In use, the matrix memory 132 may be used to store both secret keys and public keys as well as working variables." ;
+    fact:hasEntity res:entity_af6420f32d92d4dc ;
+    fact:hasValue res:value_b26d783c8b3dbc9b ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_71f1d6e54fbba79a a fact:Fact ;
+    rdfs:label "Supported cryptographic algorithms — comprises — German Bundesamt fiir Sicherheit in der Informationstechnik (BSI) developed algorithms including FrodoKEM and Classic McEliece" ;
+    fact:attribute "comprises" ;
+    fact:evidence "Supported cryptographic algorithms may comprise but are not limited to: NIST structured lattice algorithms including DILITHIUM, KYBER, SABER and NTRU; the German Bundesamt fiir Sicherheit in der Informationstechnik (BSI) developed algorithms including FrodoKEM and Classic McEliece; and NIST SP 800-208 Hash-Based Signature Algorithms such as LMS, HSS, XMSS, and XMSS™." ;
+    fact:hasEntity res:entity_d34409e599bbaf77 ;
+    fact:hasValue res:value_ce2deb392a775e99 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_7244e75058609b86 a fact:Fact ;
+    rdfs:label "cryptographic math unit 130 — comprises — arithmetic unit 136" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0032] In the example 100 of Figure 1, the cryptographic math unit 130 comprises a matrix memory 132, an address generator 134, and an arithmetic unit 136." ;
+    fact:hasEntity res:entity_806949c75d86be6f ;
+    fact:hasValue res:value_d08dcd3416a41775 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_72846b567ff4a397 a fact:Fact ;
+    rdfs:label "cryptographic system 110 — comprises — permutation unit 140" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0042] In the example 100 of Figure 1, the cryptographic system 110 further comprises a permutation unit 140." ;
+    fact:hasEntity res:entity_ad0642736b84688d ;
+    fact:hasValue res:value_14b657b5898358c1 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_77399fd66c1dd7b1 a fact:Fact ;
+    rdfs:label "portions in this example — comprises — data shares in certain configurations" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The portions in this example may comprise data shares in certain configurations." ;
+    fact:hasEntity res:entity_e07f57870ff5a8c6 ;
+    fact:hasValue res:value_bf99e3791c628a0b ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_85ed31af92647d5a a fact:Fact ;
+    rdfs:label "cryptographic math unit 130 — comprises — number of components to perform mathematical operations for post-quantum cryptographic operations and functions" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The cryptographic math unit 130 comprises a number of components to perform mathematical operations for post-quantum cryptographic operations and functions." ;
+    fact:hasEntity res:entity_806949c75d86be6f ;
+    fact:hasValue res:value_9890904be89bbc88 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_8e77fd1c1bd69141 a fact:Fact ;
+    rdfs:label "arithmetic unit — configured to — perform discrete binary arithmetic using bit sequences loaded from the matrix memory" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The arithmetic unit may be configured to perform discrete binary arithmetic using bit sequences loaded from the matrix memory." ;
+    fact:hasEntity res:entity_c75c787f11b061e4 ;
+    fact:hasValue res:value_63ec54b28e9e9316 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_90ef7b565d22fdda a fact:Fact ;
+    rdfs:label "two nested loops — used to — iterate over a sequence of words in memory that are processed as a two-dimensional matrix" ;
+    fact:attribute "used to" ;
+    fact:evidence "For example, two nested loops may be used to iterate over a sequence of words in memory that are processed as a two-dimensional matrix." ;
+    fact:hasEntity res:entity_2e121c9709b5605e ;
+    fact:hasValue res:value_2c063d4600ca07ee ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_980a0e93271ba2db a fact:Fact ;
+    rdfs:label "address generator 134 — configured to — determine a twodimensional “blit” window within the matrix memory 132" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The address generator 134 may be configured to determine a twodimensional “blit” window within the matrix memory 132." ;
+    fact:hasEntity res:entity_0c391586b84217c0 ;
+    fact:hasValue res:value_303925f624804253 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_997502f3bde09d8e a fact:Fact ;
+    rdfs:label "pipelining — used to — increase efficiency and speed of processing" ;
+    fact:attribute "used to" ;
+    fact:evidence "In certain cases, such as those described with reference to Figures 2 and 5 below, pipelining may be used to increase efficiency and speed of processing." ;
+    fact:hasEntity res:entity_e45671068bd0dd14 ;
+    fact:hasValue res:value_e2ce8a95ecd07fef ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_9aca4c285602719b a fact:Fact ;
+    rdfs:label "masking — comprises — then that writes the result of performing the masking to share destination locations or registers" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0071] In certain examples, masking may comprise a “blit” (i.e., operation of the cryptographic math unit 130) that reads data to be masked (e.g., X) from a source location or register (e.g., A), obtains a random bit sequence R via an inbuilt internal operation, and then that writes the result of performing the masking to share destination locations or registers." ;
+    fact:hasEntity res:entity_6ba6788a4856383b ;
+    fact:hasValue res:value_4f803e9dd624cbdd ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_9b30644b14e54a90 a fact:Fact ;
+    rdfs:label "permutation unit 140 — comprises — optional unit that is provided in preferred implementations" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The permutation unit 140 may comprise an optional unit that is provided in preferred implementations." ;
+    fact:hasEntity res:entity_e31438ec2068c5db ;
+    fact:hasValue res:value_479085f20775a3d2 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_9cae39862a47dbc5 a fact:Fact ;
+    rdfs:label "cryptographic system — configured to — implement key establishment and digital signature functions on behalf of the computing system" ;
+    fact:attribute "configured to" ;
+    fact:evidence "For example, the cryptographic system may be configured to implement key establishment and digital signature functions on behalf of the computing system." ;
+    fact:hasEntity res:entity_9626f1988746ba27 ;
+    fact:hasValue res:value_1b18b6b78096f6bc ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_a2687ce35b351449 a fact:Fact ;
+    rdfs:label "each of the four computation streams 212 — comprises — plurality of stages that are computed in series over time for each stream" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0049] In Figure 2, each of the four computation streams 212 comprises a plurality of stages that are computed in series over time for each stream." ;
+    fact:hasEntity res:entity_b801e4369f7ab997 ;
+    fact:hasValue res:value_756b6a7bfbe2abf0 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_ab02c7d320ae3a32 a fact:Fact ;
+    rdfs:label "wherein the control unit — configured to — convert from a first masking format to a second masking format" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The cryptographic system of any one of claims 1 to 16, wherein the control unit is configured to convert from a first masking format to a second masking format." ;
+    fact:hasEntity res:entity_799de6263f1a81f1 ;
+    fact:hasValue res:value_2e5e0d9a2e57ba70 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_af083790e9c78883 a fact:Fact ;
+    rdfs:label "permutation unit 140 — used to — perform one of a number of defined permutation operations" ;
+    fact:attribute "used to" ;
+    fact:evidence "[0044] The permutation unit 140 may be used to perform one of a number of defined permutation operations." ;
+    fact:hasEntity res:entity_e31438ec2068c5db ;
+    fact:hasValue res:value_e4ae9a417b9e222e ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_b1b296d9ad19af0b a fact:Fact ;
+    rdfs:label "it may be used with any cryptographic system including those — comprises — security processor" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0105] Although the method of Figure 6 has been described with reference to the cryptographic system 110 of Figure 1, it may be used with any cryptographic system including those that comprise a security processor." ;
+    fact:hasEntity res:entity_0f91f4bbef7c1349 ;
+    fact:hasValue res:value_885eed342ce0520c ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_b73ea08c9c76b624 a fact:Fact ;
+    rdfs:label "cryptographic system 110 — configured to — enter a “sleep” mode with minimal dynamic power consumption" ;
+    fact:attribute "configured to" ;
+    fact:evidence "While not executing a cryptographic operation, the cryptographic system 110 may be configured to enter a “sleep” mode with minimal dynamic power consumption." ;
+    fact:hasEntity res:entity_ad0642736b84688d ;
+    fact:hasValue res:value_41b2de2b0b55b11e ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_bdf72044f3287249 a fact:Fact ;
+    rdfs:label "matrix memory 132 — comprises — 256 bits (amongst others)" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0033] For example, the matrix memory 132 may comprise RAM with n-bit internally addressable memory, where 7 may be configurable and include 16, 32, 64, 96, 128, and 256 bits (amongst others)." ;
+    fact:hasEntity res:entity_af6420f32d92d4dc ;
+    fact:hasValue res:value_0126810d65a10bb5 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_c07393d5ec5922dd a fact:Fact ;
+    rdfs:label "they — used to — perform an operation 350" ;
+    fact:attribute "used to" ;
+    fact:evidence "[0063] Returning to Figure 3, once the data shares are generated, they are used to perform an operation 350." ;
+    fact:hasEntity res:entity_151e58a831306903 ;
+    fact:hasValue res:value_e1b3935926287dc3 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_c0b47244f06ec215 a fact:Fact ;
+    rdfs:label "cryptographic system — comprises — system-on-chip for performing post-quantum cryptography" ;
+    fact:attribute "comprises" ;
+    fact:evidence "For example, the cryptographic system may comprise a system-on-chip for performing post-quantum cryptography." ;
+    fact:hasEntity res:entity_9626f1988746ba27 ;
+    fact:hasValue res:value_3d4d9af56a5d7990 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_c1c343f7edaf4ae8 a fact:Fact ;
+    rdfs:label "cryptographic math unit — comprises — matrix memory to store data configured as a multi-dimensional array" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The cryptographic math unit may comprise a matrix memory to store data configured as a multi-dimensional array; an address generator configured to receive control signals from the control unit and to control access to data within the matrix memory; and an arithmetic unit to perform a set of defined arithmetic operations upon data within the matrix memory as accessed using the address generator." ;
+    fact:hasEntity res:entity_25c46260e9cefba9 ;
+    fact:hasValue res:value_7275ef66bce95cc2 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_c2554ad872fd3a80 a fact:Fact ;
+    rdfs:label "Each of the data shares — comprises — sequence of bits of the same length as a sequence of bits representing the input variables" ;
+    fact:attribute "comprises" ;
+    fact:evidence "Each of the data shares may comprise a sequence of bits of the same length as a sequence of bits representing the input variables." ;
+    fact:hasEntity res:entity_512d7b2d39478d62 ;
+    fact:hasValue res:value_767b8bc514c66848 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_c4b35e2e67681e99 a fact:Fact ;
+    rdfs:label "cryptographic math unit 130 — configured to — perform arithmetic operations with complex addressing efficiently" ;
+    fact:attribute "configured to" ;
+    fact:evidence "Examples ofPipelined Operations [0047] The cryptographic math unit 130 is configured to perform arithmetic operations with complex addressing efficiently." ;
+    fact:hasEntity res:entity_806949c75d86be6f ;
+    fact:hasValue res:value_9f0d056bb58101f2 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_d1180745cce76d68 a fact:Fact ;
+    rdfs:label "which — comprises — address generator 134 in Figure 1" ;
+    fact:attribute "comprises" ;
+    fact:evidence "During the pipelined operation 210, data access from and/or to one or more of the matrix memory 132 and the permutation unit 140 is controlled by address generator 230, which may comprise the address generator 134 in Figure 1." ;
+    fact:hasEntity res:entity_77bc06c55d29ee3c ;
+    fact:hasValue res:value_6391dc1a879cd0dd ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_d238f9a7877923e1 a fact:Fact ;
+    rdfs:label "Figure 5 shows an example 500 of a configured cryptographic operation 510 — used to — perform lattice-based post-quantum cryptography" ;
+    fact:attribute "used to" ;
+    fact:evidence "[0088] Figure 5 shows an example 500 of a configured cryptographic operation 510 that may be used to perform lattice-based post-quantum cryptography." ;
+    fact:hasEntity res:entity_bbf511d35debc7e5 ;
+    fact:hasValue res:value_52a15beeee6506d1 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_d271b11a33acaa6a a fact:Fact ;
+    rdfs:label "which — comprises — cryptographic system 110 of Figure 1" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0074] Figure 4 shows a computing system 410 (the “host”) that is communicatively coupled to the cryptographic system 420, which may comprise the cryptographic system 110 of Figure 1." ;
+    fact:hasEntity res:entity_77bc06c55d29ee3c ;
+    fact:hasValue res:value_1f43dc9a9779378f ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_ddea604b629f76e3 a fact:Fact ;
+    rdfs:label "two input data variables 310 and 320 — comprises — SSPs that are received via the set of bus interfaces 120" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The two input data variables 310 and 320 may comprise SSPs that are received via the set of bus interfaces 120." ;
+    fact:hasEntity res:entity_c087a9ff41632be0 ;
+    fact:hasValue res:value_b1c1a583ecbb4d20 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_e1a2b1c4228901e3 a fact:Fact ;
+    rdfs:label "matrix memory 132 — comprises — RAM with n-bit internally addressable memory, where 7 may be configurable and include 16, 32, 64, 96, 128" ;
+    fact:attribute "comprises" ;
+    fact:evidence "[0033] For example, the matrix memory 132 may comprise RAM with n-bit internally addressable memory, where 7 may be configurable and include 16, 32, 64, 96, 128, and 256 bits (amongst others)." ;
+    fact:hasEntity res:entity_af6420f32d92d4dc ;
+    fact:hasValue res:value_327b50b76befc7c1 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_e1ee297511155280 a fact:Fact ;
+    rdfs:label "wherein the cryptographic system — configured to — compute hash-based signatures by iteratively hashing data stored in the matrix memory" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The cryptographic system of any one of claims 1 to 8, wherein the cryptographic system is configured to compute hash-based signatures by iteratively hashing data stored in the matrix memory." ;
+    fact:hasEntity res:entity_771e1389eecf53ef ;
+    fact:hasValue res:value_fec7cd9b361f0edc ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_e230847a754cabdb a fact:Fact ;
+    rdfs:label "cryptographic system 110 where permutations implemented by the permutation unit 140 — used to — compute the SHA3 hash function" ;
+    fact:attribute "used to" ;
+    fact:evidence "In this case, the hash may be computed using the cryptographic system 110 where permutations implemented by the permutation unit 140 are used to compute the SHA3 hash function." ;
+    fact:hasEntity res:entity_af7b0abf94799a12 ;
+    fact:hasValue res:value_7accfacd52f61aa9 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_e52f77a4fbc002f3 a fact:Fact ;
+    rdfs:label "arithmetic masking in the form of additive masking — used to — generate the data shares" ;
+    fact:attribute "used to" ;
+    fact:evidence "In one case, arithmetic masking in the form of additive masking may be used to generate the data shares." ;
+    fact:hasEntity res:entity_9ec71f058e3369da ;
+    fact:hasValue res:value_7fca00c9aa04eeae ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_e98caa37c8c4c5d4 a fact:Fact ;
+    rdfs:label "matrix memory 132 — configured to — store a multi-dimensional array of data, i.e. data arranged as a multi-dimensional array" ;
+    fact:attribute "configured to" ;
+    fact:evidence "The matrix memory 132 is configured to store a multi-dimensional array of data, i.e. data arranged as a multi-dimensional array." ;
+    fact:hasEntity res:entity_af6420f32d92d4dc ;
+    fact:hasValue res:value_4cd8eaae7ee779db ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_f51c94dbbef2aad7 a fact:Fact ;
+    rdfs:label "wherein the control unit — comprises — set of condition-free instructions that are stored in the memory and executed by the processor" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The cryptographic system of any one of claims | to 4, wherein the control unit comprises a set of condition-free instructions that are stored in the memory and executed by the processor." ;
+    fact:hasEntity res:entity_799de6263f1a81f1 ;
+    fact:hasValue res:value_4d0c05718f8a8725 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_f55a7e8942f44a2b a fact:Fact ;
+    rdfs:label "cryptographic system 110 of Figure 1 — configured to — implement many different post-quantum cryptographic operations" ;
+    fact:attribute "configured to" ;
+    fact:evidence "[0051] The cryptographic system 110 of Figure 1 may be configured to implement many different post-quantum cryptographic operations." ;
+    fact:hasEntity res:entity_477c5f29910f41d5 ;
+    fact:hasValue res:value_2fc3aaf7b6d41134 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_f6c5245c1a7090f2 a fact:Fact ;
+    rdfs:label "RAM 154 — comprises — volatile memory and the ROM 156 may comprise a non-volatile memory for control instructions" ;
+    fact:attribute "comprises" ;
+    fact:evidence "The RAM 154 may comprise a volatile memory and the ROM 156 may comprise a non-volatile memory for control instructions." ;
+    fact:hasEntity res:entity_c8623448e6f4c3a0 ;
+    fact:hasValue res:value_3048a8489470a3c8 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_fa2ee948583cf64a a fact:Fact ;
+    rdfs:label "each round of a cryptographic permutation — comprises — iota (A, ir)" ;
+    fact:attribute "comprises" ;
+    fact:evidence "As described in Section 3 of the FIPS 202 standard, each round of a cryptographic permutation may comprise a composition of five individual (permutation) steps: theta: 6(A), rho: p(A), pi: 2(A), chi: y(A), and iota (A, ir)." ;
+    fact:hasEntity res:entity_896f381fe21d8547 ;
+    fact:hasValue res:value_47b4e38d45f58bd1 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_fd1896ad143486a2 a fact:Fact ;
+    rdfs:label "data — comprises — bit sequences of the same length as the original input variables" ;
+    fact:attribute "comprises" ;
+    fact:evidence "For simple Boolean operations, such as (bitwise) AND, OR, and XOR, the data may comprise bit sequences of the same length as the original input variables." ;
+    fact:hasEntity res:entity_3a6eb0790f39ac87 ;
+    fact:hasValue res:value_82175fcebc83039b ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:fact_fe781b1a4adbb652 a fact:Fact ;
+    rdfs:label "This — comprises — Extendable-Output Function (XOF) unit" ;
+    fact:attribute "comprises" ;
+    fact:evidence "This may comprise an Extendable-Output Function (XOF) unit configured to apply cryptographic operations to generate an indefinite-length output stream." ;
+    fact:hasEntity res:entity_1eb79602411ef02c ;
+    fact:hasValue res:value_e6c20d4b5838a6f6 ;
+    fact:sourceExtractor "facts_attributes.py" .
+
+res:entity_079dc937ce65f32d a fact:Entity ;
+    rdfs:label "instruction 220 of Figure 2)" .
+
+res:entity_0c391586b84217c0 a fact:Entity ;
+    rdfs:label "address generator 134" .
+
+res:entity_0f91f4bbef7c1349 a fact:Entity ;
+    rdfs:label "it may be used with any cryptographic system including those" .
+
+res:entity_151e58a831306903 a fact:Entity ;
+    rdfs:label "they" .
+
+res:entity_1b40342bb346ecc5 a fact:Entity ;
+    rdfs:label "wherein the XOF unit" .
+
+res:entity_2e121c9709b5605e a fact:Entity ;
+    rdfs:label "two nested loops" .
+
+res:entity_3a6eb0790f39ac87 a fact:Entity ;
+    rdfs:label "data" .
+
+res:entity_463fd1b940421c7a a fact:Entity ;
+    rdfs:label "present cryptographic operation 510 is a multiply-add operation" .
+
+res:entity_477c5f29910f41d5 a fact:Entity ;
+    rdfs:label "cryptographic system 110 of Figure 1" .
+
+res:entity_512d7b2d39478d62 a fact:Entity ;
+    rdfs:label "Each of the data shares" .
+
+res:entity_6ba6788a4856383b a fact:Entity ;
+    rdfs:label "masking" .
+
+res:entity_74de07c4e919534b a fact:Entity ;
+    rdfs:label "operations" .
+
+res:entity_771e1389eecf53ef a fact:Entity ;
+    rdfs:label "wherein the cryptographic system" .
+
+res:entity_82d5d635e7bc03ee a fact:Entity ;
+    rdfs:label "number of components" .
+
+res:entity_9ec71f058e3369da a fact:Entity ;
+    rdfs:label "arithmetic masking in the form of additive masking" .
+
+res:entity_af7b0abf94799a12 a fact:Entity ;
+    rdfs:label "cryptographic system 110 where permutations implemented by the permutation unit 140" .
+
+res:entity_b801e4369f7ab997 a fact:Entity ;
+    rdfs:label "each of the four computation streams 212" .
+
+res:entity_b808e156d18d1cec a fact:Entity ;
+    rdfs:label "These" .
+
+res:entity_bbf511d35debc7e5 a fact:Entity ;
+    rdfs:label "Figure 5 shows an example 500 of a configured cryptographic operation 510" .
+
+res:entity_c087a9ff41632be0 a fact:Entity ;
+    rdfs:label "two input data variables 310 and 320" .
+
+res:entity_c8623448e6f4c3a0 a fact:Entity ;
+    rdfs:label "RAM 154" .
+
+res:entity_ce8c186d2822b58f a fact:Entity ;
+    rdfs:label "input to each of the first stages in Figure 2" .
+
+res:entity_d217d7f31fddafd9 a fact:Entity ;
+    rdfs:label "in terms of hardware it may be implemented using Random Access Memory (RAM)" .
+
+res:entity_db7e71593af508f8 a fact:Entity ;
+    rdfs:label "These Boolean add and Boolean substitution operations in turn" .
+
+res:entity_e07f57870ff5a8c6 a fact:Entity ;
+    rdfs:label "portions in this example" .
+
+res:entity_e45671068bd0dd14 a fact:Entity ;
+    rdfs:label "pipelining" .
+
+res:entity_eaa7e42237469ef2 a fact:Entity ;
+    rdfs:label "of Figure 4 shows one way in which the cryptographic system of the described examples" .
+
+res:entity_ebf60c92b3320c49 a fact:Entity ;
+    rdfs:label "low-power computation of certain functions" .
+
+res:entity_fb7a5f298b754fc1 a fact:Entity ;
+    rdfs:label "wherein the plurality of stages" .
+
+res:value_0126810d65a10bb5 a fact:Value ;
+    rdfs:label "256 bits (amongst others)" .
+
+res:value_0b8a81fb194710bb a fact:Value ;
+    rdfs:label "XMSS™" .
+
+res:value_108f50fdb8bed2e5 a fact:Value ;
+    rdfs:label "matrix memory 132, an address generator 134" .
+
+res:value_14b657b5898358c1 a fact:Value ;
+    rdfs:label "permutation unit 140" .
+
+res:value_1b18b6b78096f6bc a fact:Value ;
+    rdfs:label "implement key establishment and digital signature functions on behalf of the computing system" .
+
+res:value_1c04a7cc711c299d a fact:Value ;
+    rdfs:label "be accessed via address generator 134 in a manner that allows for the storage of multi-dimensional arrays" .
+
+res:value_1f43dc9a9779378f a fact:Value ;
+    rdfs:label "cryptographic system 110 of Figure 1" .
+
+res:value_2170255e13cdbaf0 a fact:Value ;
+    rdfs:label "implement a (cryptographic) permutation computation" .
+
+res:value_25a3ed3d07606c76 a fact:Value ;
+    rdfs:label "control unit" .
+
+res:value_2c063d4600ca07ee a fact:Value ;
+    rdfs:label "iterate over a sequence of words in memory that are processed as a two-dimensional matrix" .
+
+res:value_2e5e0d9a2e57ba70 a fact:Value ;
+    rdfs:label "convert from a first masking format to a second masking format" .
+
+res:value_2fc3aaf7b6d41134 a fact:Value ;
+    rdfs:label "implement many different post-quantum cryptographic operations" .
+
+res:value_303925f624804253 a fact:Value ;
+    rdfs:label "determine a twodimensional “blit” window within the matrix memory 132" .
+
+res:value_3048a8489470a3c8 a fact:Value ;
+    rdfs:label "volatile memory and the ROM 156 may comprise a non-volatile memory for control instructions" .
+
+res:value_327b50b76befc7c1 a fact:Value ;
+    rdfs:label "RAM with n-bit internally addressable memory, where 7 may be configurable and include 16, 32, 64, 96, 128" .
+
+res:value_341db9794155dfb4 a fact:Value ;
+    rdfs:label "implement SABER and NTRU cryptographic algorithms" .
+
+res:value_3624e5f26d838047 a fact:Value ;
+    rdfs:label "implement at least post-quantum cryptographic operations" .
+
+res:value_3d4d9af56a5d7990 a fact:Value ;
+    rdfs:label "system-on-chip for performing post-quantum cryptography" .
+
+res:value_41b2de2b0b55b11e a fact:Value ;
+    rdfs:label "enter a “sleep” mode with minimal dynamic power consumption" .
+
+res:value_42e6bbc9cdbe20f4 a fact:Value ;
+    rdfs:label "data shares of the three inputs A, B and C)" .
+
+res:value_479085f20775a3d2 a fact:Value ;
+    rdfs:label "optional unit that is provided in preferred implementations" .
+
+res:value_47b4e38d45f58bd1 a fact:Value ;
+    rdfs:label "iota (A, ir)" .
+
+res:value_4cd8eaae7ee779db a fact:Value ;
+    rdfs:label "store a multi-dimensional array of data, i.e. data arranged as a multi-dimensional array" .
+
+res:value_4d0c05718f8a8725 a fact:Value ;
+    rdfs:label "set of condition-free instructions that are stored in the memory and executed by the processor" .
+
+res:value_4f803e9dd624cbdd a fact:Value ;
+    rdfs:label "then that writes the result of performing the masking to share destination locations or registers" .
+
+res:value_52a15beeee6506d1 a fact:Value ;
+    rdfs:label "perform lattice-based post-quantum cryptography" .
+
+res:value_62a75440f3d0af54 a fact:Value ;
+    rdfs:label "set of available functions that are" .
+
+res:value_6391dc1a879cd0dd a fact:Value ;
+    rdfs:label "address generator 134 in Figure 1" .
+
+res:value_63ec54b28e9e9316 a fact:Value ;
+    rdfs:label "perform discrete binary arithmetic using bit sequences loaded from the matrix memory" .
+
+res:value_686b1ddc34d7f238 a fact:Value ;
+    rdfs:label "perform discrete binary arithmetic using bit sequences loaded from a memory" .
+
+res:value_6cc62db38f55db2a a fact:Value ;
+    rdfs:label "specific mathematical operations and representations to support post-quantum cryptographic algorithms or other targets for accelerated computation" .
+
+res:value_7275ef66bce95cc2 a fact:Value ;
+    rdfs:label "matrix memory to store data configured as a multi-dimensional array" .
+
+res:value_752c08985c4766fc a fact:Value ;
+    rdfs:label "low-level building blocks for the cryptographic operation" .
+
+res:value_756b6a7bfbe2abf0 a fact:Value ;
+    rdfs:label "plurality of stages that are computed in series over time for each stream" .
+
+res:value_767b8bc514c66848 a fact:Value ;
+    rdfs:label "sequence of bits of the same length as a sequence of bits representing the input variables" .
+
+res:value_779353e3f97fe397 a fact:Value ;
+    rdfs:label "implement particular cryptographic operations" .
+
+res:value_7accfacd52f61aa9 a fact:Value ;
+    rdfs:label "compute the SHA3 hash function" .
+
+res:value_7bf341499747fa61 a fact:Value ;
+    rdfs:label "cryptographic random masking operation" .
+
+res:value_7fca00c9aa04eeae a fact:Value ;
+    rdfs:label "generate the data shares" .
+
+res:value_82175fcebc83039b a fact:Value ;
+    rdfs:label "bit sequences of the same length as the original input variables" .
+
+res:value_885eed342ce0520c a fact:Value ;
+    rdfs:label "security processor" .
+
+res:value_89a3193fa9c44aee a fact:Value ;
+    rdfs:label "address generator" .
+
+res:value_9890904be89bbc88 a fact:Value ;
+    rdfs:label "number of components to perform mathematical operations for post-quantum cryptographic operations and functions" .
+
+res:value_9f0d056bb58101f2 a fact:Value ;
+    rdfs:label "perform arithmetic operations with complex addressing efficiently" .
+
+res:value_9ff7274613586b63 a fact:Value ;
+    rdfs:label "processor 152, randomaccess memory (RAM) 154 and read-alone memory (ROM) 156" .
+
+res:value_a027e3a70750ab63 a fact:Value ;
+    rdfs:label "support signature algorithms for post-quantum cryptography" .
+
+res:value_b1c1a583ecbb4d20 a fact:Value ;
+    rdfs:label "SSPs that are received via the set of bus interfaces 120" .
+
+res:value_b26d783c8b3dbc9b a fact:Value ;
+    rdfs:label "store both secret keys and public keys as well as working variables" .
+
+res:value_b592e9accd724efa a fact:Value ;
+    rdfs:label "copying data from specific addresses in matrix memory 132 into input registers of the arithmetic unit 136" .
+
+res:value_bf99e3791c628a0b a fact:Value ;
+    rdfs:label "data shares in certain configurations" .
+
+res:value_c1a60c0d1c308880 a fact:Value ;
+    rdfs:label "re-combining the individual results from each computation stream 212" .
+
+res:value_ce2deb392a775e99 a fact:Value ;
+    rdfs:label "German Bundesamt fiir Sicherheit in der Informationstechnik (BSI) developed algorithms including FrodoKEM and Classic McEliece" .
+
+res:value_d08dcd3416a41775 a fact:Value ;
+    rdfs:label "arithmetic unit 136" .
+
+res:value_d15b8183b10fe880 a fact:Value ;
+    rdfs:label "perform these functions autonomously" .
+
+res:value_dbe7a30ed9f9d5cc a fact:Value ;
+    rdfs:label "composition of five individual (permutation) steps: theta: 6(A), rho: p(A), pi: 2(A), chi: y(A)" .
+
+res:value_e085025afe6f48a5 a fact:Value ;
+    rdfs:label "plurality of parallel processing streams, the plurality of parallel processing streams receiving data accessed from the matrix memory" .
+
+res:value_e1b3935926287dc3 a fact:Value ;
+    rdfs:label "perform an operation 350" .
+
+res:value_e271e97c0fabe1cf a fact:Value ;
+    rdfs:label "set of bus interfaces 120, a cryptographic math unit 130 and a control unit 150" .
+
+res:value_e2ce8a95ecd07fef a fact:Value ;
+    rdfs:label "increase efficiency and speed of processing" .
+
+res:value_e4ae9a417b9e222e a fact:Value ;
+    rdfs:label "perform one of a number of defined permutation operations" .
+
+res:value_e5e13878a12e9e76 a fact:Value ;
+    rdfs:label "cryptographic math unit" .
+
+res:value_e6c20d4b5838a6f6 a fact:Value ;
+    rdfs:label "Extendable-Output Function (XOF) unit" .
+
+res:value_f20955b5064d7df6 a fact:Value ;
+    rdfs:label "but are not limited to: NIST structured lattice algorithms including DILITHIUM, KYBER, SABER and NTRU" .
+
+res:value_f3996600a91799ca a fact:Value ;
+    rdfs:label "n-bit cryptographic state that is separated into a plurality of data shares for masked arithmetic computations" .
+
+res:value_f7a0e7ed01e8351f a fact:Value ;
+    rdfs:label "relatively complex sequences of bit manipulations involving a “mask random” input" .
+
+res:value_fbfd1179ba0ffaf4 a fact:Value ;
+    rdfs:label "at least one processor and memory to control the cryptographic system" .
+
+res:value_fec7cd9b361f0edc a fact:Value ;
+    rdfs:label "compute hash-based signatures by iteratively hashing data stored in the matrix memory" .
+
+res:entity_25c46260e9cefba9 a fact:Entity ;
+    rdfs:label "cryptographic math unit" .
+
+res:entity_77bc06c55d29ee3c a fact:Entity ;
+    rdfs:label "which" .
+
+res:entity_799de6263f1a81f1 a fact:Entity ;
+    rdfs:label "wherein the control unit" .
+
+res:entity_896f381fe21d8547 a fact:Entity ;
+    rdfs:label "each round of a cryptographic permutation" .
+
+res:entity_97ce4b93f2455336 a fact:Entity ;
+    rdfs:label "control unit 150" .
+
+res:entity_c75c787f11b061e4 a fact:Entity ;
+    rdfs:label "arithmetic unit" .
+
+res:entity_1eb79602411ef02c a fact:Entity ;
+    rdfs:label "This" .
+
+res:entity_d34409e599bbaf77 a fact:Entity ;
+    rdfs:label "Supported cryptographic algorithms" .
+
+res:entity_e31438ec2068c5db a fact:Entity ;
+    rdfs:label "permutation unit 140" .
+
+res:entity_806949c75d86be6f a fact:Entity ;
+    rdfs:label "cryptographic math unit 130" .
+
+res:entity_9626f1988746ba27 a fact:Entity ;
+    rdfs:label "cryptographic system" .
+
+res:entity_af6420f32d92d4dc a fact:Entity ;
+    rdfs:label "matrix memory 132" .
+
+res:entity_ad0642736b84688d a fact:Entity ;
+    rdfs:label "cryptographic system 110" .
+

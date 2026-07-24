@@ -67,3 +67,45 @@ repo that holds the codes for the API access to load the documents, the extracto
 
 ![Diagram](img/T3_3_CEF-INFAI_draft.drawio.png)
 
+
+## Task 2: Text-to-RDF Knowledge Extraction
+
+This task experiments with three approaches for extracting knowledge from the
+same patent text and representing the extracted information as RDF graphs.
+
+### Extraction approaches
+
+1. Ontology-guided extraction
+   - Uses the DAOnt ontology to identify relevant entities and relationships.
+   - Produces a small ontology-aligned RDF graph.
+
+2. Event extraction
+   - Extracts actors, actions, targets, triggers, evidence, and context.
+   - Converts the reviewed events into an RDF graph.
+
+3. Facts-and-attributes extraction
+   - Extracts entities, attributes, values, optional units, and evidence.
+   - Converts the reviewed technical facts into an RDF graph.
+
+### Main implementation files
+
+- `extractors/events.py`
+- `extractors/events_to_rdf.py`
+- `extractors/facts_attributes.py`
+- `extractors/facts_attributes_to_rdf.py`
+- `extractors/text_preprocessing.py`
+
+### Example RDF results
+
+- `outputs/rdf/paw_file_daont_graph.ttl`
+- `outputs/rdf/paw_file_events_graph.ttl`
+- `outputs/rdf/paw_file_facts_attributes_graph.ttl`
+
+### Comparison
+
+The ontology-guided extractor produced the smallest and most precise graph,
+but with limited coverage. The event extractor produced broader coverage but
+introduced more extraction and visualization noise. The facts-and-attributes
+extractor produced structured technical statements with moderate coverage
+and relatively low noise. This experiment demonstrates the trade-off between
+precision and coverage among different knowledge-extraction approaches.

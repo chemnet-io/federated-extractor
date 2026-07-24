@@ -1,0 +1,37 @@
+@prefix dao: <https://w3id.org/daont#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res: <https://example.org/paw/resource/> .
+
+res:coprocessor-a458dbe4ab a dao:PQCAccelerator ;
+    rdfs:label "coprocessor" ;
+    dao:hasInterface res:interface-c796d37c6d .
+
+res:cryptographic-system-9626f19887 a dao:CryptographicHardwareItem ;
+    rdfs:label "cryptographic system" ;
+    dao:hasCPU res:security-processor-97f24450b1 ;
+    dao:hasInterface res:bus-interface-71964c81bb ;
+    dao:supportsAlgorithm res:sha3-4ff5a360d2 .
+
+res:matrix-memory-ffdc4c76fd a dao:RAM ;
+    rdfs:label "matrix memory" ;
+    dao:hasInterface res:interface-c796d37c6d .
+
+res:processing-unit-a2b06c0a1f a dao:CPU ;
+    rdfs:label "processing unit" ;
+    dao:supportsAlgorithm res:keccak-486d622ee0 .
+
+res:bus-interface-71964c81bb a dao:Interface ;
+    rdfs:label "bus interface" .
+
+res:keccak-486d622ee0 a dao:CryptographicAlgorithm ;
+    rdfs:label "KECCAK" .
+
+res:security-processor-97f24450b1 a dao:CPU ;
+    rdfs:label "security processor" .
+
+res:sha3-4ff5a360d2 a dao:CryptographicAlgorithm ;
+    rdfs:label "SHA3" .
+
+res:interface-c796d37c6d a dao:Interface ;
+    rdfs:label "interface" .
+
