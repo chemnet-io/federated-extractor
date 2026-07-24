@@ -5,3 +5,5 @@ click
 pymupdf
 ocrmypdf
 ollama
+
+rdflib==7.6.0
