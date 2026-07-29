@@ -1,0 +1,4 @@
+SELECT (COUNT(*) AS ?tripleCount)
+WHERE {
+  ?subject ?predicate ?object .
+}
