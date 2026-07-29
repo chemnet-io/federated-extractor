@@ -1,0 +1,37 @@
+# QLever configuration for the federated-extractor knowledge graph.
+#
+# Run qlever commands from this directory:
+#   cd qlever
+#   qlever index
+#   qlever start --access-token "$QLEVER_ACCESS_TOKEN"
+
+[data]
+NAME = federated-extractor
+DESCRIPTION = RDF knowledge extracted from uploaded technical documents
+FORMAT = ttl
+
+[index]
+# The committed fixture makes local setup deterministic. Replace or extend
+# this list with generated Turtle files when the extraction pipeline is
+# connected to QLever.
+INPUT_FILES = data/task3_fixture.ttl
+CAT_INPUT_FILES = cat ${INPUT_FILES}
+PARALLEL_PARSING = false
+SETTINGS_JSON = { "num-triples-per-batch": 100000 }
+
+[server]
+PORT = 7001
+MEMORY_FOR_QUERIES = 1G
+CACHE_MAX_SIZE = 512M
+CACHE_MAX_SIZE_SINGLE_ENTRY = 128M
+TIMEOUT = 30s
+PERSIST_UPDATES = true
+
+# ACCESS_TOKEN is intentionally omitted. Supply the secret at runtime:
+# qlever start --access-token "$QLEVER_ACCESS_TOKEN"
+
+[runtime]
+SYSTEM = docker
+IMAGE = docker.io/adfreiburg/qlever:latest
+INDEX_CONTAINER = qlever.index.federated-extractor
+SERVER_CONTAINER = qlever.server.federated-extractor

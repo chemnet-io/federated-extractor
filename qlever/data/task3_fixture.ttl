@@ -1,0 +1,19 @@
+@prefix dao: <https://w3id.org/dao#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://chemnet.io/federated-extractor/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:document-task3
+    a dao:DigitalAsset ;
+    dcterms:title "Task 3 QLever fixture" ;
+    dcterms:description "A deterministic RDF graph for testing the QLever endpoint." ;
+    dao:hasDocumentation ex:datasheet-task3 .
+
+ex:datasheet-task3
+    a dao:Datasheet ;
+    rdfs:label "Example technical datasheet" .
+
+ex:algorithm-task3
+    a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "Example post-quantum algorithm" .

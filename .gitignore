@@ -226,3 +226,7 @@ outputs/**
 !outputs/
 !outputs/**/
 !outputs/**/.gitkeep
+
+# QLever creates index, log, and persisted-update files beside Qleverfile.
+qlever/federated-extractor.*
+qlever/*.log
