@@ -109,3 +109,72 @@ introduced more extraction and visualization noise. The facts-and-attributes
 extractor produced structured technical statements with moderate coverage
 and relatively low noise. This experiment demonstrates the trade-off between
 precision and coverage among different knowledge-extraction approaches.
+
+## Task 3A: QLever SPARQL Endpoint Foundation
+
+Task 3A provides the QLever configuration and reproducible test data used by
+the Task 3B authorization gateway. The complete ownership split and integration
+contract are documented in `Task 3 Plan.txt`.
+
+### Prerequisites
+
+- Docker
+- The `qlever` command-line tool
+
+Follow the official QLever installation instructions for your operating
+system: https://docs.qlever.dev/quickstart/
+
+### Configure secrets
+
+Copy `.env.example` to `.env` and set `QLEVER_ACCESS_TOKEN` locally. The
+repository intentionally contains no QLever credential.
+
+Export the values before running QLever. For example:
+
+```bash
+set -a
+source .env
+set +a
+```
+
+### Build and start the endpoint
+
+Run QLever from the directory containing `Qleverfile`:
+
+```bash
+cd qlever
+qlever index
+qlever start --access-token "$QLEVER_ACCESS_TOKEN"
+```
+
+The endpoint listens on `http://localhost:7001` by default. The committed
+fixture in `qlever/data/task3_fixture.ttl` provides deterministic data for
+initial development. Generated RDF files can be added to `INPUT_FILES` in the
+Qleverfile during pipeline integration.
+
+The access token protects SPARQL updates and administrative operations. It
+must only be used by the backend authorization gateway implemented in Task 3B;
+it must never be returned to API clients.
+
+### Smoke check
+
+With QLever running, execute:
+
+```bash
+python scripts/check_qlever.py
+```
+
+To test another endpoint:
+
+```bash
+QLEVER_URL=http://localhost:7001 python scripts/check_qlever.py
+```
+
+The smoke check verifies the triple count and known fixture resources. The
+queries are also available in `qlever/queries/`.
+
+Offline validation, which does not require Docker or QLever, can be run with:
+
+```bash
+python -m unittest tests.test_qlever_setup
+```
