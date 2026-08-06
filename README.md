@@ -114,7 +114,7 @@ precision and coverage among different knowledge-extraction approaches.
 
 Task 3A provides the QLever configuration and reproducible test data used by
 the Task 3B authorization gateway. The complete ownership split and integration
-contract are documented in `Task 3 Plan.txt`.
+contract are documented in `Task3-plan.txt`.
 
 ### Prerequisites
 
@@ -178,3 +178,114 @@ Offline validation, which does not require Docker or QLever, can be run with:
 ```bash
 python -m unittest tests.test_qlever_setup
 ```
+
+## Task 3B: QLever Authorization Gateway
+
+Task 3B adds application-level authorization in front of QLever. Clients
+authenticate to FastAPI using an `X-API-Token` header. FastAPI looks up the
+token's role and permits only the corresponding QLever operations.
+
+### Roles and permissions
+
+| Operation | Reader | Writer | Admin |
+| --- | --- | --- | --- |
+| SPARQL query | Allowed | Allowed | Allowed |
+| SPARQL update | Denied | Allowed | Allowed |
+| Clear complete QLever cache | Denied | Denied | Allowed |
+
+Existing API tokens created before Task 3B are migrated to the least-privileged
+`reader` role.
+
+### Create role-based API tokens
+
+Create tokens with the token-management CLI:
+
+~~~bash
+python -m cli.manage_tokens create --role reader
+python -m cli.manage_tokens create --role writer
+python -m cli.manage_tokens create --role admin
+~~~
+
+The plaintext token is shown only when it is created. The database stores its
+HMAC hash and application role.
+
+Verify a token:
+
+~~~bash
+python -m cli.manage_tokens verify <application-token>
+~~~
+
+List stored token hashes and roles:
+
+~~~bash
+python -m cli.manage_tokens list
+~~~
+
+### Start the FastAPI gateway
+
+Load the server-side environment variables and start FastAPI:
+
+~~~bash
+set -a
+source .env
+set +a
+
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+~~~
+
+`QLEVER_ACCESS_TOKEN` is an internal backend credential. API clients must never
+receive it or send it as their application token.
+
+### Query the graph
+
+Reader, writer, and admin tokens may query:
+
+~~~bash
+curl -X POST "http://localhost:8000/sparql/query" \
+  -H "X-API-Token: <reader-token>" \
+  -H "Content-Type: application/sparql-query" \
+  -H "Accept: application/sparql-results+json" \
+  --data-binary 'SELECT * WHERE { ?s ?p ?o } LIMIT 10'
+~~~
+
+### Update the graph
+
+Only writer and admin tokens may update:
+
+~~~bash
+curl -X POST "http://localhost:8000/sparql/update" \
+  -H "X-API-Token: <writer-token>" \
+  -H "Content-Type: application/sparql-update" \
+  --data-binary 'INSERT DATA {
+    <urn:example> <urn:status> "created" .
+  }'
+~~~
+
+A reader token receives HTTP `403` without the request being forwarded to
+QLever.
+
+### Clear the QLever cache
+
+Only an admin token may invoke the explicitly allowlisted cache operation:
+
+~~~bash
+curl -X POST "http://localhost:8000/qlever/admin/clear-cache" \
+  -H "X-API-Token: <admin-token>"
+~~~
+
+The gateway does not expose a generic QLever command proxy.
+
+### Run authorization tests
+
+The authorization tests use a temporary SQLite database and a mocked QLever
+client, so they do not require a running QLever server:
+
+~~~bash
+python -m unittest tests.test_qlever_authorization -v
+~~~
+
+Run the complete test suite with:
+
+~~~bash
+python -m unittest discover -s tests -v
+~~~
