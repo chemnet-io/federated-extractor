@@ -1,0 +1,23 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - .env
+    environment:
+      EXTRACTOR_DB_PATH: /app/data/system.db
+      EXTRACTOR_UPLOAD_DIR: /app/uploads
+      QLEVER_URL: http://host.docker.internal:7001
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - extractor_data:/app/data
+      - extractor_uploads:/app/uploads
+    restart: unless-stopped
+
+volumes:
+  extractor_data:
+  extractor_uploads:

@@ -289,3 +289,65 @@ Run the complete test suite with:
 ~~~bash
 python -m unittest discover -s tests -v
 ~~~
+
+## Task 4: Run the API with Docker Compose
+
+QLever remains a separate host-managed service on port `7001`; Compose starts
+only the FastAPI API.
+
+Copy the environment template, replace both secret placeholders, then build
+and start the API:
+
+~~~bash
+cp .env.example .env
+docker compose up --build -d
+~~~
+
+The `.env` file is intentionally uncommitted and supplies
+`EXTRACTOR_SYSTEM_KEY` and `QLEVER_ACCESS_TOKEN` to the container. Check API
+status and logs with:
+
+~~~bash
+docker compose ps
+docker compose logs -f api
+curl http://localhost:8000/openapi.json
+~~~
+
+Create application tokens in the running container. Each command prints the
+plaintext token once, so save it securely:
+
+~~~bash
+docker compose exec api python -m cli.manage_tokens create --role reader
+docker compose exec api python -m cli.manage_tokens create --role writer
+docker compose exec api python -m cli.manage_tokens create --role admin
+~~~
+
+The API uses `http://host.docker.internal:7001` to reach QLever on the host.
+The Compose `host-gateway` mapping provides that hostname on Linux. QLever
+must already be running and listening on a host interface accessible from
+Docker; it is not built, started, or replaced by this Compose project.
+
+Test the authorization gateway by substituting tokens created above:
+
+~~~bash
+# Reader, writer, and admin tokens can query.
+curl -X POST http://localhost:8000/sparql/query \
+  -H "X-API-Token: <reader-token>" \
+  -H "Content-Type: application/sparql-query" \
+  --data-binary 'SELECT * WHERE { ?s ?p ?o } LIMIT 10'
+
+# Writer and admin tokens can update; a reader receives HTTP 403.
+curl -X POST http://localhost:8000/sparql/update \
+  -H "X-API-Token: <writer-token>" \
+  -H "Content-Type: application/sparql-update" \
+  --data-binary 'INSERT DATA { <urn:example> <urn:status> "created" . }'
+
+# Only an admin token can clear QLever's complete cache.
+curl -X POST http://localhost:8000/qlever/admin/clear-cache \
+  -H "X-API-Token: <admin-token>"
+~~~
+
+The named volumes `extractor_data` and `extractor_uploads` preserve the SQLite
+token database and uploaded files across container recreation. Normal
+`docker compose down` keeps them. **Running `docker compose down --volumes`
+permanently deletes the stored application tokens and uploads.**
