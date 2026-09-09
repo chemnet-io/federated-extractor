@@ -28,13 +28,17 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import re
 import sys
 import time
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
 # Force line-buffered stdout/stderr so per-stage progress and the final report
 # appear immediately, even when stdout is redirected or piped. Without this, a
@@ -62,6 +66,16 @@ OCR_DIR = REPO_ROOT / "outputs" / "ocr"
 TEXT_DIR = REPO_ROOT / "outputs" / "pdf_text"
 RDF_DIR = REPO_ROOT / "outputs" / "rdf"
 RDF_GRAPH_DIR = REPO_ROOT / "outputs" / "rdf_graph"
+
+# The LLM (Ollama) graph-review stage lives in its own module so the
+# prompt-building, model call, validation, and visualisation logic can be reused
+# or run standalone.  Re-export the defaults and the entry point here for the
+# CLI wiring below.
+from llm_graph_review import (
+    DEFAULT_OLLAMA_HOST,
+    DEFAULT_LLM_MODEL,
+    run_llm_graph_review,
+)
 
 
 def load_visualizer_module():
@@ -91,7 +105,7 @@ def run_pdf_to_text(pdf_path: Path, use_ocr: bool) -> Path:
         use_ocr=use_ocr,
         ocr_output_dir=OCR_DIR,
     )
-    print(f"[1/4] PDF text extracted -> {output_path}")
+    print(f"[1/5] PDF text extracted -> {output_path}")
     return output_path
 
 
@@ -110,7 +124,7 @@ def run_ontology_extraction(
     entities_path = text_path.parent / f"{prefix}_ontology_entities.json"
     relationships_path = text_path.parent / f"{prefix}_ontology_relationships.json"
     print(
-        f"[2/4] Ontology extraction complete -> "
+        f"[2/5] Ontology extraction complete -> "
         f"{entities_path.name}, {relationships_path.name}"
     )
     return entities_path, relationships_path
@@ -140,7 +154,7 @@ def run_rdf_conversion(
     validation_graph = validate_generated_rdf(output_path)
 
     print(
-        f"[3/4] RDF graph written -> {output_path} "
+        f"[3/5] RDF graph written -> {output_path} "
         f"({len(graph)} triples, {len(validation_graph)} validated)"
     )
     return len(validation_graph)
@@ -161,7 +175,7 @@ def run_visualization(rdf_path: Path, output_path: Path) -> Path:
     """Stage 4 (optional): render the RDF graph as an interactive HTML file."""
     module = load_visualizer_module()
     module.create_full_visualization(rdf_path, output_path)
-    print(f"[4/4] Visualization written -> {output_path}")
+    print(f"[4/5] Visualization written -> {output_path}")
     return output_path
 
 
@@ -263,15 +277,31 @@ def main() -> int:
         action="store_true",
         help="Skip the optional HTML visualization stage.",
     )
+    parser.add_argument(
+         "--no-llm",
+        action="store_true",
+        help="Skip the optional LLM (Ollama) graph-review stage.",
+     )
+    parser.add_argument(
+         "--ollama-host",
+        default=DEFAULT_OLLAMA_HOST,
+        help="Ollama server URL for the LLM review stage.",
+     )
+    parser.add_argument(
+         "--llm-model",
+        default=DEFAULT_LLM_MODEL,
+        help="Ollama model name used to review/validate the graph.",
+     )
     arguments = parser.parse_args()
 
-    # Print an immediate, flushed banner so the user sees the script is alive
-    # even before the slow spaCy stage produces output.
+     # Print an immediate, flushed banner so the user sees the script is alive
+     # even before the slow spaCy stage produces output.
     print(
         f"PDF -> RDF (DAOnt) pipeline starting on "
         f"'{arguments.pdf_path}'"
         f"{' (no OCR)' if arguments.no_ocr else ''}"
         f"{' (no visualization)' if arguments.no_visualize else ''}"
+        f"{' (no LLM review)' if arguments.no_llm else ''}"
     )
     print(f"  interpreter: {sys.executable}")
     sys.stdout.flush()
@@ -339,13 +369,51 @@ def main() -> int:
             # pyvis is an optional dependency that is not in requirements.txt.
             # Keep the pipeline usable without it by skipping this stage.
             print(
-                f"[4/4] Skipping visualization "
+                f"[4/5] Skipping visualization "
                 f"({error.name} is not installed; "
                 f"run 'uv pip install pyvis' to enable it)."
             )
         else:
             timer.record("RDF visualization", time.perf_counter() - stage_start)
             artifacts["html graph"] = str(html_path)
+
+# Stage 5: optional LLM (Ollama) review + visualization of the graph.
+    # The heavy logic lives in scripts/llm_graph_review.py; this block just
+    # wires it into the pipeline and records its execution time.
+    if not arguments.no_llm:
+        model_slug = re.sub(r"[^A-Za-z0-9._-]+", "_", arguments.llm_model)
+        llm_html_path_target = RDF_GRAPH_DIR / f"{prefix}_daont_{model_slug}_graph.html"
+
+         # Load the visualizer module once, reusing it for the reviewed-graph
+         # HTML (optional; degrades gracefully when pyvis is missing).
+        visualizer_module = None
+        if not arguments.no_visualize:
+            try:
+                visualizer_module = load_visualizer_module()
+            except Exception:
+                visualizer_module = None
+
+        stage_start = time.perf_counter()
+        llm_graph_path, llm_report_path, llm_html_path = run_llm_graph_review(
+            rdf_path=rdf_path,
+            prefix=prefix,
+            output_dir=RDF_DIR,
+            host=arguments.ollama_host,
+            model=arguments.llm_model,
+            text_path=text_path,
+            ontology_path=ontology_path,
+            html_output_path=llm_html_path_target
+            if not arguments.no_visualize
+            else None,
+            visualizer_module=visualizer_module,
+         )
+        timer.record("LLM graph review", time.perf_counter() - stage_start)
+        if llm_graph_path is not None:
+            artifacts["llm reviewed rdf turtle"] = str(llm_graph_path)
+        if llm_report_path is not None:
+            artifacts["llm review report"] = str(llm_report_path)
+        if llm_html_path is not None:
+            artifacts["llm html graph"] = str(llm_html_path)
 
     overall = time.perf_counter() - overall_start
     artifacts["timing report log"] = str(report_log_path)

@@ -1,0 +1,146 @@
+T3.3 Report
+
+Write a task progress for a EU research project where the progress was involved in three different steps:
+1. The ampliation of the Federated Knowledge Graph management asset, including tests and development for accepting hardware manuals and patent documents;
+2. Strategies to facilitate further access of the automatically extracted entities by other SMARTY partners through MCPs;
+3. Cooperation with CEF to use the automatic extractor with their KCONG governance catalogue and allowing CMPG to access these automatic answers at the same time as the manual KCONG knowledge graph.
+
+From Gemma 4:
+
+The Federated Knowledge Graph management asset was expanded to increase its versatility in handling diverse data sources. This included the development and testing of new ingestion pipelines specifically designed to accept and process hardware manuals and patent documents, ensuring that technical specifications and intellectual property are accurately and automatically integrated into the graph.
+
+Strategies were implemented to facilitate seamless access to automatically extracted entities for other SMARTY partners. By utilizing Model Context Protocols (MCPs), a standardized interface was established to ensure that these entities are interoperable and easily accessible across the consortium's various applications. This allows for further insight to be derived from the automatically extracted entities.
+
+In collaboration with CEF, the automatic extractor is ready to be deployed within the KCONG governance catalogue. Its purpose is to try and extract other entities from documents that describe the hardware. The system was also prepared for integration with CMPG LLM-based methods. Through the MCPs in the autom generated Knowledge Graph their tools can access the automatically with the manually curated KCONG knowledge graphs, providing a hybrid approach that combines automation efficiency with human-verified accuracy for final insight generation.
+
+-------
+
+T5.4 Report
+
+Write a task progress report, divided only by paragraphs, for developing an automatic Text2SPARQL LLM-based generator, along with tools to evaluate it and organize the second edition of an international challenge to further collect solutions and test out the systems. More details are available below (in chronological order):
+1. to possibilitate automatic evaluation we prepared a CLI client that is capable of asking questions to an API that contains the Text2SPARQL system, query the answers, and evaluate it in comparison to a gold standard;
+2. the system was then used during the evaluation process of the challenge as a real world test;
+3. moreover the challenge presented many diferent ideas that can be directly transfered into the SMARTY use cases and, at the same time, it served as a dissemination of the project to the broader industry and scientific community;
+4. a fine-tuned and open-source based solution was also developed and is ready for sovereign and private execution within the SMARTY use cases. The fine-tune also fits to smaller hardware constraints to be used in the Edge.
+
+Gemma 4:
+
+After reviewing literature and in conjunction with SMARTY’s needs and INFAI’s expertise, the focus shifted toward the development of LLM-based automatic Text2SPARQL systems. Significant progress has been made in this area, with a primary focus on establishing a robust framework for automated evaluation. To achieve this, a dedicated Command-line Interface client was developed, capable of interfacing with the system's API to query questions and compare the resulting answers against gold standard SPARQL queries. This tool ensures that the generation process can be measured accurately and consistently, providing a technical foundation for iterative improvements.
+h
+This evaluation infrastructure was subsequently put to a practical test during the second edition of the International Text2SPARQL challenge co-located with ESWC 2026, which was co-organized by INFAI. By utilizing the CLI client in a live environment, the system's performance was validated under real-world conditions. The challenge also allowed for the collection and analysis of diverse solutions submitted by the participants.
+
+Beyond technical validation, the international challenge provided substantial strategic value by acting as a bridge between theoretical research and practical application. Many of the innovative ideas emerging from the competition are being directly transferred into the SMARTY use cases to enhance overall system capabilities. Furthermore, the event served as a key dissemination vehicle, increasing the project's visibility and footprint within both the scientific community and the broader industry.
+
+Finally, a fine-tuned, open-source solution as been successfully developed, designed for sovereign and private execution within the SMARTY use cases. This version is specifically optimized to operate under stricter hardware constraints, ensuring that it remains viable for deployment at the Edge. This achievement allows for high-performance Text2SPARQL capabilities to be maintained while respecting data privacy requirements and technical limitations in decentralized environments.
+
+-------
+
+T5.2 Activities Report
+
+Write a task progress report, divided only by paragraphs, about developing knowledge management solutions based on Knowledge Graphs and LLMs. The steps developed in the period are described as follows (in chronological order):
+1. The research on graph-based solutions to improve confiability and performance of AI driven tools has finished. When combining the state-of-the-art and SMARTY's needs INFAI's focused shifted on developing graph and AI-based knowledge extraction, AI-ready triple-stores, and automatic SPARQL queries.
+2. INFAI has developed a tool to automatically extract entities from patents and hardware manuals. The main idea from this tool is to serve as an addition to the KCONG catalogue by extracting possible details that might be important for ensuring hardware interoperability. The system was already tested in academic papers and achieves state-of-the-art performance in knowledge extraction;
+3. INFAI uses Knowledge Graph and triple-stores to host centralized data. Within SMARTY it provides a Text2SPARQL-based solution in the Edge for the automotive use case to create queries for the vision KG. Additionally, in the cooperation for the hardware catalogue it makes use of designed permitions within CEF's ontology to maintain privacy and security concerns from SMARTY's partners;
+4. the automatic Text to SPARQL queries generation method uses fine-tuned open weight LLMs and shows that: bigger models with our fine-tuning stage achieve competitive performance with proprietary closed models while maintaining sovereignty; and smaller models provide competitive performance and allow better compatibility for Edge deployment.
+
+Gemma 4:
+
+INFAI has successfully concluded its initial research phase concerning graph-based solutions aimed at enhancing the reliability and performance of AI-driven tools. By integrating state-of-the-art methodologies with the specific requirements of the SMARTY initiative, INFAI has strategically shifted its focus toward the development of AI-integrated knowledge extraction, the implementation of AI-ready triple-stores, and the LLM-based automation of SPARQL queries to streamline data retrieval.
+
+A significant milestone was achieved with the development of a specialized tool designed for the automatic extraction of entities from hardware manuals and patents. This system is intended to supplement the KCONG catalogue by capturing critical details essential for ensuring seamless hardware interoperability. Testing against academic papers has already validated the system, demonstrating state-of-the-art performance in knowledge extraction tasks.
+
+To manage centralized data, INFAI utilizes Knowledge Graphs and triple-stores, which facilitate structured data hosting and retrieval. Within the SMARTY framework, this architecture supports a Text2SPARQL solution deployed at the Edge for automotive use cases, enabling efficient querying of the vision KG. Furthermore, to address privacy and security concerns among partners in the hardware catalogue cooperation, specific permissions within the CEF ontology have been implemented to ensure robust data governance.
+
+The methodology for automatic Text2SPARQL query generation relies on the fine-tuning of open-weight Large Language Models (LLMs). Experimental results indicate that larger fine-tuned models achieve performance levels competitive with proprietary closed models while ensuring full data sovereignty. Simultaneously, smaller models have proven highly effective, offering a balance of competitive performance and optimized compatibility for deployment in Edge environments.
+
+---------
+
+T6.1 Actitivies Report
+
+Gemma 4:
+
+INFAI has successfully concluded the initial phase of eliciting requirements in collaboration with the Use Case owners. The Use Case onwers were more interested in the automated Text-to-SPARQL generation tools and INFAI has defined the requirements necessary to provide a private fine-tuned LLM-based model designed to Edge use. In parallel, INFAI has completed the development of the evaluation tool for Text-to-SPARQL methods. This tool provides a critical framework for measuring the precision and efficiency of natural language queries to SPARQL translations, allowing for a standardized assessment of different methodologies. With this tool now operational, the project is well-positioned to quantitatively validate performance and refine the Text-to-SPARQL pipeline based on empirical results. Additionally, this tool was used and tested within two editions of the International Text2SPARQL challenge.
+
+Final: 
+
+INFAI has concluded the initial requirements elicitation phase in collaboration with Use Case owners, focusing primarily on the need for automated Text-to-SPARQL generation. Based on these discussions, INFAI has defined the necessary requirements to develop a private, fine-tuned LLM-based model specifically tailored for edge deployment. 
+
+Alongside these efforts, INFAI has developed an evaluation tool for Text-to-SPARQL methods to provide a standardized framework for measuring translation precision and efficiency. This tool enables the project to quantitatively validate performance and refine the Text-to-SPARQL pipeline using empirical data. To further demonstrate its reliability, the tool has already been successfully utilized and tested across two editions of the International Text2SPARQL challenge.
+
+----
+T6.2 Actitivies Report
+
+Write a task progress report, divided only by paragraphs, where the task represents a continuation of the previous one and required three steps:
+1. Initial standardization of solution for the Use Case -> progressing well
+2. Development of synthetic SPARQL query pair for training -> slight delay
+3. Development of the fine-tuning pipeline for open-source LLMs to be used in the Edge for Use Case owners -> progressing well
+Also consider the corresponding explanations for the respective task:
+1. Since there was a delay on receiving the updated ontology and knowledge graph from INFAI has focused on standardization for the solution in order to make sure all following steps are robust and can contribute to catch up all delays in the following period
+2. without receiving the updated versions of the ontology the progress on generating and testing synthetic data for training, but with standardization and the preparation the delays can be caught up in the next period
+3. standardization contributed specially for the development of the fine-tuning pipeline that is ready and tested with other knowledge graphs against state-of-the-art methods from the text2sparql challenge and is expected to maintain the level of private performance on the edge for the use case
+
+Gemma 4:
+
+As a continuation of the previous phase,INFAI focused on the initial standardization of the solution for the Use Case, which is currently progressing well. Although there was a delay in receiving the updated ontology and knowledge graph, this period was used to prioritize standardization efforts. This strategic focus ensures that all subsequent technical steps are robust and well-structured, creating a foundation that will allow the team to recover lost time and accelerate progress in the coming period.
+
+Regarding the development of synthetic SPARQL query pairs for training, there has been a slight delay. The lack of updated ontology versions hindered the ability to generate and test synthetic data with the necessary precision. However, because of the preparatory work and standardization completed in the first step, the team is well-positioned to catch up on these activities during the next reporting period.
+
+Conversely, the development of the fine-tuning pipeline for open-source LLMs intended for edge deployment is progressing well. The emphasis on standardization has directly contributed to the pipeline's success; it is now fully operational and has been validated using alternative knowledge graphs against state-of-the-art methods from the Text2SPARQL challenge. As a result, the pipeline is expected to maintain high levels of private performance when deployed on the edge for the Use Case owners.
+
+-------
+
+T5.2 Leader Report
+
+You are a team member of INFAI the leader organization of Task 5.2: Data and knowledge management tools, and you have to write a task report for the period M13-M24. Write a single concise paragraph summarizing all activities and reporting overall good progress. Consider the following activities report from the task partners:
+
+Gemma 4:
+
+During the reporting period M13-M24, Task 5.2 has demonstrated strong overall progress in the design and implementation of data and knowledge management tools. Infrastructure capabilities were significantly bolstered by LUH’s deployment of a modular and scalable Multimodal Stream Fusion Engine, which works in tandem with NNG and QAM/JOS’s successful integration of SMARTY connections for real-time video streaming and AR alert systems. On the semantic and knowledge management front, INFAI led the development of LLM-based knowledge access methods—including a Text2SPARQL solution and automated entity extraction from technical manuals—while META established a foundational ontology for SAP rollouts and CMPG implemented a low-code interface utilizing the Model Context Protocol for finance use cases. Furthermore, TKI advanced secure collaborative learning through a redesigned serverless federated learning framework, and SSSA developed specialized knowledge solutions tailored for 6G network closed-loop control. While CEF experienced a slight delay in developing its metadata management tool due to dependencies on the T3.3 schema, this is expected to be recovered in the next period. Overall, the T5.2 remains on track, successfully bridging the gap between high-throughput raw data streaming and sophisticated semantic knowledge retrieval preparing its solutions for Use Case integration.
+
+------
+
+MS5.2 Asset description
+
+Describe an asset lead by InfAI where it encompasses a collection of different services that can be executed with Knowledge Graphs and/or Federated portions from it. It’s name is "Federated knowledge representation through graphs" and is available for all SMARTY partners and in some portions is also available as an open-source service. It provides the following funcionatinalities and characteristics:
+    1. Automatic Knowledge Extractor from documents, being it papers, patents or hardware manuals:
+        * REST API with tokens to securely and privately receive the documents from SMARTY partners;
+        * LLM-based extractor for the documents into RDF Knowledge Graphs based on an ontology (e.g., CEF's DAOnt that is KCONG's backbone)
+        * Access controllable QLever triple-store with support for MCP access for other SMARTY partners such as CMPG.
+    2. Node-to-node similarity- or Graph Neural Network-based search for Knowledge Graphs:
+        * command-line interface and file preparation for choosing type you want to search;
+        * different graph-embeddings, text-embeddings propagation or Graph Neural Network methods are available.
+    3. Open-source private LLM-based Text-to-SPARQL method designed to be used with Edge devices:
+        * Two step QLoRA-based fine-tuning with reasoning and rewards in mind for lower amount of parameters models
+        * In-development automatic generation of training data for the fine-tuning pipeline
+        * Command-line interface Text-to-SPARQL evaluation tool that was already used for in two editions of the International Text2SPARQL challenge
+        * Web interface for setting up the prompts, saving and running the queries
+
+Gemma 4:
+
+Federated Knowledge Representation through Graphs is a comprehensive technical asset. It serves as a suite of services designed to transform unstructured data into actionable intelligence through the use of Knowledge Graphs (KGs) and federated architectures.
+
+The asset is primary available to all SMARTY partners, with select components released as open-source services to foster transparency and community adoption. By bridging the gap between raw documentation and semantic querying, the asset enables partners to scale their knowledge management capabilities across distributed environments.
+
+The asset is structured into three core functional pillars:
+
+1. Automated Knowledge Extraction Pipeline
+This service handles the ingestion and transformation of complex technical documents (such as academic papers, patents, and hardware manuals) into structured KGs.
+
+Secure Ingestion: It utilizes a REST API with token-based authentication, ensuring that documents shared by SMARTY partners are transmitted and handled with strict privacy and security.
+LLM-Driven Extraction: The system employs Large Language Models (LLMs) to extract entities and relations, mapping them into RDF Knowledge Graphs. This process is governed a known ontology, in the case of SMARTY, CEF's DAOnt (the backbone of KCONG) is used to guide the extraction and ensure interoperability and semantic consistency.
+High-Performance Storage: Extracted structured data is housed in an access-controlled QLever triple-store. To facilitate seamless integration with other partners (such as CMPG), with support to MCP (Model Context Protocol) access, allowing for federated data consumption.
+
+2. Advanced Graph Analytics and Search
+Beyond simple queries, the asset provides sophisticated tools for discovering hidden patterns and similarities within the Knowledge Graphs.
+
+Flexible Search Mechanisms: Users can perform node-to-node similarity searches or leverage Graph Neural Networks (GNNs) to identify related concepts.
+Customizable Embeddings: The service supports various methodologies, including graph-embeddings, text-embedding propagation, and specialized GNN methods, allowing users to choose the most effective approach based on the nature of their data.
+Developer Interface: The tool is managed via a command-line interface (CLI) with structured file preparation, ensuring that the search type and parameters are precisely configured for the desired outcome.
+
+3. Edge-Ready Text-to-SPARQL Interface
+To democratize access to the Knowledge Graphs without requiring deep expertise in SPARQL, InfAI provides an open-source, private LLM-based translation layer optimized for resource-constrained environments.
+
+Edge Optimization: Specifically designed for Edge devices, the system utilizes a two-step QLoRA-based fine-tuning process. This approach focuses on reasoning and reward-based learning, allowing smaller parameter models to achieve high accuracy in query generation for the target KG.
+Automated Pipeline: The asset includes an in-development pipeline for the automatic generation of training data, reducing the manual effort required to refine the fine-tuning process.
+Proven Performance: The reliability of this method is validated by a CLI evaluation tool that has been successfully deployed in two editions of the International Text2SPARQL challenge.
+User Accessibility: For non-technical users, a web interface provides a streamlined environment for setting up prompts, saving queries, and executing searches against the federated graph in different triple-stores.
