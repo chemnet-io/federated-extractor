@@ -5,7 +5,6 @@ from pathlib import Path
 
 import spacy
 
-
 SUBJECT_DEPENDENCIES = {
     "nsubj",
     "nsubjpass",
