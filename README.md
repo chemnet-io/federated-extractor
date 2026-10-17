@@ -201,8 +201,61 @@ attempts visualization and an optional Ollama LLM review:
 python -m scripts.run_pdf_to_rdf /path/to/document.pdf
 ```
 
-The Ollama review stage uses the configured default Ollama host/model. If that
-service is not available, skip the stage explicitly:
+### How PDF input is read
+
+The extractor accepts a PDF filesystem path; it does not look up pending
+documents in the upload database. You can pass an existing local PDF or a
+previously uploaded file, normally `uploads/<filename>`. The upload endpoint
+copies the submitted PDF into that directory and records its filename, but
+does not run this pipeline.
+
+The pipeline opens the path with PyMuPDF and reads embedded text page by page.
+If no embedded text is found anywhere in the PDF and OCR is enabled, it runs
+OCRmyPDF with `--skip-text`, saves the OCR copy under `outputs/ocr/`, then
+extracts text from that copy. OCR is a document-level fallback, not a per-page
+fallback: if the PDF contains some embedded text, pages without embedded text
+are not separately OCRed. The extracted page text is joined and written as
+`outputs/pdf_text/<original-pdf-name>.txt`.
+
+### How text is aligned to the ontology
+
+The main extraction stage is deterministic, ontology-guided text processing;
+it does not ask the LLM to discover the initial entities and relationships.
+It loads the configured Turtle ontology (by default `normalizers/daont.ttl`),
+collects its declared classes and properties, and builds searchable class
+aliases from class names, `rdfs:label` values, and code-defined aliases.
+Text is normalized and grouped at paragraph boundaries into chunks targeted
+at 45,000 characters; a single paragraph can exceed that target. spaCy's
+`en_core_web_sm` model and a lowercase phrase
+matcher find ontology class names and aliases in those chunks. When matches
+overlap, the longer ontology phrase is preferred.
+
+Matched mentions are grouped and deduplicated as entities with their text and
+ontology class. Relationship candidates are identified between nearby entity
+mentions in the same sentence. The extractor uses spaCy's parsed sentence and
+verbs, then maps supported verb/object-class combinations to controlled
+ontology properties. It rejects candidates that fail configured ontology
+domain/range constraints, cross clause boundaries, or occur in negated or
+noisy sentences. This is a rule-based extraction pipeline, so results should
+be reviewed for completeness and correctness.
+
+The stage writes entity and relationship JSON, as well as rejected-candidate
+and extraction-report JSON, next to the extracted text. The RDF conversion
+stage turns entities into labeled resources with DAOnt types, adds the
+validated relationship predicates, and serializes the graph as Turtle. It
+checks that referenced classes and properties are declared by the ontology
+and reparses the generated Turtle for validation. The optional Ollama stage
+runs afterward to review the generated graph; it is separate from the
+ontology phrase-matching extraction.
+
+The optional Ollama review stage defaults to the `qwen3.8:27b-mlx` model and
+the Ollama host `http://mac.fritz.box:11434`. The project prefers open models
+served on hardware under the operator's control, rather than relying on
+third-party hosted inference. This keeps both document data and the capacity
+used to process it under local control, supporting data and processing
+capacity sovereignty. The configured host must have Ollama running with the
+selected model available. Use `--ollama-host` and `--llm-model` to select a
+different Ollama server or model. If the service is unavailable, skip review:
 
 ```bash
 python -m scripts.run_pdf_to_rdf /path/to/document.pdf --no-llm
@@ -218,8 +271,9 @@ python -m scripts.run_pdf_to_rdf document.pdf \
   --no-llm
 ```
 
-- `--prefix` controls the generated artifact filenames (defaults to the PDF
-  filename without its extension).
+- `--prefix` sets the prefix for downstream extraction and RDF artifacts
+  (defaults to the PDF filename without its extension). The extracted text
+  file always uses the original PDF basename.
 - `--ontology` selects another Turtle ontology (defaults to
   `normalizers/daont.ttl`).
 - `--base-url` sets the base URI for generated resources.
@@ -229,6 +283,8 @@ python -m scripts.run_pdf_to_rdf document.pdf \
   visualization stage reports it missing.
 - `--no-llm` skips Ollama review. To use it, the configured Ollama server
   must be reachable and have the selected model available.
+- `--ollama-host` and `--llm-model` override the default Ollama endpoint and
+  model (`http://mac.fritz.box:11434` and `qwen3.8:27b-mlx`).
 
 For an input file named `my_document.pdf` with no custom prefix, the pipeline
 produces:
@@ -243,9 +299,9 @@ produces:
 | Graph visualizations | `outputs/rdf_graph/` |
 | LLM-reviewed graph/report, when enabled | `outputs/rdf/` |
 
-Use `--help` to see all options. The extractor can also be run on PDFs already
-uploaded through the API; pass the stored PDF path, normally
-`uploads/<filename>`. Uploading does not launch this pipeline automatically.
+Use `--help` to see all options. `--prefix` controls the downstream
+entity/relationship JSON and RDF artifact names; the extracted text filename
+continues to use the original PDF basename.
 
 ## 6. QLever triple-store
 
