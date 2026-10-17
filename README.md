@@ -194,7 +194,7 @@ curl -X POST http://localhost:8000/qlever/admin/clear-cache \
 
 Run the end-to-end extractor from the repository root with a local PDF. It
 extracts PDF text, performs ontology-guided entity and relationship
-extraction, converts those results to DAOnt RDF/Turtle, and (by default)
+extraction, converts those results to [DAOnt's](https://github.com/cefriel/daont-ontology) RDF/Turtle, and (by default)
 attempts visualization and an optional Ollama LLM review:
 
 ```bash
