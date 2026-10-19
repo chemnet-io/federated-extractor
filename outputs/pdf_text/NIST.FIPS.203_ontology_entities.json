@@ -1,0 +1,114 @@
+[
+  {
+    "text": "KEM",
+    "label": "PostQuantumCryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#PostQuantumCryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 151,
+    "example_sentence": "Abstract A key-encapsulation mechanism (KEM) is a set of algorithms that, under certain conditions, can be used by two parties to establish a shared secret key over a public channel."
+  },
+  {
+    "text": "NTT",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 56,
+    "example_sentence": "Publication 203 Specification for the Module-Lattice-Based Key-Encapsulation Mechanism Standard Table of Contents 1 Introduction 1 1.1 Purpose and Scope 1 1.2 Context 1 2 Terms, Acronyms, and Notation 2 2.1 Terms and Definitions 2 2.2 Acronyms 4 2.3 Mathematical Symbols 5 2.4 Interpreting the Pseudocode 6 2.4.1 Data Types 7 2.4.2 Loop Syntax 7 2.4.3 Arithmetic With Arrays of Integers 7 2.4.4 Representations of Algebraic Objects 8 2.4.5 Arithmetic With Polynomials and NTT Representations 9 2.4.6 Matrices and Vectors 9 2.4.7 Arithmetic With Matrices and Vectors 10 2.4.8 Applying Algorithms to Arrays, Examples 11 3 Overview of the ML-KEM Scheme 12 3.1 Key-Encapsulation Mechanisms 12 3.2 The ML-KEM Scheme 13 3.3 Requirements for ML-KEM Implementations 15 4 Auxiliary Algorithms 18 4.1 Cryptographic Functions 18 4.2 General Algorithms 20 4.2.1 Conversion and Compression Algorithms 20 4.2.2 Sampling Algorithms 22 4.3 The Number-Theoretic Transform 24 iv FIPS 203 MODULE-LATTICE-BASED KEY-ENCAPSULATION MECHANISM 4.3.1"
+  },
+  {
+    "text": "KYBER",
+    "label": "PostQuantumCryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#PostQuantumCryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 20,
+    "example_sentence": "NIST has entered into two patent license agreements to facilitate the adoption of NIST’s announced selection of the PQC key-encapsulation mechanism CRYSTALS-KYBER."
+  },
+  {
+    "text": "SHA3",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 8,
+    "example_sentence": "SHA3-256 and SHA3-512 are hash functions with one variable-length input and one fixed-length output."
+  },
+  {
+    "text": "Number-Theoretic Transform",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 7,
+    "example_sentence": "Publication 203 Specification for the Module-Lattice-Based Key-Encapsulation Mechanism Standard Table of Contents 1 Introduction 1 1.1 Purpose and Scope 1 1.2 Context 1 2 Terms, Acronyms, and Notation 2 2.1 Terms and Definitions 2 2.2 Acronyms 4 2.3 Mathematical Symbols 5 2.4 Interpreting the Pseudocode 6 2.4.1 Data Types 7 2.4.2 Loop Syntax 7 2.4.3 Arithmetic With Arrays of Integers 7 2.4.4 Representations of Algebraic Objects 8 2.4.5 Arithmetic With Polynomials and NTT Representations 9 2.4.6 Matrices and Vectors 9 2.4.7 Arithmetic With Matrices and Vectors 10 2.4.8 Applying Algorithms to Arrays, Examples 11 3 Overview of the ML-KEM Scheme 12 3.1 Key-Encapsulation Mechanisms 12 3.2 The ML-KEM Scheme 13 3.3 Requirements for ML-KEM Implementations 15 4 Auxiliary Algorithms 18 4.1 Cryptographic Functions 18 4.2 General Algorithms 20 4.2.1 Conversion and Compression Algorithms 20 4.2.2 Sampling Algorithms 22 4.3 The Number-Theoretic Transform 24 iv FIPS 203 MODULE-LATTICE-BASED KEY-ENCAPSULATION MECHANISM 4.3.1"
+  },
+  {
+    "text": "cryptographic algorithm",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 4,
+    "example_sentence": "As with its other cryptographic algorithm standards, NIST will formally reevaluate this standard every five years."
+  },
+  {
+    "text": "KECCAK",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 2,
+    "example_sentence": "NISTIR NIST Interagency or Internal Report NTT Number-Theoretic Transform PKE Public-Key Encryption PQC Post-Quantum Cryptography PRF Pseudorandom Function RBG Random Bit Generator SHA Secure Hash Algorithm 4 FIPS 203 MODULE-LATTICE-BASED KEY-ENCAPSULATION MECHANISM SHAKE Secure Hash Algorithm KECCAK SP Special Publication XOF Extendable-Output Function 2.3 Mathematical Symbols n Denotes the integer 256 throughout this document."
+  },
+  {
+    "text": "SHA-3",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 2,
+    "example_sentence": "[6] National Institute of Standards and Technology (2015) SHA-3 standard: Permutation-based hash and extendable-output functions, (U.S. Department of Commerce, Washington, DC), Federal Information Processing Standards Publication (FIPS) 202."
+  },
+  {
+    "text": "firmware",
+    "label": "Firmware",
+    "class_uri": "https://w3id.org/daont#Firmware",
+    "source": "DAOnt phrase match",
+    "mention_count": 2,
+    "example_sentence": "A key-encapsulation mechanism may be implemented in software, firmware, hardware, or any combination thereof."
+  },
+  {
+    "text": "AES",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "2.2 Acronyms AES Advanced Encryption Standard CBD Centered Binomial Distribution FIPS Federal Information Processing Standard KEM Key-Encapsulation Mechanism LWE Learning with Errors MLWE Module Learning with Errors NIST National Institute of Standards and Technology"
+  },
+  {
+    "text": "documentation",
+    "label": "Documentation",
+    "class_uri": "https://w3id.org/daont#Documentation",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "[4] Avanzi R, Bos J, Ducas L, Kiltz E, Lepoint T, Lyubashevsky V, Schanck JM, Schwabe P, Seiler G, Stehlé D (2020) CRYSTALS-Kyber algorithm specifications and supporting documentation, Third-round submission to the NIST’s post-quantum cryptography standardization process."
+  },
+  {
+    "text": "Dilithium",
+    "label": "PostQuantumCryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#PostQuantumCryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "[15] Ducas L, Schanck J (2021) Security estimation scripts for Kyber and Dilithium, Github reposi tory."
+  },
+  {
+    "text": "post-quantum cryptographic algorithm",
+    "label": "PostQuantumCryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#PostQuantumCryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "security category A number associated with the security strength of a post-quantum cryptographic algorithm, as specified by NIST (see [7])."
+  },
+  {
+    "text": "programming language",
+    "label": "ProgrammingLanguage",
+    "class_uri": "https://w3id.org/amv#ProgrammingLanguage",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "In the case of “for” loops, the syntax will be in the style of the programming language C. Two simple examples are given in Algorithm 1."
+  }
+]

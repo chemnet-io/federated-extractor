@@ -1,0 +1,193 @@
+@prefix dao: <https://w3id.org/daont#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res: <https://example.org/paw/resource/> .
+
+res:dilithium-6533647a72 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "Dilithium" ;
+    rdfs:seeAlso res:post-quantum-cryptographic-algorithm-3bc1ed4116 .
+
+res:documentation-caf9f906b1 a dao:Documentation ;
+    rdfs:label "documentation" ;
+    rdfs:seeAlso res:cmvp-validation-f3a4b5c6d7,
+        res:fips-203-a1b2c3d4e5,
+        res:module-lattice-based-kem-standard-a4b5c6d7e8,
+        res:sp-800-140c-e6f7a8b9c0,
+        res:sp-800-227-d5e6f7a8b9 .
+
+res:programming-language-6e5f5884f6 a <https://w3id.org/amv#ProgrammingLanguage> ;
+    rdfs:label "programming language" ;
+    rdfs:seeAlso res:software-a8b9c0d1e2 .
+
+res:aes-9899f1fec6 a dao:CryptographicAlgorithm ;
+    rdfs:label "AES" ;
+    rdfs:seeAlso res:cryptographic-algorithm-9dd61a0f1e .
+
+res:sha-3-5110c7a27b a dao:CryptographicAlgorithm ;
+    rdfs:label "SHA-3" ;
+    rdfs:seeAlso res:sha3-4ff5a360d2 .
+
+res:cmvp-validation-f3a4b5c6d7 a dao:Documentation ;
+    rdfs:label "CMVP Validation Program" ;
+    rdfs:seeAlso res:ml-kem-f6a7b8c9d0 .
+
+res:cryptographic-algorithm-9dd61a0f1e a dao:CryptographicAlgorithm ;
+    rdfs:label "cryptographic algorithm" ;
+    rdfs:seeAlso res:aes-9899f1fec6,
+        res:keccak-486d622ee0,
+        res:ntt-d4cc2e3bab,
+        res:post-quantum-cryptographic-algorithm-3bc1ed4116,
+        res:sha3-4ff5a360d2 .
+
+res:encapsulation-key-c6d7e8f9a0 a dao:DigitalAsset ;
+    rdfs:label "encapsulation key" ;
+    rdfs:seeAlso res:decapsulation-key-d7e8f9a0b1,
+        res:shared-secret-key-b5c6d7e8f9 .
+
+res:itl-e2f3a4b5c6 a dao:Organization ;
+    rdfs:label "Information Technology Laboratory" ;
+    rdfs:seeAlso res:nist-d1e2f3a4b5 .
+
+res:keccak-486d622ee0 a dao:CryptographicAlgorithm ;
+    rdfs:label "KECCAK" ;
+    rdfs:seeAlso res:sha3-4ff5a360d2 .
+
+res:kem-2080150a7f a dao:Protocol ;
+    rdfs:label "Key-Encapsulation Mechanism" ;
+    rdfs:seeAlso res:ciphertext-a0b1c2d3e4,
+        res:decapsulation-key-d7e8f9a0b1,
+        res:encapsulation-key-c6d7e8f9a0,
+        res:ml-kem-f6a7b8c9d0,
+        res:shared-secret-key-b5c6d7e8f9 .
+
+res:lattice-based-cryptography-c3d4e5f6a7 a dao:Technology ;
+    rdfs:label "lattice-based cryptography" ;
+    rdfs:seeAlso res:crystals-kyber-126f8849a6,
+        res:ml-kem-f6a7b8c9d0,
+        res:mlwe-b2c3d4e5f6 .
+
+res:ml-kem-512-d1e2f3a4b5 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "ML-KEM-512" ;
+    rdfs:seeAlso res:ml-kem-1024-f3a4b5c6d7,
+        res:ml-kem-768-e2f3a4b5c6 ;
+    dao:isTechnologyVersionOf res:ml-kem-f6a7b8c9d0 .
+
+res:mlwe-b2c3d4e5f6 a dao:Technology ;
+    rdfs:label "Module Learning With Errors" ;
+    rdfs:seeAlso res:lattice-based-cryptography-c3d4e5f6a7,
+        res:ml-kem-f6a7b8c9d0 .
+
+res:module-lattice-based-kem-standard-a4b5c6d7e8 a dao:Documentation ;
+    rdfs:label "Module-Lattice-Based Key-Encapsulation Mechanism Standard" ;
+    rdfs:seeAlso res:fips-203-a1b2c3d4e5,
+        res:itl-e2f3a4b5c6,
+        res:nist-d1e2f3a4b5 .
+
+res:nist-d1e2f3a4b5 a dao:Organization ;
+    rdfs:label "National Institute of Standards and Technology" ;
+    rdfs:seeAlso res:itl-e2f3a4b5c6 .
+
+res:ntt-d4cc2e3bab a dao:CryptographicAlgorithm ;
+    rdfs:label "Number-Theoretic Transform" ;
+    rdfs:seeAlso res:ml-kem-f6a7b8c9d0 .
+
+res:post-quantum-cryptographic-algorithm-3bc1ed4116 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "post-quantum cryptographic algorithm" ;
+    rdfs:seeAlso res:crystals-kyber-126f8849a6,
+        res:ml-kem-1024-f3a4b5c6d7,
+        res:ml-kem-512-d1e2f3a4b5,
+        res:ml-kem-768-e2f3a4b5c6,
+        res:ml-kem-f6a7b8c9d0 .
+
+res:post-quantum-cryptography-b9c0d1e2f3 a dao:Technology ;
+    rdfs:label "post-quantum cryptography" ;
+    rdfs:seeAlso res:crystals-kyber-126f8849a6,
+        res:ml-kem-f6a7b8c9d0,
+        res:quantum-computer-c0d1e2f3a4 .
+
+res:quantum-computer-c0d1e2f3a4 a dao:Technology ;
+    rdfs:label "quantum computer" ;
+    rdfs:seeAlso res:post-quantum-cryptography-b9c0d1e2f3 .
+
+res:sp-800-140c-e6f7a8b9c0 a dao:Documentation ;
+    rdfs:label "SP 800-140C" ;
+    rdfs:seeAlso res:cryptographic-algorithm-9dd61a0f1e .
+
+res:sp-800-227-d5e6f7a8b9 a dao:Documentation ;
+    rdfs:label "SP 800-227" ;
+    rdfs:seeAlso res:kem-2080150a7f .
+
+res:ciphertext-a0b1c2d3e4 a dao:DigitalAsset ;
+    rdfs:label "ciphertext" ;
+    rdfs:seeAlso res:shared-secret-key-b5c6d7e8f9 .
+
+res:decapsulation-key-d7e8f9a0b1 a dao:DigitalAsset ;
+    rdfs:label "decapsulation key" ;
+    rdfs:seeAlso res:ciphertext-a0b1c2d3e4,
+        res:shared-secret-key-b5c6d7e8f9 .
+
+res:fips-203-a1b2c3d4e5 a dao:Documentation ;
+    rdfs:label "FIPS 203" ;
+    rdfs:seeAlso res:cmvp-validation-f3a4b5c6d7,
+        res:ml-kem-f6a7b8c9d0,
+        res:sp-800-140c-e6f7a8b9c0,
+        res:sp-800-227-d5e6f7a8b9 .
+
+res:firmware-c3bf47ea1f a dao:Firmware ;
+    rdfs:label "firmware" ;
+    rdfs:seeAlso res:hardware-d7e8f9a0b1,
+        res:ml-kem-f6a7b8c9d0,
+        res:software-a8b9c0d1e2 .
+
+res:hardware-d7e8f9a0b1 a dao:HardwareType ;
+    rdfs:label "hardware" ;
+    rdfs:seeAlso res:firmware-c3bf47ea1f,
+        res:ml-kem-f6a7b8c9d0,
+        res:software-a8b9c0d1e2 .
+
+res:ml-kem-1024-f3a4b5c6d7 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "ML-KEM-1024" ;
+    dao:isTechnologyVersionOf res:ml-kem-f6a7b8c9d0 .
+
+res:ml-kem-768-e2f3a4b5c6 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "ML-KEM-768" ;
+    dao:isTechnologyVersionOf res:ml-kem-f6a7b8c9d0 .
+
+res:sha3-4ff5a360d2 a dao:CryptographicAlgorithm ;
+    rdfs:label "SHA-3" ;
+    rdfs:seeAlso res:keccak-486d622ee0,
+        res:sha-3-5110c7a27b .
+
+res:crystals-kyber-126f8849a6 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "CRYSTALS-KYBER" ;
+    rdfs:seeAlso res:lattice-based-cryptography-c3d4e5f6a7,
+        res:ml-kem-f6a7b8c9d0 .
+
+res:shared-secret-key-b5c6d7e8f9 a dao:DigitalAsset ;
+    rdfs:label "shared secret key" ;
+    rdfs:seeAlso res:ciphertext-a0b1c2d3e4,
+        res:decapsulation-key-d7e8f9a0b1,
+        res:encapsulation-key-c6d7e8f9a0 .
+
+res:software-a8b9c0d1e2 a dao:SoftwareType ;
+    rdfs:label "software" ;
+    rdfs:seeAlso res:firmware-c3bf47ea1f,
+        res:hardware-d7e8f9a0b1,
+        res:ml-kem-f6a7b8c9d0 .
+
+res:ml-kem-f6a7b8c9d0 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "ML-KEM" ;
+    rdfs:seeAlso res:crystals-kyber-126f8849a6,
+        res:firmware-c3bf47ea1f,
+        res:hardware-d7e8f9a0b1,
+        res:kem-2080150a7f,
+        res:ml-kem-1024-f3a4b5c6d7,
+        res:ml-kem-512-d1e2f3a4b5,
+        res:ml-kem-768-e2f3a4b5c6,
+        res:mlwe-b2c3d4e5f6,
+        res:post-quantum-cryptography-b9c0d1e2f3,
+        res:quantum-computer-c0d1e2f3a4,
+        res:software-a8b9c0d1e2 ;
+    dao:hasDocumentation res:fips-203-a1b2c3d4e5,
+        res:module-lattice-based-kem-standard-a4b5c6d7e8 ;
+    dao:supportsAlgorithm res:ntt-d4cc2e3bab .
+

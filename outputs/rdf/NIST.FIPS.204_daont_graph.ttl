@@ -1,0 +1,52 @@
+@prefix dao: <https://w3id.org/daont#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res: <https://example.org/paw/resource/> .
+
+res:aes-9899f1fec6 a dao:CryptographicAlgorithm ;
+    rdfs:label "AES" .
+
+res:application-programming-interface-b3e64eba64 a <http://purl.org/spar/fabio/ApplicationProgrammingInterface> ;
+    rdfs:label "Application Programming Interface" .
+
+res:cryptographic-algorithm-9dd61a0f1e a dao:CryptographicAlgorithm ;
+    rdfs:label "cryptographic algorithm" .
+
+res:cryptographic-hardware-b11cc0924c a dao:CryptographicHardwareItem ;
+    rdfs:label "Cryptographic Hardware" .
+
+res:dilithium-6533647a72 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "DILITHIUM" .
+
+res:documentation-caf9f906b1 a dao:Documentation ;
+    rdfs:label "documentation" .
+
+res:firmware-c3bf47ea1f a dao:Firmware ;
+    rdfs:label "firmware" .
+
+res:keccak-486d622ee0 a dao:CryptographicAlgorithm ;
+    rdfs:label "KECCAK" .
+
+res:kyber-126f8849a6 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "Kyber" .
+
+res:ntt-d4cc2e3bab a dao:CryptographicAlgorithm ;
+    rdfs:label "NTT" .
+
+res:number-theoretic-transform-dd3e486b16 a dao:CryptographicAlgorithm ;
+    rdfs:label "Number Theoretic Transform" .
+
+res:post-quantum-cryptographic-algorithm-3bc1ed4116 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "post-quantum cryptographic algorithm" .
+
+res:protocol-2ea88c7a30 a dao:Protocol ;
+    rdfs:label "protocol" .
+
+res:rsa-f5f69168bb a dao:CryptographicAlgorithm ;
+    rdfs:label "RSA" .
+
+res:sha-3-5110c7a27b a dao:CryptographicAlgorithm ;
+    rdfs:label "SHA-3" .
+
+res:signature-algorithm-350ca3fc0e a dao:SignatureAlgorithm ;
+    rdfs:label "signature algorithm" .
+

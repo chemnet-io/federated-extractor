@@ -1,0 +1,130 @@
+[
+  {
+    "text": "NTT",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 23,
+    "example_sentence": "4 FIPS 204 MODULE-LATTICE-BASED DIGITAL SIGNATURE STANDARD 2.2 Acronyms AES Advanced Encryption Standard API Application Programming Interface DER Distinguished Encoding Rules FIPS Federal Information Processing Standard ML-DSA Module-Lattice-Based Digital Signature Algorithm MLWE Module Learning With Errors NIST National Institute of Standards and Technology NIST IR NIST Interagency or Internal Report NTT Number Theoretic Transform OID Object Identifier PQC Post-Quantum Cryptography RBG Random Bit Generator SHA Secure Hash Algorithm SHAKE Secure"
+  },
+  {
+    "text": "DILITHIUM",
+    "label": "PostQuantumCryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#PostQuantumCryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 16,
+    "example_sentence": "45 References 47 Appendix A — Montgomery Multiplication 50 Appendix B — Zetas Array 51 Appendix C — Loop Bounds 52 Appendix D — Differences from the CRYSTALS-DILITHIUM Submission 54 D.1 Differences Between Version 3.1 and the Round 3 Version of CRYSTALS-DILITHIUM . ."
+  },
+  {
+    "text": "signature algorithm",
+    "label": "SignatureAlgorithm",
+    "class_uri": "https://w3id.org/daont#SignatureAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 9,
+    "example_sentence": "This standard specifies ML-DSA, a lattice-based digital signature algorithm for applications that require a digital signature rather than a written signature."
+  },
+  {
+    "text": "protocol",
+    "label": "Protocol",
+    "class_uri": "https://w3id.org/daont#Protocol",
+    "source": "DAOnt phrase match",
+    "mention_count": 7,
+    "example_sentence": "The Schnorr signature scheme applies the Fiat-Shamir heuristic to an interactive protocol between a verifier who knows g (the generator of a group in which discrete logs are believed to be difficult) and the value y = gx and a prover who knows g and x."
+  },
+  {
+    "text": "cryptographic algorithm",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 5,
+    "example_sentence": "key A parameter used in conjunction with a cryptographic algorithm that determines its operation."
+  },
+  {
+    "text": "RSA",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 3,
+    "example_sentence": "Topics in Cryptology – CT-RSA 2014, ed Benaloh J (Springer International Publishing, Cham), pp 28–47. https://doi.org/10.1007/978-3-319-04852-9_2. 47 FIPS 204 MODULE-LATTICE-BASED DIGITAL SIGNATURE STANDARD"
+  },
+  {
+    "text": "documentation",
+    "label": "Documentation",
+    "class_uri": "https://w3id.org/daont#Documentation",
+    "source": "DAOnt phrase match",
+    "mention_count": 3,
+    "example_sentence": "CRYSTALSDilithium: Algorithm specifications and supporting documentation, Submission to the NIST’s postquantum cryptography standardization process."
+  },
+  {
+    "text": "KECCAK",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 2,
+    "example_sentence": "Hash Algorithm KECCAK SP Special Publication SUF-CMA Strongly existentially UnForgeable under Chosen Message Attack XOF eXtendable-Output Function 2.3 Mathematical Symbols"
+  },
+  {
+    "text": "Number Theoretic Transform",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 2,
+    "example_sentence": "4 FIPS 204 MODULE-LATTICE-BASED DIGITAL SIGNATURE STANDARD 2.2 Acronyms AES Advanced Encryption Standard API Application Programming Interface DER Distinguished Encoding Rules FIPS Federal Information Processing Standard ML-DSA Module-Lattice-Based Digital Signature Algorithm MLWE Module Learning With Errors NIST National Institute of Standards and Technology NIST IR NIST Interagency or Internal Report NTT Number Theoretic Transform OID Object Identifier PQC Post-Quantum Cryptography RBG Random Bit Generator SHA Secure Hash Algorithm SHAKE Secure"
+  },
+  {
+    "text": "SHA-3",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 2,
+    "example_sentence": "[7] National Institute of Standards and Technology (2015) SHA-3 standard: Permutation-based hash and extendable-output functions, (U.S. Department of Commerce, Washington, DC), Federal Information Processing Standards Publication (FIPS) 202."
+  },
+  {
+    "text": "Application Programming Interface",
+    "label": "ApplicationProgrammingInterface",
+    "class_uri": "http://purl.org/spar/fabio/ApplicationProgrammingInterface",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "4 FIPS 204 MODULE-LATTICE-BASED DIGITAL SIGNATURE STANDARD 2.2 Acronyms AES Advanced Encryption Standard API Application Programming Interface DER Distinguished Encoding Rules FIPS Federal Information Processing Standard ML-DSA Module-Lattice-Based Digital Signature Algorithm MLWE Module Learning With Errors NIST National Institute of Standards and Technology NIST IR NIST Interagency or Internal Report NTT Number Theoretic Transform OID Object Identifier PQC Post-Quantum Cryptography RBG Random Bit Generator SHA Secure Hash Algorithm SHAKE Secure"
+  },
+  {
+    "text": "AES",
+    "label": "CryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#CryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "4 FIPS 204 MODULE-LATTICE-BASED DIGITAL SIGNATURE STANDARD 2.2 Acronyms AES Advanced Encryption Standard API Application Programming Interface DER Distinguished Encoding Rules FIPS Federal Information Processing Standard ML-DSA Module-Lattice-Based Digital Signature Algorithm MLWE Module Learning With Errors NIST National Institute of Standards and Technology NIST IR NIST Interagency or Internal Report NTT Number Theoretic Transform OID Object Identifier PQC Post-Quantum Cryptography RBG Random Bit Generator SHA Secure Hash Algorithm SHAKE Secure"
+  },
+  {
+    "text": "Cryptographic Hardware",
+    "label": "CryptographicHardwareItem",
+    "class_uri": "https://w3id.org/daont#CryptographicHardwareItem",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "IACR Transactions on Cryptographic Hardware and Embedded Systems (3):21–43. https://doi.org/10.131"
+  },
+  {
+    "text": "firmware",
+    "label": "Firmware",
+    "class_uri": "https://w3id.org/daont#Firmware",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "A digital signature algorithm may be implemented in software, firmware, hardware, or any combination thereof."
+  },
+  {
+    "text": "Kyber",
+    "label": "PostQuantumCryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#PostQuantumCryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "[28] Avanzi R, Bos J, Ducas L, Kiltz E, Lepoint T, Lyubashevsky V, Schanck JM, Schwabe P, Seiler G, Stehlé D (2020) CRYSTALS-Kyber algorithm specifications and supporting documentation, 3rd Round submission to the NIST’s post-quantum cryptography standardization process."
+  },
+  {
+    "text": "post-quantum cryptographic algorithm",
+    "label": "PostQuantumCryptographicAlgorithm",
+    "class_uri": "https://w3id.org/daont#PostQuantumCryptographicAlgorithm",
+    "source": "DAOnt phrase match",
+    "mention_count": 1,
+    "example_sentence": "security category A number associated with the security strength of a post-quantum cryptographic algorithm, as specified by NIST (see [9, Sect."
+  }
+]

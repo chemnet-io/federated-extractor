@@ -1,0 +1,40 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+PDF -> RDF (DAOnt) pipeline starting on 'uploads/NIST.FIPS.203.pdf' (no visualization)
+  interpreter: /home/pcarmo/repositories/federated-extractor/.venv/bin/python
+[1/4] PDF text extracted -> /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/NIST.FIPS.203.txt
+Ontology triples: 621
+Ontology classes: 84
+Ontology properties: 94
+Matching aliases: 179
+Text chunks: 3
+Processing text...
+Processed chunk 1/3Processed chunk 2/3Processed chunk 3/3
+Ontology-guided extraction completed.
+Unique entities: 14
+Unique relationships: 0
+Rejected candidates: 10
+Saved: /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/chk_ontology_entities.json
+Saved: /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/chk_ontology_relationships.json
+Saved: /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/chk_ontology_rejected.json
+Saved: /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/chk_ontology_report.json
+[2/4] Ontology extraction complete -> chk_ontology_entities.json, chk_ontology_relationships.json
+[3/4] RDF graph written -> /home/pcarmo/repositories/federated-extractor/outputs/rdf/chk_daont_graph.ttl (28 triples, 28 validated)
+
+================================================================
+PIPELINE EXECUTION TIME REPORT
+================================================================
+  1. PDF -> text extraction                              0.127s  (  4.4%)
+  2. Ontology-guided extraction                          2.768s  ( 95.1%)
+  3. RDF conversion (DAOnt)                              0.016s  (  0.5%)
+----------------------------------------------------------------
+  Overall elapsed time:           2.910s
+================================================================
+
+Generated artifacts:
+  - input pdf: uploads/NIST.FIPS.203.pdf
+  - ontology: /home/pcarmo/repositories/federated-extractor/normalizers/daont.ttl
+  - text: /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/NIST.FIPS.203.txt
+  - entities json: /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/chk_ontology_entities.json
+  - relationships json: /home/pcarmo/repositories/federated-extractor/outputs/pdf_text/chk_ontology_relationships.json
+  - rdf turtle: /home/pcarmo/repositories/federated-extractor/outputs/rdf/chk_daont_graph.ttl
+

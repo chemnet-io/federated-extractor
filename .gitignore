@@ -242,6 +242,8 @@ outputs/**
 !outputs/
 !outputs/**/
 !outputs/**/.gitkeep
+!outputs/**/NIST.FIPS*
+!uploads/**/NIST.FIPS*
 
 # QLever creates index, log, and persisted-update files beside Qleverfile.
 qlever/federated-extractor.*

@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.8:27b-mlx",
+  "host": "http://mac.fritz.box:11434",
+  "status": "ok",
+  "input_triples": 28,
+  "output_triples": 155,
+  "output_graph": "/home/pcarmo/repositories/federated-extractor/outputs/rdf/NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph.ttl",
+  "output_html": "/home/pcarmo/repositories/federated-extractor/outputs/rdf_graph/NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph.html"
+}

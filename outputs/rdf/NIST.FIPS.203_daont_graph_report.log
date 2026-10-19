@@ -1,0 +1,63 @@
+PDF -> RDF (DAOnt) pipeline starting on 'uploads/NIST.FIPS.203.pdf'
+  interpreter: .venv/bin/python
+[1/5] PDF text extracted -> outputs/pdf_text/NIST.FIPS.203.txt
+Ontology triples: 621
+Ontology classes: 84
+Ontology properties: 94
+Matching aliases: 179
+Text chunks: 3
+Processing text...
+Processed chunk 3/3
+Ontology-guided extraction completed.
+Unique entities: 14
+Unique relationships: 0
+Rejected candidates: 10
+Saved: outputs/pdf_text/NIST.FIPS.203_ontology_entities.json
+Saved: outputs/pdf_text/NIST.FIPS.203_ontology_relationships.json
+Saved: outputs/pdf_text/NIST.FIPS.203_ontology_rejected.json
+Saved: outputs/pdf_text/NIST.FIPS.203_ontology_report.json
+[2/5] Ontology extraction complete -> NIST.FIPS.203_ontology_entities.json, NIST.FIPS.203_ontology_relationships.json
+[3/5] RDF graph written -> outputs/rdf/NIST.FIPS.203_daont_graph.ttl
+(28 triples, 28 validated)
+
+RDF triples loaded: 28
+Visualization nodes: 33
+Visualization edges: 28
+All RDF triples were added successfully.
+Saved to: outputs/rdf_graph/NIST.FIPS.203_daont_graph.html
+[4/5] Visualization written -> outputs/rdf_graph/NIST.FIPS.203_daont_graph.html
+[5/5] LLM graph review via Ollama (http://mac.fritz.box:11434, model=qwen3.8:27b-mlx)...
+
+RDF triples loaded: 155
+Visualization nodes: 78
+Visualization edges: 155
+All RDF triples were added successfully.
+Saved to: outputs/rdf_graph/NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph.html
+[5/5] LLM graph visualization -> outputs/rdf_graph/NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph.html
+[5/5] LLM review complete: 28 -> 155 triples -> NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph.ttl
+
+================================================================
+PIPELINE EXECUTION TIME REPORT
+================================================================
+   1. PDF -> text extraction                              0.116s    (  0.1%)
+   2. Ontology-guided extraction                          2.301s    (  1.3%)
+   3. RDF conversion (DAOnt)                              0.012s    (  0.0%)
+   4. RDF visualization                                   0.121s    (  0.1%)
+   5. LLM graph review                                  179.378s    ( 98.6%)
+----------------------------------------------------------------
+  Overall elapsed time:         181.928s
+================================================================
+
+Generated artifacts:
+    - input pdf: uploads/NIST.FIPS.203.pdf
+    - ontology: normalizers/daont.ttl
+    - text: outputs/pdf_text/NIST.FIPS.203.txt
+    - entities json: outputs/pdf_text/NIST.FIPS.203_ontology_entities.json
+    - relationships json: outputs/pdf_text/NIST.FIPS.203_ontology_relationships.json
+    - rdf turtle: outputs/rdf/NIST.FIPS.203_daont_graph.ttl
+    - html graph: outputs/rdf_graph/NIST.FIPS.203_daont_graph.html
+    - llm reviewed rdf turtle: outputs/rdf/NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph.ttl
+    - llm review report: outputs/rdf/NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph_report.json
+    - llm html graph: outputs/rdf_graph/NIST.FIPS.203_daont_qwen3.8_27b-mlx_graph.html
+    - timing report log: outputs/rdf/NIST.FIPS.203_daont_graph_report.log
+

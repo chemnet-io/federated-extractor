@@ -1,0 +1,77 @@
+[
+  {
+    "reason": "sentence contains negation",
+    "sentence": "However, a combined KEM that includes ML-KEM as a component might not meet IND-CCA2 security."
+  },
+  {
+    "reason": "sentence contains negation",
+    "sentence": "For these reasons, the NTT is considered to be an integral part of ML-KEM and not merely an optimization."
+  },
+  {
+    "reason": "DAOnt domain/range mismatch",
+    "subject": "NTT",
+    "subject_label": "CryptographicAlgorithm",
+    "predicate": "supportsAlgorithm",
+    "object": "NTT",
+    "object_label": "CryptographicAlgorithm",
+    "sentence": "Algorithm 10 NTT (f) ̂̂ Computes the polynomial f ∈ Rq that corresponds to the given NTT representation f ∈ Tq."
+  },
+  {
+    "reason": "DAOnt domain/range mismatch",
+    "subject": "NTT",
+    "subject_label": "CryptographicAlgorithm",
+    "predicate": "supportsAlgorithm",
+    "object": "NTT",
+    "object_label": "CryptographicAlgorithm",
+    "sentence": "▷ e[i] ∈ Z256 sampled from CBD q 14: N ←N+1 15: end for 16: ̂ ▷ run NTT k times (once for each coordinate of s) s ← NTT(s) 17: ̂ ▷ run NTT k times e ← NTT(e)̂̂ 18: t← A∘ s+̂ ê ▷ noisy linear system in NTT domain ̂̂ 19: ekPKE ← ByteEncode12(t)‖ρ ▷ run ByteEncode12 k times, then append A-seed 20: dkPKE ← ByteEncode12(s)̂ ▷ run ByteEncode12 k times 21: return (ekPKE,dkPKE) centered binomial distributions using randomness expanded from another seed σ via PRF."
+  },
+  {
+    "reason": "DAOnt domain/range mismatch",
+    "subject": "NTT",
+    "subject_label": "CryptographicAlgorithm",
+    "predicate": "supportsAlgorithm",
+    "object": "NTT",
+    "object_label": "CryptographicAlgorithm",
+    "sentence": "▷ e[i] ∈ Z256 sampled from CBD q 14: N ←N+1 15: end for 16: ̂ ▷ run NTT k times (once for each coordinate of s) s ← NTT(s) 17: ̂ ▷ run NTT k times e ← NTT(e)̂̂ 18: t← A∘ s+̂ ê ▷ noisy linear system in NTT domain ̂̂ 19: ekPKE ← ByteEncode12(t)‖ρ ▷ run ByteEncode12 k times, then append A-seed 20: dkPKE ← ByteEncode12(s)̂ ▷ run ByteEncode12 k times 21: return (ekPKE,dkPKE) centered binomial distributions using randomness expanded from another seed σ via PRF."
+  },
+  {
+    "reason": "DAOnt domain/range mismatch",
+    "subject": "KEM",
+    "subject_label": "PostQuantumCryptographicAlgorithm",
+    "predicate": "supportsAlgorithm",
+    "object": "Cryptographic Algorithm",
+    "object_label": "CryptographicAlgorithm",
+    "sentence": "The interfaces specified in this section will be used to test ML-KEM implementations through the Cryptographic Algorithm Validation Program (CAVP)."
+  },
+  {
+    "reason": "sentence contains negation",
+    "sentence": "▷ run internal encapsulation algorithm 7.3 ML-KEM Decapsulation The decapsulation algorithm ML-KEM.Decaps of ML-KEM (Algorithm 21) accepts a decapsulation key and an ML-KEM ciphertext as input, does not use any randomness, and outputs a shared secret."
+  },
+  {
+    "reason": "DAOnt domain/range mismatch",
+    "subject": "KEM",
+    "subject_label": "PostQuantumCryptographicAlgorithm",
+    "predicate": "supportsAlgorithm",
+    "object": "KEM",
+    "object_label": "PostQuantumCryptographicAlgorithm",
+    "sentence": "Specifically, ML-KEM-x can be used to denote the parameter-free KEM that results from instantiating the scheme ML-KEM with the parameter set ML-KEM-x."
+  },
+  {
+    "reason": "DAOnt domain/range mismatch",
+    "subject": "KEM",
+    "subject_label": "PostQuantumCryptographicAlgorithm",
+    "predicate": "supportsAlgorithm",
+    "object": "KEM",
+    "object_label": "PostQuantumCryptographicAlgorithm",
+    "sentence": "Specifically, ML-KEM-x can be used to denote the parameter-free KEM that results from instantiating the scheme ML-KEM with the parameter set ML-KEM-x."
+  },
+  {
+    "reason": "DAOnt domain/range mismatch",
+    "subject": "KEM",
+    "subject_label": "PostQuantumCryptographicAlgorithm",
+    "predicate": "supportsAlgorithm",
+    "object": "KEM",
+    "object_label": "PostQuantumCryptographicAlgorithm",
+    "sentence": "Specifically, ML-KEM-x can be used to denote the parameter-free KEM that results from instantiating the scheme ML-KEM with the parameter set ML-KEM-x."
+  }
+]

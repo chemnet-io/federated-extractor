@@ -1,0 +1,46 @@
+@prefix dao: <https://w3id.org/daont#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res: <https://example.org/paw/resource/> .
+
+res:aes-9899f1fec6 a dao:CryptographicAlgorithm ;
+    rdfs:label "AES" .
+
+res:cryptographic-algorithm-9dd61a0f1e a dao:CryptographicAlgorithm ;
+    rdfs:label "cryptographic algorithm" .
+
+res:dilithium-6533647a72 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "Dilithium" .
+
+res:documentation-caf9f906b1 a dao:Documentation ;
+    rdfs:label "documentation" .
+
+res:firmware-c3bf47ea1f a dao:Firmware ;
+    rdfs:label "firmware" .
+
+res:keccak-486d622ee0 a dao:CryptographicAlgorithm ;
+    rdfs:label "KECCAK" .
+
+res:kem-2080150a7f a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "KEM" .
+
+res:kyber-126f8849a6 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "KYBER" .
+
+res:ntt-d4cc2e3bab a dao:CryptographicAlgorithm ;
+    rdfs:label "NTT" .
+
+res:number-theoretic-transform-20d2b1561a a dao:CryptographicAlgorithm ;
+    rdfs:label "Number-Theoretic Transform" .
+
+res:post-quantum-cryptographic-algorithm-3bc1ed4116 a dao:PostQuantumCryptographicAlgorithm ;
+    rdfs:label "post-quantum cryptographic algorithm" .
+
+res:programming-language-6e5f5884f6 a <https://w3id.org/amv#ProgrammingLanguage> ;
+    rdfs:label "programming language" .
+
+res:sha-3-5110c7a27b a dao:CryptographicAlgorithm ;
+    rdfs:label "SHA-3" .
+
+res:sha3-4ff5a360d2 a dao:CryptographicAlgorithm ;
+    rdfs:label "SHA3" .
+
